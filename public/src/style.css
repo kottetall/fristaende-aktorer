@@ -11,11 +11,14 @@
     --main-fg: white;
     --main-seperator: rgb(255 255 255 / .1);
     --overlay-bg: rgb(138 43 226 / .7);
+    --overlay-light: rgba(255, 255, 255, 0.5);
+    --overlay-dark: rgba(0, 0, 0, 0.9);
     --accent-bg: blueviolet;
     --accent-fg: white;
     --accent-border: rgb(150 39 253 / .5);
     --accent-warning: red;
-    --pop-border: rgb(255 165 0 / .6);
+    --pop-border-section: rgba(72, 255, 0, 0.6);
+    --pop-border-article: rgb(255 165 0 / .6);
     --loading-bg: rgb(0 136 255 / .2);
 
     --font-normal: 0.8rem;
@@ -23,15 +26,19 @@
     --font-h1: 2rem;
     --font-h2: 1.1rem;
     --font-h3: 1.1rem;
+    --font-section-nav: 0.7rem;
     --font-message: 0.8rem;
     --font-warning: 0.7rem;
 
     --offset-header: 15vh;
     --offset-footer: 5vh;
 
-    /* scroll-behavior: smooth; */
     scroll-snap-type: mandatory;
     scroll-padding-top: var(--offset-header);
+}
+
+* {
+    /* outline: 2px solid pink; */
 }
 
 body {
@@ -85,6 +92,7 @@ header {
     padding: 0.5em;
     height: var(--offset-header);
     box-shadow: 0px 2px 10px 0px black;
+    z-index: 1000;
 }
 
 header::after {
@@ -119,7 +127,7 @@ h1 {
 
 h3 {
     font-size: var(--font-h3);
-    border-bottom: 1px solid var(--pop-border);
+    border-bottom: 1px solid var(--pop-border-article);
     margin: 0.5em 0;
 }
 
@@ -227,12 +235,14 @@ main {
     margin-bottom: var(--offset-footer);
 }
 
-section {}
+section {
+    border-bottom: 1px solid var(--pop-border-section);
+    margin-bottom: 4em;
+}
 
 h3 {}
 
 article {
-    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     gap: 2em;
@@ -248,6 +258,32 @@ article::after {
     z-index: -1;
 }
 
+.sectionNav {
+    font-size: var(--font-section-nav);
+    font-style: italic;
+}
+
+.sectionNav a {
+    position: relative;
+    display: block;
+    padding: 0.25em;
+}
+
+.sectionNav a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotateZ(-90deg);
+    height: 1em;
+    width: 1em;
+    background-image: url(./../img/icons/expand_white.png);
+    background-position: center;
+    background-size: contain;
+}
+
+
+
 picture img {
     max-width: 100%;
     background-color: var(--loading-bg);
@@ -255,15 +291,6 @@ picture img {
 
 section li li {
     padding-left: 0.75em;
-}
-
-h2+p {
-    padding: .25em;
-    margin: 0.5em;
-    font-size: var(--font-message);
-    background-color: rgb(233 233 233/.5);
-    border: 1px dotted darkgray;
-    border-radius: 4px;
 }
 
 footer {
@@ -277,6 +304,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 footer a[href="#"]:not(.start) {
@@ -312,8 +340,84 @@ footer a[href="#"]:not(.start)::after {
 
 
 .warning {
+    --icon-size-info: 2em;
     border: 1px dashed var(--accent-warning);
     padding: 0.75em;
+    padding-left: var(--icon-size-info);
     font-weight: bold;
     font-size: var(--font-warning);
+    position: relative;
+    z-index: -1;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.warning::before {
+    content: "";
+    position: absolute;
+    min-height: var(--icon-size-info);
+    min-width: var(--icon-size-info);
+    left: calc(calc(var(--icon-size-info) / 2) * -1);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 100vh;
+    border: 1px solid var(--accent-warning);
+    background-color: var(--main-bg);
+    background-image: url(./../img/icons/info_white.png);
+    background-position: center;
+    background-size: contain;
+}
+
+#about {
+    font-size: .7rem;
+    line-height: 2;
+    padding: 1em;
+}
+
+#about .warning {
+    font-size: .8rem;
+}
+
+#about ul {
+    list-style: circle;
+}
+
+#about li {
+    margin-left: 2em;
+    padding: .5em 0;
+}
+
+.signatur {
+    text-align: right;
+    padding-right: 3em;
+}
+
+.modal {
+    display: none;
+}
+
+.modal.active {
+    position: fixed;
+    background-color: var(--overlay-dark);
+    top: var(--offset-header);
+    bottom: var(--offset-footer);
+    left: 0;
+    right: 0;
+    display: block;
+    overflow: scroll;
+}
+
+.modal.active .close {
+    --icon-size: 2.5em;
+    position: fixed;
+    top: calc(var(--offset-header) + 0.5em);
+    right: 1em;
+    height: var(--icon-size);
+    width: var(--icon-size);
+    background-color: var(--overlay-light);
+    background-image: url(./../img/icons/close.png);
+    background-position: center;
+    background-size: cover;
+    border: none;
+    border-radius: 100vh;
 }

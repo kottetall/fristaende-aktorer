@@ -14,7 +14,9 @@
     <header>
         <!-- s.1 -->
         <div class="title">
-            <h1>MSFA</h1>
+            <a href="#">
+                <h1>MSFA</h1>
+            </a>
             <p>Mina sidor för fristående aktörer</p>
         </div>
         <span class="lastUpdate">Uppdaterat 2022-04-06</span>
@@ -90,6 +92,9 @@
                         <li>
                             <a href="#Byt_handledare">Byt handledare</a>
                         </li>
+                        <li>
+                            <a href="#Ta_bort_handledare">Ta bort handledare</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -160,6 +165,9 @@
                     <span>Skapa avvikelserapport</span>
                     <ul aria-expanded="false">
                         <li>
+                            <a href="#Skapa_avvikelserapport">Skapa avvikelserapport</a>
+                        </li>
+                        <li>
                             <a href="#Franvaro">Frånvaro</a>
                         </li>
                         <li>
@@ -207,6 +215,9 @@
                     <span>Periodisk redovisning</span>
                     <ul aria-expanded="false">
                         <li>
+                            <a href="#Periodisk_redovisning">Periodisk redovisning</a>
+                        </li>
+                        <li>
                             <a href="#Skapa_periodisk_redovisning">Skapa periodisk redovisning</a>
                         </li>
                         <li>
@@ -223,20 +234,17 @@
                             <a href="#Informativ_rapport">Informativ rapport</a>
                         </li>
                         <li>
-                            <a href="#Slutredovisning_Deltagare_har_fatt_jobb/paborjat_studier">Slutredovisning +
-                                Deltagare har fått jobb/påbörjat studier</a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <span>Informativ rapport</span>
-                    <ul aria-expanded="false">
-                        <li>
                             <a href="#Skapa_informativ_rapport">Skapa informativ rapport</a>
                         </li>
                         <li>
-                            <a href="#Jobb_eller_studier">Jobb eller studier</a>
+                            <a href="#Signal_om_arbete-eller_studier">Signal om arbete eller studier</a>
+                        </li>
+                        <li>
+                            <a href="#Skicka_in_Signal_om_arbete_eller_studier_">Skicka in ”Signal om arbete eller
+                                studier”</a>
+                        </li>
+                        <li>
+                            <a href="#Skapa_resultatredovisning">Skapa resultatredovisning</a>
                         </li>
                     </ul>
                 </li>
@@ -244,6 +252,9 @@
                 <li>
                     <span>Slutredovisning</span>
                     <ul aria-expanded="false">
+                        <li>
+                            <a href="#Skapa_slutredovisning">Skapa slutredovisning</a>
+                        </li>
                         <li>
                             <a href="#Slutredovisning_steg_1">Slutredovisning steg 1</a>
                         </li>
@@ -271,12 +282,14 @@
                                 redovisningar</a>
                         </li>
                         <li>
-                            <a href="#Se_motivering_till_ej_godkand_slutredovisning_-">Se motivering till ej godkänd
-                                slutredovisning -</a>
+                            <a href="#Se_motivering_till_ej_godkand_slutredovisning_deltagarlistan">Se motivering till
+                                ej godkänd
+                                slutredovisning - Deltagarlistan</a>
                         </li>
                         <li>
-                            <a href="#Se_motivering_till_ej_godkand_slutredovisning">Se motivering till ej godkänd
-                                slutredovisning</a>
+                            <a href="#Se_motivering_till_ej_godkand_slutredovisning_rapporter">Se motivering till ej
+                                godkänd
+                                slutredovisning - Rapporter</a>
                         </li>
                     </ul>
                 </li>
@@ -285,6 +298,9 @@
                 <li>
                     <span>Exportera deltagarinformation</span>
                     <ul aria-expanded="false">
+                        <li>
+                            <a href="#Exportera_deltagarinformation">Exportera deltagarinformation</a>
+                        </li>
                         <li>
                             <a href="#Export_till_Excel">Export till Excel</a>
                         </li>
@@ -318,14 +334,68 @@
         </nav>
     </header>
     <!--  -->
+
     <main>
 
         <section>
-            <article>
-                <h3>Om sidan</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum debitis nobis quam, similique earum
-                    deleniti omnis commodi facere repellat repellendus perferendis, numquam, qui sunt corrupti suscipit
-                    explicabo in. Eveniet, commodi?</p>
+            <article id="about">
+                <h2>Om sidan</h2>
+                <p class="warning">fristaende-aktorer.se drivs inte av Arbetsförmedlingen och du ansvarar själv för att
+                    säkerställa att all information är korrekt</p>
+
+                <h3>Bakgrund</h3>
+                <p>Denna sida är en tillfällig lösning som skapats utifrån upplevda brister i de användarstöd som finns
+                    tillgängliga på
+                    <a href="https://arbetsformedlingen.se/om-oss/for-leverantorer/webbstod"
+                        target="_blank">Arbetsförmedlingens hemsida</a>
+                </p>
+                <p>All information är sådant som finns tillgängligt på <a
+                        href="https://arbetsformedlingen.se">arbetsformedlingen.se</a> och är i möjligaste mån
+                    oredigerat.
+                    Ibland kan text och/eller bild ha modifierats från originalet. Syftet har då varit att exempelvis
+                    rätta stavfel, felaktiga innehållsförteckningar, beskära bilder etc.
+                </p>
+                <p>Även om målet är att informationen ska vara identisk med den som erbjuds av Arbetsförmedlingen, är
+                    det i slutändan du själv som ytterst ansvarar för att det du gör är korrekt. fristaende-aktorer.se
+                    tar inget ansvar för eventuella konsekvenser som orsakats av felaktig eller gammal information.</p>
+                <p>
+                <h3>Grundförutsättningar</h3>
+                <ul>
+                    Målet är att tillhandahålla:
+                    <li><b>En plats för alla användarstöd</b> - <i>Du ska inte behöva lägga tid på att hitta stödet</i>
+                    </li>
+                    <li><b>En möjlighet att läsa användarstöden på mobilen, plattan eller datorn</b> - <i>Du ska inte
+                            behöva sitta
+                            vid datorn för att snabbt och smidig kunna hitta svar.</i></li>
+                    <li><b>En enhetlig struktur för alla användarstöd</b> - <i>Du ska inte behöva "lära dig" olika stöd
+                            för olika
+                            tjänster</i></li>
+                </ul>
+
+                <ul>
+                    Sidan kommer <u>inte</u>:
+                    <li>Vara vinstdrivande</li>
+                    <li>Innehålla annonsering</li>
+                    <li>Genomföra felsökning av KA eller MSFA</li>
+                    <li>Ta emot felanmälningar av KA eller MSFA</li>
+                    <li>Genomföra utbildningar av KA eller MSFA</li>
+                </ul>
+                </p>
+                <h3>Om mig</h3>
+                <p>
+                    Jag som driver sidan arbetar i dagsläget hos Servicedesk på Arbetsförmedlingen, inriktat mot
+                    arbetsförmedlares och leverantörers systemstöd.
+                </p>
+                <p>
+                    Då sidan räknas potentiellt kan räknas som "bisyssla" innebär det vissa krav och begränsningar på
+                    innehåll och omfattning.
+                    Det innebär även att oannonserade förändringar kan komma att ske
+                    om oklarheter eller nya bedömningar sker.
+                </p>
+                <p class="signatur">
+                    / Alexander
+                </p>
+
             </article>
         </section>
 
@@ -481,9 +551,36 @@
         <section>
             <article>
                 <h2>Bjuda in användare och lägga till behörigheter</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Inloggning_Mina_sidor_for_fristaende_aktorer_">Inloggning ”Mina sidor för
+                            fristående aktörer”</a>
+                    </li>
+                    <li>
+                        <a href="#Skapa_personalkonto">Skapa personalkonto</a>
+                    </li>
+                    <li>
+                        <a href="#Bjud_in_anvandare">Bjud in användare</a>
+                    </li>
+                    <li>
+                        <a href="#Lagga_till_behorigheter">Lägga till behörigheter</a>
+                    </li>
+                    <li>
+                        <a href="#Tjanst_utforande_verksamhet_och_adresser">Tjänst, utförande verksamhet och
+                            adresser</a>
+                    </li>
+                    <li>
+                        <a href="#Roller">Roller</a>
+                    </li>
+                    <li>
+                        <a href="#Personalkontot_har_uppdaterats">Personalkontot har uppdaterats</a>
+                    </li>
+                </ul>
+
             </article>
 
-            <article id="Inloggning_Mina_sidor_för_fristaende_aktorer_">
+            <article id="Inloggning_Mina_sidor_for_fristaende_aktorer_">
                 <h3>Inloggning ”Mina sidor för fristående aktörer”</h3>
                 <p>
                     Du som är ansvarig behörighetsadministratör får en länk, via e-post, som går till inloggningssidan
@@ -576,15 +673,20 @@
             <article id="Tjanst_utforande_verksamhet_och_adresser">
                 <h3>Tjänst, utförande verksamhet och adresser</h3>
 
-                Välj den tjänst du vill ge personen tillgång till.
-
-                När du valt tjänst ser du de utförande verksamheter inom din organisation som finns registrerade för den
-                valda tjänsten.
-
-                När du ställer markören på en utförande verksamhet får du fram de adresser verksamheten finns på.
-
-                Välj de utförande verksamheter och adresser du vill ge personen behörighet till.
-
+                <p>
+                    Välj den tjänst du vill ge personen tillgång till.
+                </p>
+                <p>
+                    När du valt tjänst ser du de utförande verksamheter inom din organisation som finns registrerade för
+                    den
+                    valda tjänsten.
+                </p>
+                <p>
+                    När du ställer markören på en utförande verksamhet får du fram de adresser verksamheten finns på.
+                </p>
+                <p>
+                    Välj de utförande verksamheter och adresser du vill ge personen behörighet till.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/administration_behörigheter_tjanster.png" alt="">
@@ -599,19 +701,29 @@
             <article id="Roller">
                 <h3>Roller</h3>
 
-                Under ”Roller” väljer du de behörigheter personen behöver i systemet för att kunna utföra sina
-                arbetsuppgifter.
-                Det finns tre olika behörigheter indelade efter vilka uppgifter personen ska utföra i ”Mina sidor för
-                fristående aktörer”:
-                Administrera behörigheter
-                Ta emot (och fördela) nya deltagare
-                Rapportering, planering och information om deltagare
-
-                De olika behörigheterna går att kombinera med varandra och en person kan ha en, två eller tre olika
-                behörigheter.
-                Det är du som leverantör som bestämmer vilka behörigheter dina olika medarbetare behöver.
-                Du hittar en utförligare beskrivning av behörigheterna i avsnittet ”Behörigheter” i slutet av det här
-                dokumentet.
+                <p>
+                    Under ”Roller” väljer du de behörigheter personen behöver i systemet för att kunna utföra sina
+                    arbetsuppgifter.
+                </p>
+                <p>
+                    Det finns tre olika behörigheter indelade efter vilka uppgifter personen ska utföra i ”Mina sidor
+                    för
+                    fristående aktörer”:
+                    Administrera behörigheter
+                    Ta emot (och fördela) nya deltagare
+                    Rapportering, planering och information om deltagare
+                </p>
+                <p>
+                    De olika behörigheterna går att kombinera med varandra och en person kan ha en, två eller tre olika
+                    behörigheter.
+                </p>
+                <p>
+                    Det är du som leverantör som bestämmer vilka behörigheter dina olika medarbetare behöver.
+                </p>
+                <p>
+                    Du hittar en utförligare beskrivning av behörigheterna i avsnittet ”Behörigheter” i slutet av det
+                    här
+                    dokumentet.</p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/administration_roller.png" alt="">
@@ -622,12 +734,16 @@
             <article id="Personalkontot_har_uppdaterats">
                 <h3>Personalkontot har uppdaterats</h3>
 
-                Nu är personalkontot uppdaterat med de behörigheter du har valt.
-
-                Scrolla längst ner på sidan och klicka på ”Tillbaka till personallistan” för att komma till
-                personallistan igen.
-
-                Nu kan du fortsätta lägga till behörigheter till personalkonton.
+                <p>
+                    Nu är personalkontot uppdaterat med de behörigheter du har valt.
+                </p>
+                <p>
+                    Scrolla längst ner på sidan och klicka på ”Tillbaka till personallistan” för att komma till
+                    personallistan igen.
+                </p>
+                <p>
+                    Nu kan du fortsätta lägga till behörigheter till personalkonton.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/administration_personalkonto_bekraftelse.png" alt="">
@@ -644,15 +760,38 @@
 
             <article>
                 <h2>Så här gör du för att registrera dig när du fått en inbjudan</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Inbjudan_via_epost">Inbjudan via e-post</a>
+                    </li>
+                    <li>
+                        <a href="#Legitimering_med_BankID">Legitimering med BankID</a>
+                    </li>
+                    <li>
+                        <a href="#Bekrafta_anvandarnamn">Bekräfta användarnamn</a>
+                    </li>
+                    <li>
+                        <a href="#Tekniskt_namn">Tekniskt namn</a>
+                    </li>
+                    <li>
+                        <a href="#Personlig_information">Personlig information</a>
+                    </li>
+                    <li>
+                        <a href="#Anvandarregisteringen_har_godkants">Användarregisteringen har godkänts</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
             <article id="Inbjudan_via_epost">
                 <h3>Inbjudan via e-post</h3>
-
-                När personen som administrerar behörigheter i din organisation bjuder in dig som användare av ”Mina
-                sidor för fristående aktörer” skickas en inbjudan till din e-post.
-
-                Klicka på länken i inbjudan för att börja registreringen av ditt konto.
+                <p>
+                    När personen som administrerar behörigheter i din organisation bjuder in dig som användare av ”Mina
+                    sidor för fristående aktörer” skickas en inbjudan till din e-post.
+                </p>
+                <p>
+                    Klicka på länken i inbjudan för att börja registreringen av ditt konto.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/anvandarinbjudan_mail.png" alt="">
@@ -661,8 +800,9 @@
             <!--  -->
             <article id="Legitimering_med_BankID">
                 <h3>Legitimering med BankID</h3>
-
-                Du legitimerar dig med BankID. Välj om du vill använda Mobilt BankID eller BankID på fil.
+                <p>
+                    Du legitimerar dig med BankID. Välj om du vill använda Mobilt BankID eller BankID på fil.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/anvandarinbjudan_steg_1.png" alt="">
@@ -672,12 +812,18 @@
             <!--  -->
             <article id="Bekrafta_anvandarnamn">
                 <h3>Bekräfta användarnamn</h3>
-
-                Kontrollera att uppgifterna stämmer, klicka sen på knappen ”Bekräfta Användarnamn (epost)”
-                En bekräftelsekod skickas till dig med e-post.
-                Hämta bekräftelsekoden i din e-post och skriv in den i rutan som kommer upp. Klicka sen på ”Kontrollera
-                kod”.
-                För att komma vidare efter att du bekräftat din e-postadress klicka på knappen ”Nästa.”
+                <p>
+                    Kontrollera att uppgifterna stämmer, klicka sen på knappen ”Bekräfta Användarnamn (epost)”
+                    En bekräftelsekod skickas till dig med e-post.
+                </p>
+                <p>
+                    Hämta bekräftelsekoden i din e-post och skriv in den i rutan som kommer upp. Klicka sen på
+                    ”Kontrollera
+                    kod”.
+                </p>
+                <p>
+                    För att komma vidare efter att du bekräftat din e-postadress klicka på knappen ”Nästa.”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/anvandarinbjudan_pin.png" alt="">
@@ -691,11 +837,15 @@
             <!--  -->
             <article id="Tekniskt_namn">
                 <h3>Tekniskt namn</h3>
-
-                Nu kommer du till en sida som visar ”Tekniskt namn”. Det är ett ID-nummer som ”Mina sidor för fristående
-                aktörer” använder för att styra informationen rätt i systemet. Du behöver inte göra något med numret.
-
-                För att komma vidare klicka på ”Nästa”.
+                <p>
+                    Nu kommer du till en sida som visar ”Tekniskt namn”. Det är ett ID-nummer som ”Mina sidor för
+                    fristående
+                    aktörer” använder för att styra informationen rätt i systemet. Du behöver inte göra något med
+                    numret.
+                </p>
+                <p>
+                    För att komma vidare klicka på ”Nästa”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/anvandarinbjudan_steg_3.png" alt="">
@@ -705,10 +855,12 @@
             <!--  -->
             <article id="Personlig_information">
                 <h3>Personlig information</h3>
-
-                Här ser du användarinformationen för ditt konto i ”Mina sidor för fristående aktörer”.
-
-                Klicka på knappen ”Bekräfta” för att gå vidare.
+                <p>
+                    Här ser du användarinformationen för ditt konto i ”Mina sidor för fristående aktörer”.
+                </p>
+                <p>
+                    Klicka på knappen ”Bekräfta” för att gå vidare.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/anvandarregistrering_personlig_information_steg_4.png" alt="">
@@ -718,13 +870,16 @@
             <!--  -->
             <article id="Anvandarregisteringen_har_godkants">
                 <h3>Användarregisteringen har godkänts</h3>
-
-                Nu är du färdig med registreringen av ditt konto i ”Mina sidor för fristående aktörer och du får en
-                bekräftelse med e-post. Personen som administrerar behörigheter i din organisation kan nu lägga till de
-                behörigheter du behöver i ditt arbete.
-
-                Du kommer till ”Mina sidor för fristående aktörer” via länken leverantorer.arbetsformedlingen.se. Du
-                använder BankID för att logga in.
+                <p>
+                    Nu är du färdig med registreringen av ditt konto i ”Mina sidor för fristående aktörer och du får en
+                    bekräftelse med e-post. Personen som administrerar behörigheter i din organisation kan nu lägga till
+                    de
+                    behörigheter du behöver i ditt arbete.
+                </p>
+                <p>
+                    Du kommer till ”Mina sidor för fristående aktörer” via länken leverantorer.arbetsformedlingen.se. Du
+                    använder BankID för att logga in.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/bekraftelse_godkand_anvandarregistrering.jpg" alt="">
@@ -736,21 +891,34 @@
         <section>
             <article>
                 <h2>Ta bort personal/ handledare</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Se_om_handledare_har_deltagare">Se om handledare har deltagare</a>
+                    </li>
+                    <li>
+                        <a href="#Byt_handledare">Byt handledare</a>
+                    </li>
+                    <li>
+                        <a href="#Ta_bort_handledare">Ta bort handledare</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
-            <p class="warning">
-                Viktigt - för att du ska kunna ta bort en handledare behöver du först flytta över handledarens deltagare
-                till en annan handledare.
-            </p>
             <article id="Se_om_handledare_har_deltagare">
                 <h3>Se om handledare har deltagare</h3>
 
-                Du kan se om handledare har deltagare på sig genom att;
-
-                Välja ”deltagarlista” och välja den handledare du vill se.
-
-                <!--  -->
-
+                <p class="warning">
+                    Viktigt - för att du ska kunna ta bort en handledare behöver du först flytta över handledarens
+                    deltagare
+                    till en annan handledare.
+                </p>
+                <p>
+                    Du kan se om handledare har deltagare på sig genom att;
+                </p>
+                <p>
+                    Välja ”deltagarlista” och välja den handledare du vill se.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagarlista_valj_handledare_markerad.png" alt="">
@@ -764,10 +932,10 @@
             <article id="Byt_handledare">
 
                 <h3>Byt handledare</h3>
-
-                För att ändra handledare går du in på varje deltagare aktuell handledare har och klickar på ”byt
-                handledare”. Du väljer den handledare deltagaren ska byta till och klickar på ”spara handledare”.
-
+                <p>
+                    För att ändra handledare går du in på varje deltagare aktuell handledare har och klickar på ”byt
+                    handledare”. Du väljer den handledare deltagaren ska byta till och klickar på ”spara handledare”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagarlista_filtrerad_pa_handledare.png" alt="">
@@ -780,14 +948,10 @@
             <article id="Ta_bort_handledare">
 
                 <h3>Ta bort handledare</h3>
-
-                <!--  -->
-
-
-
-                För att ta bort en handledare klicka på ”administration” och ”hantera personalkonton” klicka på
-                handledarens konto genom att klicka på namnet. Klicka på ”redigera konto” och ”ta bort konto”.
-
+                <p>
+                    För att ta bort en handledare klicka på ”administration” och ”hantera personalkonton” klicka på
+                    handledarens konto genom att klicka på namnet. Klicka på ”redigera konto” och ”ta bort konto”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/startsida_administration_markerad.png" alt="">
@@ -796,10 +960,12 @@
                     <source srcset="">
                     <img src="./img/instructions/hantera_personalkonton_ta_bort_markerad.png" alt="">
                 </picture>
-
-                Du kan även ta bort en handledare genom att gå in via ”administration” och ”hantera personalkonton”, du
-                söker fram den handledaren du vill ta bort, klickar på ”redigera” sedan klickar du på ”ta bort konto”.
-
+                <p>
+                    Du kan även ta bort en handledare genom att gå in via ”administration” och ”hantera personalkonton”,
+                    du
+                    söker fram den handledaren du vill ta bort, klickar på ”redigera” sedan klickar du på ”ta bort
+                    konto”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/personalkonto_administration.png" alt="">
@@ -817,16 +983,33 @@
 
             <article>
                 <h2>Ta emot och fördela nya deltagare</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Fliken_Nya_deltagare_">Fliken “Nya deltagare”</a>
+                    </li>
+                    <li>
+                        <a href="#Valj_deltagare_att_tilldela">Välj deltagare att tilldela</a>
+                    </li>
+                    <li>
+                        <a href="#Tilldela_handledare">Tilldela handledare</a>
+                    </li>
+                    <li>
+                        <a href="#Bekrafta_tilldelning">Bekräfta tilldelning</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
             <article id="Fliken_Nya_deltagare_">
                 <h3>Fliken “Nya deltagare”</h3>
-
-                Klicka på fliken ”Nya deltagare” för att se alla nya deltagare som har kommit in för de utförande
-                verksamheter du har behörighet till.
-
-                Det är endast du som har behörigheten ”Ta emot (och fördela) nya deltagare” som ser fliken ”Nya
-                deltagare”. Har du inte den behörigheten ser du inte heller fliken.
+                <p>
+                    Klicka på fliken ”Nya deltagare” för att se alla nya deltagare som har kommit in för de utförande
+                    verksamheter du har behörighet till.
+                </p>
+                <p>
+                    Det är endast du som har behörigheten ”Ta emot (och fördela) nya deltagare” som ser fliken ”Nya
+                    deltagare”. Har du inte den behörigheten ser du inte heller fliken.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/startsida.png" alt="">
@@ -836,17 +1019,22 @@
             <!--  -->
             <article id="Valj_deltagare_att_tilldela">
                 <h3>Välj deltagare att tilldela</h3>
-
-                Här ser du alla nya deltagare för de utförande verksamheter och adresser du har behörighet till.
-
-                Du kan filtrera resultatet efter tjänst, utförande verksamhet och kommun. Du kan välja att visa
-                deltagare för en eller flera utförande verksamheter och kommuner samtidigt.
-
-                För att tilldela deltagare till en handledare så väljer du deltagare genom att sätta en bock i rutan
-                ”välj deltagare”. Du kan välja att tilldela en eller flera deltagare samtidigt till en handledare. Du
-                kan också välja att tilldela alla deltagare i listan genom att bocka för rutan ”Välj alla deltagare.
-
-                För att gå vidare klicka på knappen ”Nästa”.
+                <p>
+                    Här ser du alla nya deltagare för de utförande verksamheter och adresser du har behörighet till.
+                </p>
+                <p>
+                    Du kan filtrera resultatet efter tjänst, utförande verksamhet och kommun. Du kan välja att visa
+                    deltagare för en eller flera utförande verksamheter och kommuner samtidigt.
+                </p>
+                <p>
+                    För att tilldela deltagare till en handledare så väljer du deltagare genom att sätta en bock i rutan
+                    ”välj deltagare”. Du kan välja att tilldela en eller flera deltagare samtidigt till en handledare.
+                    Du
+                    kan också välja att tilldela alla deltagare i listan genom att bocka för rutan ”Välj alla deltagare.
+                </p>
+                <p>
+                    För att gå vidare klicka på knappen ”Nästa”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/nya_deltagare_oversikt.png" alt="">
@@ -857,15 +1045,19 @@
             <!--  -->
             <article id="Tilldela_handledare">
                 <h3>Tilldela handledare</h3>
-
-                Välj vilken handledare i listan du vill tilldela till de valda deltagarna.
-
-                När du har valt handledare i listan ser du med en gång namnet på handledaren under rubriken ”Vald
-                handledare” i det gråa deltagarfältet. Du kan endast tilldela deltagare till handledare som har
-                behörigheten ”Rapportering, planering och information om deltagare”. Det är endast de handledarna du ser
-                i listan.
-
-                Kontrollera att du valt rätt handledare, klicka sedan på knappen ”Tilldela”
+                <p>
+                    Välj vilken handledare i listan du vill tilldela till de valda deltagarna.
+                </p>
+                <p>
+                    När du har valt handledare i listan ser du med en gång namnet på handledaren under rubriken ”Vald
+                    handledare” i det gråa deltagarfältet. Du kan endast tilldela deltagare till handledare som har
+                    behörigheten ”Rapportering, planering och information om deltagare”. Det är endast de handledarna du
+                    ser
+                    i listan.
+                </p>
+                <p>
+                    Kontrollera att du valt rätt handledare, klicka sedan på knappen ”Tilldela”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/nya_deltagare_tilldela.png" alt="">
@@ -877,11 +1069,13 @@
             <article id="Bekrafta_tilldelning">
 
                 <h3>Bekräfta tilldelning</h3>
-
-                Klicka på knappen ”Bekräfta tilldelning” för att bekräfta tilldelningen till handledaren.
-
-                Nu är tilldelningen färdig och du kan gå tillbaka till listan med nya deltagare genom att klicka på
-                knappen ”Tillbaka till nya deltagare”.
+                <p>
+                    Klicka på knappen ”Bekräfta tilldelning” för att bekräfta tilldelningen till handledaren.
+                </p>
+                <p>
+                    Nu är tilldelningen färdig och du kan gå tillbaka till listan med nya deltagare genom att klicka på
+                    knappen ”Tillbaka till nya deltagare”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/nya_deltagare_bekrafta_tilldelning.png" alt="">
@@ -897,22 +1091,47 @@
         <section>
             <article>
                 <h2>Mina deltagare, deltagarinformation</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Se_mina_deltagare">Se mina deltagare</a>
+                    </li>
+                    <li>
+                        <a href="#Deltagarinformation_-_Deltagare_tjanst">Deltagarinformation - Deltagare &
+                            tjänst</a>
+                    </li>
+                    <li>
+                        <a href="#Deltagare_tjanst_-_Genomförandereferens_avbrott_videomote">Deltagare & tjänst -
+                            Genomförandereferens, avbrott, videomöte</a>
+                    </li>
+                    <li>
+                        <a href="#Deltagarinformation_-_Erfarenheter">Deltagarinformation - Erfarenheter</a>
+                    </li>
+                    <li>
+                        <a href="#Deltagarinformation_-_Rapportering">Deltagarinformation - Rapportering</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
             <article id="Se_mina_deltagare">
                 <h3>Se mina deltagare</h3>
-
-                För att få fram dina tilldelade deltagare börja med att klicka på fliken ”Deltagarlista”.
-
-                Du ser då en lista med de deltagare som tillhör din organisation. För att se enbart dina deltagare
-                bockar du för rutan ”Visa endast mina tilldelade deltagare”.
-
-                Du kan också söka fram en deltagare genom att söka på genomförandereferens i rutan ”Sök deltagare på
-                genomförandereferens”
-
-                Du kan se de senaste händelserna för en deltagare genom att klicka på ”Visa händelser”
-
-                Klicka på en deltagares namn i listan för att se den information som finns om deltagaren.
+                <p>
+                    För att få fram dina tilldelade deltagare börja med att klicka på fliken ”Deltagarlista”.
+                </p>
+                <p>
+                    Du ser då en lista med de deltagare som tillhör din organisation. För att se enbart dina deltagare
+                    bockar du för rutan ”Visa endast mina tilldelade deltagare”.
+                </p>
+                <p>
+                    Du kan också söka fram en deltagare genom att söka på genomförandereferens i rutan ”Sök deltagare på
+                    genomförandereferens”
+                </p>
+                <p>
+                    Du kan se de senaste händelserna för en deltagare genom att klicka på ”Visa händelser”
+                </p>
+                <p>
+                    Klicka på en deltagares namn i listan för att se den information som finns om deltagaren.
+                </p>
                 <!--  -->
                 <picture>
                     <source srcset="">
@@ -929,14 +1148,19 @@
             </article>
             <article id="Deltagarinformation_-_Deltagare_tjanst">
                 <h3>Deltagarinformation - Deltagare & tjänst</h3>
-
-                Under fliken ”Deltagare & tjänst” hittar du information om deltagaren och tjänsten. Här ser du också om
-                deltagaren har behov av språkstöd och i så fall på vilket språk. Deltagarens personnummer ligger dolt på
-                sidan. För att få fram personnumret klicka på ”Visa” bredvid det lilla ögat. Du ser också vilken
-                handledare som ansvarar för deltagaren. För att byta handledare väljer du ny handledare i listan under
-                rubriken ”Byt handledare”. Klicka sedan på knappen ”Spara handledare” Du kan endast välja att byta till
-                en handledare med behörigheten ”Rapportering, planering och information om deltagare”. Du ser därför
-                endast de handledarna i listan.
+                <p>
+                    Under fliken ”Deltagare & tjänst” hittar du information om deltagaren och tjänsten. Här ser du också
+                    om
+                    deltagaren har behov av språkstöd och i så fall på vilket språk. Deltagarens personnummer ligger
+                    dolt på
+                    sidan. För att få fram personnumret klicka på ”Visa” bredvid det lilla ögat. Du ser också vilken
+                    handledare som ansvarar för deltagaren. För att byta handledare väljer du ny handledare i listan
+                    under
+                    rubriken ”Byt handledare”. Klicka sedan på knappen ”Spara handledare” Du kan endast välja att byta
+                    till
+                    en handledare med behörigheten ”Rapportering, planering och information om deltagare”. Du ser därför
+                    endast de handledarna i listan.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_deltagare_och_tjanst.png" alt="">
@@ -946,14 +1170,19 @@
             <!--  -->
             <article id="Deltagare_tjanst_-_Genomforandereferens_avbrott_videomote">
                 <h3>Deltagare & tjänst - Genomförandereferens, avbrott och videomöte</h3>
-
-                Under fliken ”Deltagare & tjänst” hittar du också ”Genomförandereferens”, vilket är det referensnummer
-                du ska använda dig av i kontakten med Arbetsförmedlingen. Du kan också använda genomförande-referensen
-                till att leta fram ordrar i Leverantörsportalen. Under rubriken ”Om tjänsten” ser du också information
-                om det gjorts ett avbrott för deltagaren. Här hittar du också en länk till videomöte som är
-                Arbetsförmedlingens digitala tjänst för videomöte där du kan genomföra säkrare digitala möten med dina
-                deltagare. Länken tar dig till en extern webbplats där du loggar in med BankID.
-                På Arbetsförmedlingens hemsida hittar du instruktioner om hur du använder videomöten
+                <p>
+                    Under fliken ”Deltagare & tjänst” hittar du också ”Genomförandereferens”, vilket är det
+                    referensnummer
+                    du ska använda dig av i kontakten med Arbetsförmedlingen. Du kan också använda
+                    genomförande-referensen
+                    till att leta fram ordrar i Leverantörsportalen. Under rubriken ”Om tjänsten” ser du också
+                    information
+                    om det gjorts ett avbrott för deltagaren. Här hittar du också en länk till videomöte som är
+                    Arbetsförmedlingens digitala tjänst för videomöte där du kan genomföra säkrare digitala möten med
+                    dina
+                    deltagare. Länken tar dig till en extern webbplats där du loggar in med BankID.
+                    På Arbetsförmedlingens hemsida hittar du instruktioner om hur du använder videomöten
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_deltagare_och_tjanst.png" alt="">
@@ -967,11 +1196,14 @@
             <!--  -->
             <article id="Deltagarinformation_-_Erfarenheter">
                 <h3>Deltagarinformation - Erfarenheter</h3>
-
-                Under fliken ”Erfarenheter” hittar du information om deltagarens arbetslivserfarenhet och utbildning. Du
-                ser också om deltagaren har körkort och tillgång till bil.
-
-                Informationen hämtas från Arbetsförmedlingens system.
+                <p>
+                    Under fliken ”Erfarenheter” hittar du information om deltagarens arbetslivserfarenhet och
+                    utbildning. Du
+                    ser också om deltagaren har körkort och tillgång till bil.
+                </p>
+                <p>
+                    Informationen hämtas från Arbetsförmedlingens system.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_erfarenheter.png" alt="">
@@ -980,12 +1212,13 @@
             <!--  -->
             <article id="Deltagarinformation_-_Rapportering">
                 <h3>Deltagarinformation - Rapportering</h3>
-
-                Under fliken ”Rapportering” hittar du en lista över de olika rapporter du har skickat in till
-                Arbetsförmedlingen för deltagaren.
-                Under rubriken status ser du vilken status rapporten har och om den är mottagen eller godkänd.
-                Det är också under fliken rapportering som du skapar nya rapporter.
-                Information om hur du skapar och skickar rapporter hittar du i nästa avsnitt.
+                <p>
+                    Under fliken ”Rapportering” hittar du en lista över de olika rapporter du har skickat in till
+                    Arbetsförmedlingen för deltagaren.
+                    Under rubriken status ser du vilken status rapporten har och om den är mottagen eller godkänd.
+                    Det är också under fliken rapportering som du skapar nya rapporter.
+                    Information om hur du skapar och skickar rapporter hittar du i nästa avsnitt.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_rapportering.png" alt="">
@@ -996,13 +1229,33 @@
         <section>
             <article>
                 <h2>Skapa och skicka rapporter</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Skapa_gemensam_planering">Skapa gemensam planering</a>
+                    </li>
+                    <li>
+                        <a href="#Gemensam_planering">Gemensam planering</a>
+                    </li>
+                    <li>
+                        <a href="#Om_du_inte_fyller_i_aktiviteterna_korrekt">Om du inte fyller i aktiviteterna
+                            korrekt</a>
+                    </li>
+                    <li>
+                        <a href="#Skicka_in_gemensam_planering">Skicka in gemensam planering</a>
+                    </li>
+                    <li>
+                        <a href="#Gemensam_planering_inskickad">Gemensam planering inskickad</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
             <article id="Skapa_gemensam_planering">
                 <h3>Skapa gemensam planering</h3>
-
-                För att skapa en rapport gå in under fliken ”Rapportering” i deltagarinformationen.
-                Välj ”Gemensam planering”
+                <p>
+                    För att skapa en rapport gå in under fliken ”Rapportering” i deltagarinformationen.
+                    Välj ”Gemensam planering”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_rapportering.png" alt="">
@@ -1012,13 +1265,15 @@
             <!--  -->
             <article id="Gemensam_planering">
                 <h3>Gemensam planering</h3>
-
-                Välj först om deltagaren ska delta på distans eller inte.
-
-                Välj sedan de aktiviteter som deltagaren ska genomföra genom att bocka för dem i listan.
-
-                Klicka på knappen ”Förhandsgranska” för att komma vidare till nästa steg.
-
+                <p>
+                    Välj först om deltagaren ska delta på distans eller inte.
+                </p>
+                <p>
+                    Välj sedan de aktiviteter som deltagaren ska genomföra genom att bocka för dem i listan.
+                </p>
+                <p>
+                    Klicka på knappen ”Förhandsgranska” för att komma vidare till nästa steg.
+                </p>
                 <p class="warning">
                     Viktigt!
                     En gemensam planering måste alltid innehålla de två obligatoriska aktiviteterna och minst en
@@ -1037,10 +1292,12 @@
             <!--  -->
             <article id="Om_du_inte_fyller_i_aktiviteterna_korrekt">
                 <h3>Om du inte fyller i aktiviteterna korrekt</h3>
-
-                Om du missar att välja de två obligatoriska aktiviteterna och minst en valfri aktivitet så kommer du
-                inte vidare i systemet.
-                Du får då fram en varningstext under listan av aktiviteter när du klickar på knappen ”förhandsgranska”.
+                <p>
+                    Om du missar att välja de två obligatoriska aktiviteterna och minst en valfri aktivitet så kommer du
+                    inte vidare i systemet.
+                    Du får då fram en varningstext under listan av aktiviteter när du klickar på knappen
+                    ”förhandsgranska”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/gemensam_planering_aktiviteter_obligatoriska.png" alt="">
@@ -1054,10 +1311,11 @@
             <!--  -->
             <article id="Skicka_in_gemensam_planering">
                 <h3>Skicka in gemensam planering</h3>
-
-                Kontrollera att den gemensamma planeringen stämmer och att du fått med de aktiviteter ni har kommit
-                överens om att deltagaren ska genomföra.
-                För att skicka in planeringen till Arbetsförmedlingen klicka på knappen ”Skicka in”
+                <p>
+                    Kontrollera att den gemensamma planeringen stämmer och att du fått med de aktiviteter ni har kommit
+                    överens om att deltagaren ska genomföra.
+                    För att skicka in planeringen till Arbetsförmedlingen klicka på knappen ”Skicka in”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/gemensam_planering_skicka_in.png" alt="">
@@ -1066,10 +1324,11 @@
             <!--  -->
             <article id="Gemensam_planering_inskickad">
                 <h3>Gemensam planering inskickad</h3>
-
-                Nu är den gemensamma planeringen färdig och inskickad till Arbetsförmedlingen.
-                I listan över rapporter under deltagarinformation ser du sen när den har blivit godkänd.
-                Klicka på ”Tillbaka till deltagaren” för att komma tillbaka till deltagarinformationen.
+                <p>
+                    Nu är den gemensamma planeringen färdig och inskickad till Arbetsförmedlingen.
+                    I listan över rapporter under deltagarinformation ser du sen när den har blivit godkänd.
+                    Klicka på ”Tillbaka till deltagaren” för att komma tillbaka till deltagarinformationen.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/gemensam_planering_bekraftelse.png" alt="">
@@ -1082,22 +1341,72 @@
         <section>
             <article>
                 <h2>Skapa avvikelserapport</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Skapa_avvikelserapport">Skapa avvikelserapport</a>
+                    </li>
+                    <li>
+                        <a href="#Franvaro">Frånvaro</a>
+                    </li>
+                    <li>
+                        <a href="#Annan_kand_orsak">Annan känd orsak</a>
+                    </li>
+                    <li>
+                        <a href="#Valj_dag_för_franvaron">Välj dag för frånvaron</a>
+                    </li>
+                    <li>
+                        <a href="#Skicka_in_Avvikelserapport">Skicka in Avvikelserapport</a>
+                    </li>
+                    <li>
+                        <a href="#Ratta_fel_i_inskickad_avvikelserapport_franvaro">Rätta fel i inskickad
+                            avvikelserapport frånvaro</a>
+                    </li>
+                    <li>
+                        <a href="#Avvikelse">Avvikelse</a>
+                    </li>
+                    <li>
+                        <a href="#Tackat_nej_till_erbjudet_arbete_insats_eller_aktivitet">Tackat nej till erbjudet
+                            arbete, insats eller aktivitet</a>
+                    </li>
+                    <li>
+                        <a href="#Kan_inte_tillgodogora_sig_eller_misskotsel">Kan inte tillgodogöra sig eller
+                            misskötsel</a>
+                    </li>
+                    <li>
+                        <a href="#Ser_till_att_erbjudet_arbete_inte_kommer_till_stand">Ser till att erbjudet arbete
+                            inte kommer till stånd</a>
+                    </li>
+                    <li>
+                        <a href="#Skicka_in_avvikelserapport">Skicka in avvikelserapport</a>
+                    </li>
+                    <li>
+                        <a href="#Avvikelserapport_inskickad">Avvikelserapport inskickad</a>
+                    </li>
+                    <li>
+                        <a href="#Ratta_fel_i_inskickad_avvikelserapport_avvikelse">Rätta fel i inskickad
+                            avvikelserapport avvikelse</a>
+                    </li>
+                </ul>
             </article>
             <article id="Skapa_avvikelserapport">
                 <h3>Skapa avvikelserapport</h3>
-
-                Gå in under fliken ”Rapportering” i deltagarinformationen. Välj sedan ”Avvikelserapport (Frånvaro)”
-                eller ”
-                Avvikelserapport (Avvikelse)” beroende på vilken typ av avvikelse du vill rapportera
-                Frånvaro:
-                När deltagaren varit frånvarande på grund av sjukdom, vård av barn, arbete, utbildning, annan känd
-                orsak, eller okänd orsak.
-                Känd orsak kan vara till exempel läkar- eller tandläkarbesök, familjeangelägenhet, möte med myndighet
-                eller annan känd orsak.
-                Avvikelse:
-                När deltagaren tackat nej till insats eller aktivitet, tackat nej till erbjudet arbete, inte kan
-                tillgodogöra sig programmet, misskött sig eller stört verksamheten, eller sett till att erbjudet arbete
-                inte blivit av.
+                <p>
+                    Gå in under fliken ”Rapportering” i deltagarinformationen. Välj sedan ”Avvikelserapport (Frånvaro)”
+                    eller ”
+                    Avvikelserapport (Avvikelse)” beroende på vilken typ av avvikelse du vill rapportera
+                    Frånvaro:
+                    När deltagaren varit frånvarande på grund av sjukdom, vård av barn, arbete, utbildning, annan känd
+                    orsak, eller okänd orsak.
+                    Känd orsak kan vara till exempel läkar- eller tandläkarbesök, familjeangelägenhet, möte med
+                    myndighet
+                    eller annan känd orsak.
+                    Avvikelse:
+                    När deltagaren tackat nej till insats eller aktivitet, tackat nej till erbjudet arbete, inte kan
+                    tillgodogöra sig programmet, misskött sig eller stört verksamheten, eller sett till att erbjudet
+                    arbete
+                    inte blivit av.
+                </p>
                 <!--  -->
                 <picture>
                     <source srcset="">
@@ -1108,9 +1417,9 @@
 
             <article id="Franvaro">
                 <h3>Frånvaro</h3>
-
-                Välj orsak till frånvaron i listan under rubriken ”Orsak till frånvaro”
-                <!--  -->
+                <p>
+                    Välj orsak till frånvaron i listan under rubriken ”Orsak till frånvaro”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_franvaro.png" alt="">
@@ -1118,17 +1427,16 @@
             </article>
             <article id="Annan_kand_orsak">
                 <h3>Annan känd orsak</h3>
-
-                När du valt ”Annan känd orsak” ska du sedan välja frånvaro-orsak i listan under rubriken ”Välj känd
-                orsak”.
-
-
-
-
-
-                Om du väljer ”Annan orsak” så behöver du beskriva orsaken till frånvaron i fritextfältet under rubriken
-                ”Beskriv
-                frånvaro”.
+                <p>
+                    När du valt ”Annan känd orsak” ska du sedan välja frånvaro-orsak i listan under rubriken ”Välj känd
+                    orsak”.
+                </p>
+                <p>
+                    Om du väljer ”Annan orsak” så behöver du beskriva orsaken till frånvaron i fritextfältet under
+                    rubriken
+                    ”Beskriv
+                    frånvaro”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_franvaro_annan_kand_orsak.png" alt="">
@@ -1142,16 +1450,20 @@
             <!--  -->
             <article id="Valj_dag_för_franvaron">
                 <h3>Välj dag för frånvaron</h3>
-
-                Välj vilken dag deltagaren har varit frånvarande. Ange sedan om frånvaron gäller heldag eller del av
-                dag.
-
-                Lägg in start- och sluttid för när deltagaren skulle ha varit närvarande. Gäller frånvaron endast en del
-                av
-                dagen så
-                lägger du även in start- och sluttid för frånvaron.
-
-                Klicka på ”Förhandsgranska” för att komma vidare.
+                <p>
+                    Välj vilken dag deltagaren har varit frånvarande. Ange sedan om frånvaron gäller heldag eller del av
+                    dag.
+                </p>
+                <p>
+                    Lägg in start- och sluttid för när deltagaren skulle ha varit närvarande. Gäller frånvaron endast en
+                    del
+                    av
+                    dagen så
+                    lägger du även in start- och sluttid för frånvaron.
+                </p>
+                <p>
+                    Klicka på ”Förhandsgranska” för att komma vidare.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_valj_datum.png" alt="">
@@ -1160,12 +1472,12 @@
             <!--  -->
             <article id="Skicka_in_Avvikelserapport">
                 <h3>Skicka in Avvikelserapport</h3>
-
-                Kontrollera att informationen i avvikelserapporten stämmer. För att skicka in rapporten till
-                Arbetsförmedlingen
-                klicka
-                på knappen ”Skicka in”
-
+                <p>
+                    Kontrollera att informationen i avvikelserapporten stämmer. För att skicka in rapporten till
+                    Arbetsförmedlingen
+                    klicka
+                    på knappen ”Skicka in”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_skicka_in.png" alt="">
@@ -1174,14 +1486,15 @@
             <!--  -->
             <article id="Ratta_fel_i_inskickad_avvikelserapport_franvaro">
                 <h3>Rätta fel i en inskickad avvikelserapport (frånvaro)</h3>
-
-                För att rätta en felaktig avvikelserapport om frånvaro så ska du skicka in en ny avvikelserapport.
-                Välj ”Annan orsak” i listan under rubriken ”Orsak till frånvaro”. I fritextfältet skriver du sedan
-                RÄTTELSE
-                eller
-                KOMPLETTERING och det datum då den felaktiga rapporten skickades in. T.ex. RÄTTELSE 211117.
-                Skriv sedan in den korrekta informationen i fritextfältet och ange datum för frånvaron.
-                Klicka sedan på ”Förhandsgranska för att komma vidare”.
+                <p>
+                    För att rätta en felaktig avvikelserapport om frånvaro så ska du skicka in en ny avvikelserapport.
+                    Välj ”Annan orsak” i listan under rubriken ”Orsak till frånvaro”. I fritextfältet skriver du sedan
+                    RÄTTELSE
+                    eller
+                    KOMPLETTERING och det datum då den felaktiga rapporten skickades in. T.ex. RÄTTELSE 211117.
+                    Skriv sedan in den korrekta informationen i fritextfältet och ange datum för frånvaron.
+                    Klicka sedan på ”Förhandsgranska för att komma vidare”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_franvaro.png" alt="">
@@ -1191,8 +1504,9 @@
             <article id="Avvikelse">
 
                 <h3>Avvikelse</h3>
-
-                Välj orsak till avvikelsen under rubriken ”Orsak till avvikelse”.
+                <p>
+                    Välj orsak till avvikelsen under rubriken ”Orsak till avvikelse”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse.png" alt="">
@@ -1201,13 +1515,16 @@
             <!--  -->
             <article id="Tackat_nej_till_erbjudet_arbete_insats_eller_aktivitet">
                 <h3>Tackat nej till erbjudet arbete, insats eller aktivitet</h3>
-
-                Om avvikelserapporten gäller en deltagare som har tackat nej till ett arbete eller till en insats eller
-                aktivitet
-                ska du
-                först ange vilket arbete eller insats/aktivitet det rör sig om.
-
-                Ange sedan den motivering deltagaren har uppgett till att hen tackat nej.
+                <p>
+                    Om avvikelserapporten gäller en deltagare som har tackat nej till ett arbete eller till en insats
+                    eller
+                    aktivitet
+                    ska du
+                    först ange vilket arbete eller insats/aktivitet det rör sig om.
+                </p>
+                <p>
+                    Ange sedan den motivering deltagaren har uppgett till att hen tackat nej.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_tackat_nej_insats_aktivitet.png" alt="">
@@ -1220,18 +1537,21 @@
             <!--  -->
             <article id="Kan_inte_tillgodogora_sig_eller_misskotsel">
                 <h3>Kan inte tillgodogöra sig eller misskötsel</h3>
-
-                Gäller avvikelserapporten en deltagare som inte kan tillgodogöra sig programmet eller en deltagare som
-                misskött
-                sig
-                så
-                ska du först beskriva problemet.
-                Sen ska du beskriva vad ni har gjort för att stötta deltagaren, hur ni har försökt anpassa programmet
-                eller
-                vad
-                ni
-                har
-                gjort för att lösa problemet.
+                <p>
+                    Gäller avvikelserapporten en deltagare som inte kan tillgodogöra sig programmet eller en deltagare
+                    som
+                    misskött
+                    sig
+                    så
+                    ska du först beskriva problemet.
+                    Sen ska du beskriva vad ni har gjort för att stötta deltagaren, hur ni har försökt anpassa
+                    programmet
+                    eller
+                    vad
+                    ni
+                    har
+                    gjort för att lösa problemet.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_kan_inte_tillgodogora_sig_programmet.png"
@@ -1246,19 +1566,22 @@
             <!--  -->
             <article id="Ser_till_att_erbjudet_arbete_inte_kommer_till_stand">
                 <h3>Ser till att erbjudet arbete inte kommer till stånd</h3>
-
-                Om deltagaren har blivit erbjuden ett arbete och har agerat så att arbetet inte blir av, så beskriver du
-                i
-                fritextfältet
-                på vilket sätt hen har agerat för att inte få arbetet.
-                Ange vilken dag avvikelsen gäller för. Du kan välja ett datum bakåt i tiden men inte ett framåt i tiden.
-                Du ska alltid rapportera en avvikelse så snart du får kännedom om den. Eftersom du rapporterar
-                avvikelsen
-                det
-                datum
-                då
-                du får reda på den behöver du inte ange ”kännedomsdatum” i ”Mina sidor för fristående aktörer”.
-                Klicka på ”Förhandsgranska” för att gå vidare.
+                <p>
+                    Om deltagaren har blivit erbjuden ett arbete och har agerat så att arbetet inte blir av, så
+                    beskriver du
+                    i
+                    fritextfältet
+                    på vilket sätt hen har agerat för att inte få arbetet.
+                    Ange vilken dag avvikelsen gäller för. Du kan välja ett datum bakåt i tiden men inte ett framåt i
+                    tiden.
+                    Du ska alltid rapportera en avvikelse så snart du får kännedom om den. Eftersom du rapporterar
+                    avvikelsen
+                    det
+                    datum
+                    då
+                    du får reda på den behöver du inte ange ”kännedomsdatum” i ”Mina sidor för fristående aktörer”.
+                    Klicka på ”Förhandsgranska” för att gå vidare.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_ser_till_att_erbjudet_arbete_inte_kommer_till_stand.png"
@@ -1273,13 +1596,15 @@
             <!--  -->
             <article id="Skicka_in_avvikelserapport">
                 <h3>Skicka in avvikelserapport</h3>
-
-                Kontrollera att informationen i avvikelserapporten stämmer.
-
-
-                För att skicka in planeringen till Arbetsförmedlingen klicka på ”Skicka in”.
-
-                Du behöver sen bekräfta en gång till genom att klicka på ”Skicka” i rutan som kommer upp.
+                <p>
+                    Kontrollera att informationen i avvikelserapporten stämmer.
+                </p>
+                <p>
+                    För att skicka in planeringen till Arbetsförmedlingen klicka på ”Skicka in”.
+                </p>
+                <p>
+                    Du behöver sen bekräfta en gång till genom att klicka på ”Skicka” i rutan som kommer upp.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_skicka_in.png" alt="">
@@ -1288,13 +1613,14 @@
             <!--  -->
             <article id="Avvikelserapport_inskickad">
                 <h3>Avvikelserapport inskickad</h3>
-
-                Din avvikelserapport är nu inskickad till Arbetsförmedlingen och du kan då tillbaka till
-                deltagarinformationen
-                genom
-                att
-                klicka på
-                ”Tillbaka till deltagaren”.
+                <p>
+                    Din avvikelserapport är nu inskickad till Arbetsförmedlingen och du kan då tillbaka till
+                    deltagarinformationen
+                    genom
+                    att
+                    klicka på
+                    ”Tillbaka till deltagaren”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_skicka_in_bekraftelse.png" alt="">
@@ -1303,16 +1629,18 @@
             <!--  -->
             <article id="Ratta_fel_i_inskickad_avvikelserapport_avvikelse">
                 <h3>Rätta fel i inskickad avvikelserapport (avvikelse)</h3>
-
-                För att rätta en felaktig avvikelserapport om avvikelse ska du skicka in en ny avvikelserapport.
-                Välj samma orsak till avvikelse som du gjorde på den felaktiga rapporten. I fritextfältet skriver du
-                sedan
-                RÄTTELSE
-                eller KOMPLETTERING och det datum då du skickade in den felaktiga avvikelserapporten
-                T. ex RÄTTELSE 211117.
-                Fyll sedan i den korrekta informationen i fritextfälten.
-                Ange datum för när avvikelsen inträffade och klicka på ”Förhandsgranska” för att granska och skicka in
-                rättelsen.
+                <p>
+                    För att rätta en felaktig avvikelserapport om avvikelse ska du skicka in en ny avvikelserapport.
+                    Välj samma orsak till avvikelse som du gjorde på den felaktiga rapporten. I fritextfältet skriver du
+                    sedan
+                    RÄTTELSE
+                    eller KOMPLETTERING och det datum då du skickade in den felaktiga avvikelserapporten
+                    T. ex RÄTTELSE 211117.
+                    Fyll sedan i den korrekta informationen i fritextfälten.
+                    Ange datum för när avvikelsen inträffade och klicka på ”Förhandsgranska” för att granska och skicka
+                    in
+                    rättelsen.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/avvikelserapport_avvikelse_kan_inte_tillgodogora_sig_programmet.png"
@@ -1329,54 +1657,95 @@
         <section>
             <article>
                 <h2>Periodisk redovisning</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Periodisk_redovisning">Periodisk redovisning</a>
+                    </li>
+                    <li>
+                        <a href="#Skapa_periodisk_redovisning">Skapa periodisk redovisning</a>
+                    </li>
+                    <li>
+                        <a href="#Valj_aktiviteter">Välj aktiviteter</a>
+                    </li>
+                    <li>
+                        <a href="#Skicka_in_periodisk_redovisning">Skicka in periodisk redovisning</a>
+                    </li>
+                    <li>
+                        <a href="#Se_innehallet_i_en_redan_inskickad_rapport">Se innehållet i en redan inskickad
+                            rapport</a>
+                    </li>
+                    <li>
+                        <a href="#Informativ_rapport">Informativ rapport</a>
+                    </li>
+                    <li>
+                        <a href="#Skapa_informativ_rapport">Skapa informativ rapport</a>
+                    </li>
+                    <li>
+                        <a href="#Signal_om_arbete-eller_studier">Signal om arbete eller studier</a>
+                    </li>
+                    <li>
+                        <a href="#Skicka_in_Signal_om_arbete_eller_studier_">Skicka in ”Signal om arbete eller
+                            studier”</a>
+                    </li>
+                    <li>
+                        <a href="#Skapa_resultatredovisning">Skapa resultatredovisning</a>
+                    </li>
+                </ul>
             </article>
 
             <!--  -->
             <article id="Periodisk_redovisning">
 
                 <h3>Periodisk redovisning</h3>
-
-                För att skapa en Periodisk redovisning klicka på knappen ”Periodisk redovisning” under fliken
-                ”Rapportering”.
+                <p>
+                    För att skapa en Periodisk redovisning klicka på knappen ”Periodisk redovisning” under fliken
+                    ”Rapportering”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_rapportering.png" alt="">
                 </picture>
             </article>
+
             <article id="Skapa_periodisk_redovisning">
 
                 <h3>Skapa periodisk redovisning</h3>
-
-                Välj den period redovisningen gäller för i listan under rubriken ”Period”.
-
-                Svara sedan ja eller nej på frågorna om deltagaren har fått språkstöd under perioden och om ni har
-                lämnat
-                några
-                förslag
-                till på arbeten att söka till deltagaren.
+                <p>
+                    Välj den period redovisningen gäller för i listan under rubriken ”Period”.
+                </p>
+                <p>
+                    Svara sedan ja eller nej på frågorna om deltagaren har fått språkstöd under perioden och om ni har
+                    lämnat
+                    några
+                    förslag
+                    till på arbeten att söka till deltagaren.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/periodisk_redovisning_skapa.png" alt="">
                 </picture>
             </article>
 
-
             <!--  -->
             <article id="Välj_aktiviteter">
                 <h3>Välj aktiviteter</h3>
-
-                Välj de aktiviteter deltagaren har genomfört under den aktuella perioden.
-                Du kan endast välja aktiviteter som finns med i den inskickade gemensamma planeringen för deltagaren.
-                Vill
-                du
-                lägga
-                till
-                nya aktiviteter behöver du först uppdatera den gemensamma planeringen innan du kan redovisa aktiviteten
-                i
-                periodisk
-                redovisning.
-                Ange hur mycket tid deltagaren har lagt på varje aktivitet.
-                Klicka på knappen ”Förhandsgranska” för att gå vidare och förhandsgranska redovisningen.
+                <p>
+                    Välj de aktiviteter deltagaren har genomfört under den aktuella perioden.
+                    Du kan endast välja aktiviteter som finns med i den inskickade gemensamma planeringen för
+                    deltagaren.
+                    Vill
+                    du
+                    lägga
+                    till
+                    nya aktiviteter behöver du först uppdatera den gemensamma planeringen innan du kan redovisa
+                    aktiviteten
+                    i
+                    periodisk
+                    redovisning.
+                    Ange hur mycket tid deltagaren har lagt på varje aktivitet.
+                    Klicka på knappen ”Förhandsgranska” för att gå vidare och förhandsgranska redovisningen.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/periodisk_redovisning_forhandsgranska.png" alt="">
@@ -1385,11 +1754,12 @@
             <!--  -->
             <article id="Skicka_in_periodisk_redovisning">
                 <h3>Skicka in periodisk redovisning</h3>
-
-                Kontrollera att du fyllt i redovisningen korrekt och klicka på knappen ”Skicka in” för att skicka in den
-                till
-                Arbetsförmedlingen.
-
+                <p>
+                    Kontrollera att du fyllt i redovisningen korrekt och klicka på knappen ”Skicka in” för att skicka in
+                    den
+                    till
+                    Arbetsförmedlingen.
+                </p>
 
                 <picture>
                     <source srcset="">
@@ -1400,10 +1770,13 @@
             <article id="Se_innehallet_i_en_redan_inskickad_rapport">
 
                 <h3>Se innehållet i en redan inskickad rapport</h3>
-
-                För att se innehållet i en rapport du har skickat in till Arbetsförmedlingen klicka på rapportens namn i
-                listan
-                ”Inskickade rapporter”. Du ser då en sammanställning över de uppgifter du har skickat in i vald rapport.
+                <p>
+                    För att se innehållet i en rapport du har skickat in till Arbetsförmedlingen klicka på rapportens
+                    namn i
+                    listan
+                    ”Inskickade rapporter”. Du ser då en sammanställning över de uppgifter du har skickat in i vald
+                    rapport.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_rapportering.png" alt="">
@@ -1423,10 +1796,10 @@
             <!--  -->
             <article id="Informativ_rapport">
                 <h3>Informativ rapport</h3>
-
-                För att skapa en informativ rapport välj ”Informativ rapport” under fliken ”Rapportering” i
-                deltagarinformationen.
-
+                <p>
+                    För att skapa en informativ rapport välj ”Informativ rapport” under fliken ”Rapportering” i
+                    deltagarinformationen.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagarinformation_rapportering.jpg" alt="">
@@ -1435,22 +1808,28 @@
             <!--  -->
             <article id="Skapa_informativ_rapport">
                 <h3>Skapa informativ rapport</h3>
-
-                Välj vad ärendet gäller i listan under rubriken ”Vad gäller ärendet”.
-
-                Skriv sedan vad du vill informera Arbetsförmedlingen om i fritextfältet.
-
-                Tänk på att inte skriva känsliga personuppgifter, uppgifter som handlar om hur deltagaren mår eller
-                uppgifter
-                som
-                rör en
-                person med skyddad identitet.
-
-                Skriv även dina kontaktuppgifter så att Arbetsförmedlingen kan komma i kontakt med dig om det behövs i
-                ärendet.
-
-                När du är färdig klicka på knappen ”Förhandsgranska” för att förhandsgranska och sedan skicka in
-                rapporten.
+                <p>
+                    Välj vad ärendet gäller i listan under rubriken ”Vad gäller ärendet”.
+                </p>
+                <p>
+                    Skriv sedan vad du vill informera Arbetsförmedlingen om i fritextfältet.
+                </p>
+                <p>
+                    Tänk på att inte skriva känsliga personuppgifter, uppgifter som handlar om hur deltagaren mår eller
+                    uppgifter
+                    som
+                    rör en
+                    person med skyddad identitet.
+                </p>
+                <p>
+                    Skriv även dina kontaktuppgifter så att Arbetsförmedlingen kan komma i kontakt med dig om det behövs
+                    i
+                    ärendet.
+                </p>
+                <p>
+                    När du är färdig klicka på knappen ”Förhandsgranska” för att förhandsgranska och sedan skicka in
+                    rapporten.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/informativ_rapport.jpg" alt="">
@@ -1463,28 +1842,32 @@
             <!--  -->
             <article id="Signal_om_arbete-eller_studier">
                 <h3>Signal om arbete eller studier</h3>
-
-                Du behöver meddela Arbetsförmedlingen att en deltagare har fått ett jobb eller påbörjat studier. Det
-                gäller
-                oavsett
-                om
-                det är på hel - eller deltid. Det gör du genom att skicka in en ”Signal om arbete eller studier”
-                Ange om deltagaren ska arbeta eller studera på hel- eller deltid. Om det är en sysselsättning på deltid
-                så
-                anger
-                du
-                omfattningen i procent.
-                Fyll också i startdatum för arbete eller studier. Om deltagaren ska arbeta eller studera på deltid så
-                ska du
-                också
-                fylla
-                i omfattning i rutan som kommer fram. Om starten sker efter insatsens slut skriver du in datum när
-                sökande
-                ansökte
-                om
-                utbildningen.
-
-                Klicka på ”Förhandsvisa” för att granska rapporten innan du skickar in den.
+                <p>
+                    Du behöver meddela Arbetsförmedlingen att en deltagare har fått ett jobb eller påbörjat studier. Det
+                    gäller
+                    oavsett
+                    om
+                    det är på hel - eller deltid. Det gör du genom att skicka in en ”Signal om arbete eller studier”
+                    Ange om deltagaren ska arbeta eller studera på hel- eller deltid. Om det är en sysselsättning på
+                    deltid
+                    så
+                    anger
+                    du
+                    omfattningen i procent.
+                    Fyll också i startdatum för arbete eller studier. Om deltagaren ska arbeta eller studera på deltid
+                    så
+                    ska du
+                    också
+                    fylla
+                    i omfattning i rutan som kommer fram. Om starten sker efter insatsens slut skriver du in datum när
+                    sökande
+                    ansökte
+                    om
+                    utbildningen.
+                </p>
+                <p>
+                    Klicka på ”Förhandsvisa” för att granska rapporten innan du skickar in den.
+                </p>
                 <p class="warning">
                     Du kan inte skicka in ”Signal om arbete eller studier” om du redan har skickat in en
                     resultatredovisning
@@ -1506,10 +1889,11 @@
             <article id="Skicka_in_Signal_om_arbete_eller_studier_">
                 <h3>Skicka in ”Signal om arbete eller studier”</h3>
 
-
-                Kontrollera att informationen stämmer och klicka sedan på knappen ”Skicka in” för att skicka in
-                resultatredovisningen
-                till Arbetsförmedlingen.
+                <p>
+                    Kontrollera att informationen stämmer och klicka sedan på knappen ”Skicka in” för att skicka in
+                    resultatredovisningen
+                    till Arbetsförmedlingen.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/signal_om_arbete_eller_studier_skicka_in.png" alt="">
@@ -1519,27 +1903,34 @@
             <article id="Skapa_resultatredovisning">
                 <h3>Skapa resultatredovisning</h3>
 
+                <p>
+                    Välj om deltagaren har fått jobb eller påbörjar studier. Ange sedan om det är på hel- eller deltid.
+                    Om
+                    en
+                    deltagare
+                    fått
+                    arbete på deltid och omfattningen motsvarar deltagarens önskade omfattning så ska du välja heltid.
+                    Om
+                    det är
+                    en
+                    sysselsättning på deltid så anger du omfattningen i procent.
+                </p>
+                <p>
+                    Ange var deltagaren ska studera eller arbeta och fyll i startdatum. Finns ett slutdatum fyller du i
+                    även
+                    det,
+                    annars
+                    lämnar du den rutan tom.
+                </p>
+                <p>
 
-                Välj om deltagaren har fått jobb eller påbörjar studier. Ange sedan om det är på hel- eller deltid. Om
-                en
-                deltagare
-                fått
-                arbete på deltid och omfattningen motsvarar deltagarens önskade omfattning så ska du välja heltid. Om
-                det är
-                en
-                sysselsättning på deltid så anger du omfattningen i procent.
-
-                Ange var deltagaren ska studera eller arbeta och fyll i startdatum. Finns ett slutdatum fyller du i även
-                det,
-                annars
-                lämnar du den rutan tom.
-
-
-                Klicka på ”Förhandsgranska” för att kontrollera informationen i resultatredovisningen innan du skickar
-                in
-                den
-                till
-                Arbetsförmedlingen.
+                    Klicka på ”Förhandsgranska” för att kontrollera informationen i resultatredovisningen innan du
+                    skickar
+                    in
+                    den
+                    till
+                    Arbetsförmedlingen.
+                </p>
                 <p class="warning">
                     För tillfället kan du inte skicka in bilaga via systemet. Du behöver
                     därför skicka in de betyg och intyg som behövs för att verifiera resultatredovisningen per post
@@ -1560,12 +1951,55 @@
         <section>
             <article>
                 <h2>Skapa slutredovisning</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Skapa_slutredovisning">Skapa slutredovisning</a>
+                    </li>
+                    <li>
+                        <a href="#Slutredovisning_steg_1">Slutredovisning steg 1</a>
+                    </li>
+                    <li>
+                        <a href="#Slutredovisning_-_Huvudsaklig_syssels._arbete">Slutredovisning - Huvudsaklig
+                            syssels. arbete</a>
+                    </li>
+                    <li>
+                        <a href="#Slutredovisning_-_Huvudsaklig_syssels._utbildning">Slutredovisning - Huvudsaklig
+                            syssels. utbildning</a>
+                    </li>
+                    <li>
+                        <a href="#Slutredovisning_-_Huvudsaklig_syssels._Arbetssokande">Slutredovisning -
+                            Huvudsaklig syssels. Arbetssökande</a>
+                    </li>
+                    <li>
+                        <a href="#Slutredovisning_-_Huvudsaklig_syssels._Annat">Slutredovisning - Huvudsaklig
+                            syssels. Annat</a>
+                    </li>
+                    <li>
+                        <a href="#Slutredovisning_steg_2">Slutredovisning steg 2</a>
+                    </li>
+                    <li>
+                        <a href="#Se_status_för_rapporter_och_redovisningar">Se status för rapporter och
+                            redovisningar</a>
+                    </li>
+                    <li>
+                        <a href="#Se_motivering_till_ej_godkand_slutredovisning_deltagarlistan">Se motivering till ej
+                            godkänd
+                            slutredovisning - Deltagarlistan</a>
+                    </li>
+                    <li>
+                        <a href="#Se_motivering_till_ej_godkand_slutredovisning_rapporter">Se motivering till ej godkänd
+                            slutredovisning - Rapporter</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
             <article id="Skapa_slutredovisning">
                 <h3>Skapa slutredovisning</h3>
-
-                För att skapa en slutredovisning välj ”Slutredovisning” under fliken ”Rapportering” på deltagarkortet.
+                <p>
+                    För att skapa en slutredovisning välj ”Slutredovisning” under fliken ”Rapportering” på
+                    deltagarkortet.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagarinformation_rapportering.jpg" alt="">
@@ -1573,19 +2007,23 @@
             </article>
             <article id="Slutredovisning_steg_1">
                 <h3>Slutredovisning steg 1</h3>
-
-                I slutredovisningen ska du beskriva de aktiviteter deltagaren har genomfört, vad som har fungerat eller
-                inte
-                fungerat
-                och ett förslag på lämpligt nästa steg för deltagaren.
-
-                Välj vilken huvudsaklig sysselsättning deltagaren har för tillfället.
-
-                Beroende på vilket val du gör så kommer olika fält fram. Alla fritextfält i slutredovisningen är
-                obligatoriska.
-                Om
-                du
-                inte fyller i dem så kommer du inte vidare.
+                <p>
+                    I slutredovisningen ska du beskriva de aktiviteter deltagaren har genomfört, vad som har fungerat
+                    eller
+                    inte
+                    fungerat
+                    och ett förslag på lämpligt nästa steg för deltagaren.
+                </p>
+                <p>
+                    Välj vilken huvudsaklig sysselsättning deltagaren har för tillfället.
+                </p>
+                <p>
+                    Beroende på vilket val du gör så kommer olika fält fram. Alla fritextfält i slutredovisningen är
+                    obligatoriska.
+                    Om
+                    du
+                    inte fyller i dem så kommer du inte vidare.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/slutredovisning_steg_1.png" alt="">
@@ -1594,12 +2032,14 @@
             <!--  -->
             <article id="Slutredovisning_-_Huvudsaklig_syssels._arbete">
                 <h3>Slutredovisning - Huvudsaklig sysselsättning arbete</h3>
-
-                Välj yrkesområde i listan under rubriken ”Yrkesområde”
-                Välj sedan Yrkesgrupp i listan som kommer fram.
-                Ange anställningsform och i vilken omfattning deltagaren jobbar.
-
-                Klicka på knappen ”vidare till steg 2” för att komma vidare och redovisa genomförda aktiviteter.
+                <p>
+                    Välj yrkesområde i listan under rubriken ”Yrkesområde”
+                    Välj sedan Yrkesgrupp i listan som kommer fram.
+                    Ange anställningsform och i vilken omfattning deltagaren jobbar.
+                </p>
+                <p>
+                    Klicka på knappen ”vidare till steg 2” för att komma vidare och redovisa genomförda aktiviteter.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/slutredovisning_steg_1_arbete.png" alt="">
@@ -1608,11 +2048,12 @@
             <!--  -->
             <article id="Slutredovisning_-_Huvudsaklig_syssels._utbildning">
                 <h3>Slutredovisning - Huvudsaklig sysselsättning utbildning</h3>
-
-                Välj utbildningsnivå under rubriken ”Utbildningsnivå”
-                Välj sedan hur lång utbildningen är under rubriken ”Utbildningens längd”
-                I fritextfältet anger du vilken inriktning utbildningen har.
-                Klicka på knappen ”vidare till steg 2” för att komma vidare och redovisa genomförda aktiviteter.
+                <p>
+                    Välj utbildningsnivå under rubriken ”Utbildningsnivå”
+                    Välj sedan hur lång utbildningen är under rubriken ”Utbildningens längd”
+                    I fritextfältet anger du vilken inriktning utbildningen har.
+                    Klicka på knappen ”vidare till steg 2” för att komma vidare och redovisa genomförda aktiviteter.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/slutredovisning_steg_1_studier.png" alt="">
@@ -1621,14 +2062,18 @@
             <!--  -->
             <article id="Slutredovisning_-_Huvudsaklig_syssels._Arbetssokande">
                 <h3>Slutredovisning - Huvudsaklig sysselsättning arbetssökande</h3>
-
-                Välj anledning till att deltagaren fortfarande är arbetssökande.
-                Om du väljer ”Annat” ska du fylla i orsaken i fritextfältet. Det är obligatoriskt att fylla i orsaken.
-                Du
-                kommer
-                inte
-                vidare om du inte gör det
-                Klicka sedan på knappen ”Vidare till steg 2”
+                <p>
+                    Välj anledning till att deltagaren fortfarande är arbetssökande.
+                    Om du väljer ”Annat” ska du fylla i orsaken i fritextfältet. Det är obligatoriskt att fylla i
+                    orsaken.
+                    Du
+                    kommer
+                    inte
+                    vidare om du inte gör det
+                </p>
+                <p>
+                    Klicka sedan på knappen ”Vidare till steg 2”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/slutredovisning_steg_1_fortsatt_arbetssokande.png" alt="">
@@ -1639,11 +2084,15 @@
             <article id="Slutredovisning_-_Huvudsaklig_syssels._Annat">
 
                 <h3>Slutredovisning - Huvudsaklig sysselsättning annat</h3>
-
-                Om väljer ”Annat” som deltagarens huvudsakliga sysselsättning så måste du beskriva vad annat innebär i
-                fritextfältet. Om
-                du inte gör det kommer du inte vidare i systemet.
-                Klicka sedan på knappen ”Vidare till steg 2”
+                <p>
+                    Om väljer ”Annat” som deltagarens huvudsakliga sysselsättning så måste du beskriva vad annat innebär
+                    i
+                    fritextfältet. Om
+                    du inte gör det kommer du inte vidare i systemet.
+                </p>
+                <p>
+                    Klicka sedan på knappen ”Vidare till steg 2”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/slutredovisning_steg_1_annat.png" alt="">
@@ -1653,18 +2102,23 @@
             <!--  -->
             <article id="Slutredovisning_steg_2">
                 <h3>Slutredovisning steg 2</h3>
-
-                Beskriv i fritextfälten vad deltagaren har gjort inom de olika aktiviteterna.
-
-                Klicka sedan på ”Nästa”
-
-                Berätta om deltagarens framsteg och utveckling under tiden hen har deltagit i rusta och matcha. Beskriv
-                sedan
-                vad
-                nästa
-                steg bör vara för deltagaren.
-
-                Klicka på ”Nästa” för att förhandsgranska slutredovisningen och sedan skicka in den..
+                <p>
+                    Beskriv i fritextfälten vad deltagaren har gjort inom de olika aktiviteterna.
+                </p>
+                <p>
+                    Klicka sedan på ”Nästa”
+                </p>
+                <p>
+                    Berätta om deltagarens framsteg och utveckling under tiden hen har deltagit i rusta och matcha.
+                    Beskriv
+                    sedan
+                    vad
+                    nästa
+                    steg bör vara för deltagaren.
+                </p>
+                <p>
+                    Klicka på ”Nästa” för att förhandsgranska slutredovisningen och sedan skicka in den..
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagare_aktiviteter.png" alt="">
@@ -1677,18 +2131,20 @@
             <!--  -->
             <article id="Se_status_för_rapporter_och_redovisningar">
                 <h3>Se status för rapporter och redovisningar</h3>
-
-                Du kan se vilken status en rapport eller redovisning har dels via deltagarlistan. Klicka på ”Visa
-                händelser”
-                så
-                får
-                du
-                fram en lista på händelser för deltagaren och ser där även statusen för rapporten.
-
-                Du kan också se statusen för en rapport eller redovisning under ”Inskickade rapporter” som du hittar
-                under
-                rubriken
-                ”Rapportering” i deltagarinformationen.
+                <p>
+                    Du kan se vilken status en rapport eller redovisning har dels via deltagarlistan. Klicka på ”Visa
+                    händelser”
+                    så
+                    får
+                    du
+                    fram en lista på händelser för deltagaren och ser där även statusen för rapporten.
+                </p>
+                <p>
+                    Du kan också se statusen för en rapport eller redovisning under ”Inskickade rapporter” som du hittar
+                    under
+                    rubriken
+                    ”Rapportering” i deltagarinformationen.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagarlista_avbrott.png" alt="">
@@ -1703,14 +2159,15 @@
                 </picture>
             </article>
             <!--  -->
-            <article id="Se_motivering_till_ej_godkand_slutredovisning_-">
+            <article id="Se_motivering_till_ej_godkand_slutredovisning_deltagarlistan">
                 <h3>Se motivering till ej godkänd slutredovisning - deltagarlistan</h3>
-
-                För att se i deltagarlistan varför en slutredovisning inte har blivit godkänd klicka först på ”Visa
-                händelser”
-                och
-                sedan
-                på ”Motivering till beslut”.
+                <p>
+                    För att se i deltagarlistan varför en slutredovisning inte har blivit godkänd klicka först på ”Visa
+                    händelser”
+                    och
+                    sedan
+                    på ”Motivering till beslut”.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/deltagarlista_avbrott.png" alt="">
@@ -1726,14 +2183,16 @@
             </article>
 
             <!--  -->
-            <article id="Se_motivering_till_ej_godkand_slutredovisning">
+            <article id="Se_motivering_till_ej_godkand_slutredovisning_rapporter">
                 <h3>Se motivering till ej godkänd slutredovisning - Rapporter</h3>
-
-                Under fliken ”Rapportering” i deltagarinformationen finns två sätt att få fram information om varför en
-                slutredovisning
-                inte är godkänd.
-                Klicka på ”Slutredovisning” under rubriken ”Typ av rapport”
-                Klicka på ”Motivering till beslut” under rubriken ”Motivering”
+                <p>
+                    Under fliken ”Rapportering” i deltagarinformationen finns två sätt att få fram information om varför
+                    en
+                    slutredovisning
+                    inte är godkänd.
+                    Klicka på ”Slutredovisning” under rubriken ”Typ av rapport”
+                    Klicka på ”Motivering till beslut” under rubriken ”Motivering”
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/inskickade_rapporter.png" alt="">
@@ -1753,27 +2212,40 @@
 
             <article>
                 <h2>Exportera deltagarinformation</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Exportera_deltagarinformation">Exportera deltagarinformation</a>
+                    </li>
+                    <li>
+                        <a href="#Export_till_Excel">Export till Excel</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
             <article id="Exportera_deltagarinformation">
                 <h3>Exportera deltagarinformation</h3>
-
-                Gå in under ”Exporter” i det gråa fältet till vänster. Välj sedan vilken tidsperiod du vill exportera
-                information
-                från.
-                Tiden avser de deltagare som kommit in i ”Mina sidor för fristående aktörer” under den angivna perioden.
-                Om du vill få med deltagarinformation som tidigare exporterats så bockar du för ”Inkludera redan
-                exporterade
-                deltagare”.
-                Det gäller alla exporter som har gjorts för den utförande verksamhet och adress du är inloggad på.
-
-                Om du vill exportera till Excel så bockar du för ”Exportera i Excelformat”. Om du inte väljer att
-                exportera
-                i
-                Excelformat så får du informationen i DSV.
-
-                Klicka på ”Exportera deltagare” för att starta exporten.
-
+                <p>
+                    Gå in under ”Exporter” i det gråa fältet till vänster. Välj sedan vilken tidsperiod du vill
+                    exportera
+                    information
+                    från.
+                    Tiden avser de deltagare som kommit in i ”Mina sidor för fristående aktörer” under den angivna
+                    perioden.
+                    Om du vill få med deltagarinformation som tidigare exporterats så bockar du för ”Inkludera redan
+                    exporterade
+                    deltagare”.
+                    Det gäller alla exporter som har gjorts för den utförande verksamhet och adress du är inloggad på.
+                </p>
+                <p>
+                    Om du vill exportera till Excel så bockar du för ”Exportera i Excelformat”. Om du inte väljer att
+                    exportera
+                    i
+                    Excelformat så får du informationen i DSV.
+                </p>
+                <p>
+                    Klicka på ”Exportera deltagare” för att starta exporten.
+                </p>
                 <p class="warning">
                     Du kan endast exportera deltagarinformation för deltagare som är kopplade till samma utförande
                     verksamhet
@@ -1791,18 +2263,21 @@
             <article id="Export_till_Excel">
                 <h3>Export till Excel</h3>
 
-
-                Här ser du ett exempel på hur det ser ut i Excel när du har exporterat deltagarinformation från ”Mina
-                sidor
-                för
-                fristående aktörer.
-
-                Under rubriken ”Sparkod” hittar du information om vilken nivå som gäller för deltagaren. Den sista
-                siffran
-                visar
-                om
-                det
-                är nivå A, B eller C (1 = Nivå A, 2 = Nivå B och 3 = Nivå C).
+                <p>
+                    Här ser du ett exempel på hur det ser ut i Excel när du har exporterat deltagarinformation från
+                    ”Mina
+                    sidor
+                    för
+                    fristående aktörer.
+                </p>
+                <p>
+                    Under rubriken ”Sparkod” hittar du information om vilken nivå som gäller för deltagaren. Den sista
+                    siffran
+                    visar
+                    om
+                    det
+                    är nivå A, B eller C (1 = Nivå A, 2 = Nivå B och 3 = Nivå C).
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/exportera_information_om_deltagare_excel.png" alt="">
@@ -1814,28 +2289,61 @@
 
             <article>
                 <h2>Behörigheter</h2>
+
+                <ul class="sectionNav">
+                    <li>
+                        <a href="#Behorigheter_i_tre_nivaer">Behörigheter i tre nivåer</a>
+                    </li>
+                    <li>
+                        <a href="#Behorighet_1_Administrera_behorigheter">Behörighet 1: Administrera
+                            behörigheter</a>
+                    </li>
+                    <li>
+                        <a href="#Behorighet_2_Ta_emot_och_fordela_nya_deltagare">Behörighet 2: Ta emot (och
+                            fördela) nya deltagare</a>
+                    </li>
+                    <li>
+                        <a href="#Behorighet_3_Rapportering_planering_och_information">Behörighet 3: Rapportering,
+                            planering och information</a>
+                    </li>
+                    <li>
+                        <a href="#Generellt_om_behorigheter">Generellt om behörigheter</a>
+                    </li>
+                </ul>
             </article>
             <!--  -->
 
             <article id="Behorigheter_i_tre_nivaer">
                 <h3>Behörigheter i tre nivåer</h3>
+                <p>
+                    Ett personalkonto i ”Mina sidor för fristående aktörer” består av behörigheter i tre nivåer:
+                </p>
+                <p>
+                    1. Tillhörighet till en organisation
+                    En person kan vara anställd på en, eller flera organisationer.
+                </p>
+                <p>
+                    2. Utförande verksamheter och adresser inom organisationen
+                    Inom vilken del av organisationen och på vilket kontor arbetar personen?
+                </p>
 
-                Ett personalkonto i ”Mina sidor för fristående aktörer” består av behörigheter i tre nivåer:
+                <p>
+                    3. Vad personen ska kunna arbeta med i systemet.
+                    Vilken roll/behörighet behöver personen för att kunna utföra sina arbetsuppgifter i Mina sidor FA?
+                </p>
+                <p>
+                    Här finns det tre olika behörigheter/roller:
+                </p>
+                <p>
+                    - Administrera behörigheter
+                </p>
+                <p>
 
-                1. Tillhörighet till en organisation
-                En person kan vara anställd på en, eller flera organisationer.
-
-                2. Utförande verksamheter och adresser inom organisationen
-                Inom vilken del av organisationen och på vilket kontor arbetar personen?
-
-
-                3. Vad personen ska kunna arbeta med i systemet.
-                Vilken roll/behörighet behöver personen för att kunna utföra sina arbetsuppgifter i Mina sidor FA?
-                Här finns det tre olika behörigheter/roller:
-
-                - Administrera behörigheter
-                - Ta emot (och fördela) nya deltagare
-                - Rapportering, planering och information om deltagare
+                    - Ta emot (och fördela) nya deltagare
+                </p>
+                <p>
+                    - Rapportering, planering och information om deltagare
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/" alt="">
@@ -1846,29 +2354,35 @@
             <!--  -->
             <article id="Behorighet_1_Administrera_behorigheter">
                 <h3>Behörighet 1:</h3>
-                Administrera behörigheter
+                <p>
+                    Administrera behörigheter
+                </p>
 
+                <p>
+                    Behörigheten ”Administrera behörigheter” passar personer som ska administrera behörigheter i
+                    systemet.
+                    Vi
+                    rekommenderar
+                    att endast ett fåtal personer får den här behörigheten, till exempel firmatecknare, eller någon
+                    annan
+                    person
+                    som
+                    ska
+                    kunna administrera personalens behörigheter.
+                    Personer med den här behörigheten får tillgång till att administrera behörigheter för alla utförande
+                    verksamheter
+                    inom
+                    en organisation. Det går inte att ha behörigheten för endast en eller några få utförande
+                    verksamheter.
+                </p>
+                <p>
 
-
-                Behörigheten ”Administrera behörigheter” passar personer som ska administrera behörigheter i systemet.
-                Vi
-                rekommenderar
-                att endast ett fåtal personer får den här behörigheten, till exempel firmatecknare, eller någon annan
-                person
-                som
-                ska
-                kunna administrera personalens behörigheter.
-                Personer med den här behörigheten får tillgång till att administrera behörigheter för alla utförande
-                verksamheter
-                inom
-                en organisation. Det går inte att ha behörigheten för endast en eller några få utförande verksamheter.
-
-
-                Behörigheten ger tillgång till följande funktioner:
-                Skapa nya personalkonton
-                Se personallista
-                Se och ändra personalkonton och dess behörigheter
-                Ta bort personalkonton
+                    Behörigheten ger tillgång till följande funktioner:
+                    Skapa nya personalkonton
+                    Se personallista
+                    Se och ändra personalkonton och dess behörigheter
+                    Ta bort personalkonton
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/" alt="">
@@ -1878,17 +2392,23 @@
             <!--  -->
             <article id="Behorighet_2_Ta_emot_och_fordela_nya_deltagare">
                 <h3>Behörighet 2:</h3>
-                Ta emot (och fördela) nya deltagare
+                <p>
+                    Ta emot (och fördela) nya deltagare
+                </p>
+                <p>
 
-
-                Behörigheten ”Ta emot (och fördela) nya deltagare” passar medarbetare som behöver kunna se nya deltagare
-                och som ska arbeta med att tilldela nya deltagare till handledare. Behörigheten kan exempelvis användas
-                av samordnande roller, handledare eller administratörer. Behörigheten gäller för de utförande
-                verksamheter personen har tillgång till.
-
-                Behörigheten ger tillgång till följande funktioner:
-                Se lista över nya deltagare
-                Tilldela handledare till nya deltagare
+                    Behörigheten ”Ta emot (och fördela) nya deltagare” passar medarbetare som behöver kunna se nya
+                    deltagare
+                    och som ska arbeta med att tilldela nya deltagare till handledare. Behörigheten kan exempelvis
+                    användas
+                    av samordnande roller, handledare eller administratörer. Behörigheten gäller för de utförande
+                    verksamheter personen har tillgång till.
+                </p>
+                <p>
+                    Behörigheten ger tillgång till följande funktioner:
+                    Se lista över nya deltagare
+                    Tilldela handledare till nya deltagare
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/" alt="">
@@ -1898,25 +2418,31 @@
             <!--  -->
             <article id="Behorighet_3_Rapportering_planering_och_information">
                 <h3>Behörighet 3:</h3>
-                Rapportering, planering och information om deltagare
-
-                Behörigheten ”Rapportering, planering och information om deltagare” passar medarbetare som arbetar nära
-                deltagare
-                och
-                som behöver se information om deltagare, planera aktiviteter med deltagare eller hantera deltagares
-                rapporter.
-                Exempelvis handledare, coacher, studie- och yrkesvägledare och lärare. Behörigheten gäller för de
-                utförande
-                verksamheter
-                personen har tillgång till.
-
-                Behörigheten ger tillgång till följande funktioner:
-                Se lista över deltagare
-                Se information om deltagare
-                Planera aktiviteter i en gemensam planering
-                Skicka och se avvikelserapporter, resultatredovisningar, periodiska redovisningar, slutredovisningar och
-                informativa
-                rapporter
+                <p>
+                    Rapportering, planering och information om deltagare
+                </p>
+                <p>
+                    Behörigheten ”Rapportering, planering och information om deltagare” passar medarbetare som arbetar
+                    nära
+                    deltagare
+                    och
+                    som behöver se information om deltagare, planera aktiviteter med deltagare eller hantera deltagares
+                    rapporter.
+                    Exempelvis handledare, coacher, studie- och yrkesvägledare och lärare. Behörigheten gäller för de
+                    utförande
+                    verksamheter
+                    personen har tillgång till.
+                </p>
+                <p>
+                    Behörigheten ger tillgång till följande funktioner:
+                    Se lista över deltagare
+                    Se information om deltagare
+                    Planera aktiviteter i en gemensam planering
+                    Skicka och se avvikelserapporter, resultatredovisningar, periodiska redovisningar, slutredovisningar
+                    och
+                    informativa
+                    rapporter
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/" alt="">
@@ -1926,16 +2452,20 @@
 
             <article id="Generellt_om_behorigheter">
                 <h3>Generellt om behörigheter</h3>
-
-                De olika behörigheterna går att kombinera med varandra och en person kan ha en, två eller tre olika
-                behörigheter.
-                Det är du som leverantör som bestämmer vilka behörigheter dina olika medarbetare behöver.
-
-                Förutom behörigheten ”Administrera behörigheter” som alltid gäller för alla utförande verksamheter
-                inomen organisation så kan en person inte kan ha olika behörigheter för olika utförande verksamheter
-                eller adresser. Om en person har behörigheterna ”Rapportering, planering och information om deltagare”
-                och ”Ta emot nya deltagare” så gäller de behörigheterna på alla de verksamheter och adresser personen
-                har tillgång till inom den organisationen.
+                <p>
+                    De olika behörigheterna går att kombinera med varandra och en person kan ha en, två eller tre olika
+                    behörigheter.
+                    Det är du som leverantör som bestämmer vilka behörigheter dina olika medarbetare behöver.
+                </p>
+                <p>
+                    Förutom behörigheten ”Administrera behörigheter” som alltid gäller för alla utförande verksamheter
+                    inomen organisation så kan en person inte kan ha olika behörigheter för olika utförande verksamheter
+                    eller adresser. Om en person har behörigheterna ”Rapportering, planering och information om
+                    deltagare”
+                    och ”Ta emot nya deltagare” så gäller de behörigheterna på alla de verksamheter och adresser
+                    personen
+                    har tillgång till inom den organisationen.
+                </p>
                 <picture>
                     <source srcset="">
                     <img src="./img/instructions/" alt="">
@@ -1944,6 +2474,12 @@
 
         </section>
     </main>
+
+    <div class="modal">
+        <button class="close"></button>
+        <img src="" alt="">
+    </div>
+
 
     <footer>
         <a class="previous" href="#">förra</a>

@@ -31,19 +31,16 @@ function closeAriaParents(element) {
 // REGEX FÖR ATT BYTA TECKEN MOT "_" och göra id av rubriker:
 // [\s”,&\+:“\(\)]+
 
-function populatePreviousAndNext(currentElement) {
-    // 
-}
+document.querySelectorAll("main img").forEach(element => {
+    element.addEventListener("click", () => {
+        const modal = document.querySelector(".modal")
+        modal.classList.add("active")
+        modal.querySelector("img").src = element.src
+    })
+})
 
-// const observerOptions = {
-//     // root: document.querySelector("bo"),
-//     rootMargin: "0px",
-//     threshold: 1.0
-// }
-// let observer = new IntersectionObserver((element, observing) => {
-//     if (!element[0].isIntersecting) return
-//     const currentElement = element[0].target.parentElement
-//     populatePreviousAndNext(currentElement)
-// }, observerOptions)
 
-// document.querySelectorAll("h3").forEach(element => observer.observe(element))
+document.querySelector(".modal .close, .modal.active").addEventListener("click", (event) => {
+    if (event.target.localName !== "img") document.querySelector(".modal.active").classList.remove("active")
+})
+
