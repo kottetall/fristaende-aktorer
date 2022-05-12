@@ -34,7 +34,6 @@
     --offset-header: 15vh;
     --offset-footer: 5vh;
 
-    scroll-snap-type: mandatory;
     scroll-padding-top: var(--offset-header);
 }
 
@@ -243,6 +242,7 @@ section {
 }
 
 article {
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     gap: 2em;
@@ -427,6 +427,7 @@ footer a[href="#"]:not(.start)::after {
     background-size: cover;
     border: none;
     border-radius: 100vh;
+    outline: 1px solid currentColor;
 }
 
 @media screen and (min-width: 600px) {
@@ -514,15 +515,13 @@ footer a[href="#"]:not(.start)::after {
 
 
     .modal.active {
-        overflow: hidden;
         display: flex;
         justify-content: center;
     }
 
-
     .modal.active .close {
         --icon-size: 4em;
-        right: 8em;
+        right: 4vw;
         background-color: var(--main-fg);
     }
 

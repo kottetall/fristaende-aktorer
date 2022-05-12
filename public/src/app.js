@@ -1,5 +1,4 @@
 document.querySelectorAll("nav span").forEach(element => element.addEventListener("click", flipAriaExpanded))
-document.querySelectorAll("section ul span").forEach(element => element.addEventListener("click", flipAriaExpanded))
 document.querySelector(".close").addEventListener("click", flipAriaExpanded)
 
 document.querySelectorAll("nav a").forEach(element => {
@@ -28,19 +27,66 @@ function closeAriaParents(element) {
     if (ariaParent) closeAriaParents(ariaParent)
 }
 
-// REGEX FÖR ATT BYTA TECKEN MOT "_" och göra id av rubriker:
-// [\s”,&\+:“\(\)]+
-
-document.querySelectorAll("main img").forEach(element => {
-    element.addEventListener("click", () => {
-        const modal = document.querySelector(".modal")
-        modal.classList.add("active")
-        modal.querySelector("img").src = element.src
-    })
-})
+// document.querySelectorAll("main img").forEach(element => {
+//     element.addEventListener("click", () => {
+//         const modal = document.querySelector(".modal")
+//         modal.classList.add("active")
+//         modal.querySelector("img").src = element.src
+//     })
+// })
 
 
 document.querySelector(".modal .close, .modal.active").addEventListener("click", (event) => {
     if (event.target.localName !== "img") document.querySelector(".modal.active").classList.remove("active")
 })
 
+function clearElement(element) {
+    const children = [...element.children]
+    for (let child of children) {
+        child.remove()
+    }
+
+}
+
+function createQuickElement(type, className, attributes) {
+    const element = document.createElement(type)
+
+    if (className) element.classList.add(className)
+    if (attributes) {
+        for (let attribute in attributes) {
+            element.setAttribute(attribute, attributes[attribute])
+        }
+    }
+
+    return element
+}
+
+const mainElement = document.querySelector("main")
+const navElement = document.querySelector("nav>ul")
+// clearElement(mainElement)
+
+const allSections = []
+for (let instruction of instructions) {
+    allSections.push(new Section(instruction))
+}
+
+const navFragment = document.createDocumentFragment()
+const sectionFragment = document.createDocumentFragment()
+
+for (let section of allSections) {
+    navFragment.append(section.navigationElement)
+    sectionFragment.append(section.element)
+}
+
+navElement.append(navFragment)
+mainElement.append(sectionFragment)
+
+
+function makeId(string) {
+    return string.replace(/\W/gi, "_")
+}
+
+document.querySelector(".modal").addEventListener("mousedown", (event) => {
+    // Funktion för att kunna "röra sig" över bilden - liknande på telefon
+    console.dir(event)
+})
