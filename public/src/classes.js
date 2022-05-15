@@ -47,11 +47,20 @@ class Page {
 
     createPictureElement(content, specialFormat) {
         const element = createQuickElement("picture", `${specialFormat}`)
-        const srcsetWebp = createQuickElement("source", null, { "srcset": this.createSrcSetString(content, "webp") })
-        const srcsetPng = createQuickElement("source", null, { "srcset": this.createSrcSetString(content, "png") })
+        const srcsetWebp = createQuickElement("source", null, {
+            "width": `${window.innerWidth}`,
+            "height": `${Math.floor(window.innerWidth * (9 / 16))}`,
+            "srcset": this.createSrcSetString(content, "webp"),
+        })
+        const srcsetPng = createQuickElement("source", null, {
+            "srcset": this.createSrcSetString(content, "png"),
+            "height": `${Math.floor(window.innerWidth * (9 / 16))}`,
+            "srcset": this.createSrcSetString(content, "webp"),
+        })
         const src = createQuickElement("img", null, {
-            "src": `./img/instructions/${content}`,
+            "src": `./img/instructions/${content}.png`,
             "alt": `Bild som beskriver avsnittet ${this.title}`,
+            "width": `${window.innerWidth}`,
             "loading": "lazy"
         })
         element.addEventListener("click", () => {
@@ -67,6 +76,7 @@ class Page {
     createSrcSetString(filename, format) {
         const availableSizes = [
             "240",
+            "360",
             "480",
             "540",
             "720",
@@ -122,7 +132,7 @@ class Section {
 
     createNavigationElement() {
         const li = createQuickElement("li")
-        const span = createQuickElement("span")
+        const span = createQuickElement("span", "expand")
         span.textContent = this.title
         span.addEventListener("click", flipAriaExpanded)
 

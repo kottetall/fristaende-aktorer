@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="./img/icons/logo48x48.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/icons/logo192x192.png">
     <link rel="stylesheet" href="src/style.css">
     <script src="src/instructions.js" defer></script>
     <script src="src/classes.js" defer></script>
@@ -85,7 +88,7 @@
                     arbetsförmedlares och leverantörers systemstöd.
                 </p>
                 <p>
-                    Då sidan räknas potentiellt kan räknas som "bisyssla" innebär det vissa krav och begränsningar på
+                    Då sidan potentiellt räknas som "bisyssla" innebär det vissa krav och begränsningar på
                     innehåll och omfattning.
                     Det innebär även att oannonserade förändringar kan komma att ske
                     om oklarheter eller nya bedömningar blir aktuella.
@@ -104,18 +107,18 @@
                 <ul>
                     <li>
                         <span>21-11-23</span>
-                        <ul aria-expanded="false">
+                        <ul>
                             <li>
-                                <span>Ändringar:</span>
-                                <ul>
+                                <span class="expand">Ändringar:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Deltagarinformation - Deltagare & tjänst ny info om avbrott
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <span>Nya avsnitt:</span>
-                                <ul>
+                                <span class="expand">Nya avsnitt:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Rätta fel i inskickad avvikelserapport frånvaro
                                     </li>
@@ -128,18 +131,18 @@
                     </li>
                     <li>
                         <span>21-11-30</span>
-                        <ul aria-expanded="false">
+                        <ul>
                             <li>
-                                <span>Ändringar:</span>
-                                <ul>
+                                <span class="expand">Ändringar:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Export till Excel ny info om nivå
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <span>Nya avsnitt:</span>
-                                <ul>
+                                <span class="expand">Nya avsnitt:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Informativ rapport
                                     </li>
@@ -155,10 +158,10 @@
                     </li>
                     <li>
                         <span>21-12-01</span>
-                        <ul aria-expanded="false">
+                        <ul>
                             <li>
-                                <span>Ändringar:</span>
-                                <ul>
+                                <span class="expand">Ändringar:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Slutredovisning steg 1 tillägg om obligatoriska fält
                                     </li>
@@ -168,18 +171,18 @@
                     </li>
                     <li>
                         <span>21-12-16</span>
-                        <ul aria-expanded="false">
+                        <ul>
                             <li>
-                                <span>Ändringar:</span>
-                                <ul>
+                                <span class="expand">Ändringar:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Skapa informativ rapport tillägg om kontaktuppgifter
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <span>Nya avsnitt:</span>
-                                <ul>
+                                <span class="expand">Nya avsnitt:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Se status för rapporter och redovisningar
                                     </li>
@@ -195,10 +198,10 @@
                     </li>
                     <li>
                         <span>22-01-27</span>
-                        <ul aria-expanded="false">
+                        <ul>
                             <li>
-                                <span>Ändringar:</span>
-                                <ul>
+                                <span class="expand">Ändringar:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Deltagare & tjänst - Genomförandereferens, avbrott och v...
                                     </li>
@@ -211,18 +214,18 @@
                     </li>
                     <li>
                         <span>22-02-28</span>
-                        <ul aria-expanded="false">
+                        <ul>
                             <li>
-                                <span>Ändringar:</span>
-                                <ul>
+                                <span class="expand">Ändringar:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Se mina deltagare - Tillägg om att söka på genomförande
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <span>Nya avsnitt:</span>
-                                <ul>
+                                <span class="expand">Nya avsnitt:</span>
+                                <ul aria-expanded="false">
                                     <li>
                                         Signal om arbete eller studier
                                     </li>
@@ -235,11 +238,10 @@
                     </li>
                     <li>
                         <span>22-04-06</span>
-                        <ul aria-expanded="false">
+                        <ul>
                             <li>Ta bort personal/ handledare</li>
                         </ul>
                     </li>
-
                 </ul>
             </article>
         </section>
@@ -251,9 +253,9 @@
     </div>
 
     <footer>
-        <a class="previous" href="#">förra</a>
-        <a class="start" href="#">start</a>
-        <a class="next" href="#">nästa</a>
+        <a class="previous" href="#"></a>
+        <a class="start" href="#">sidstart</a>
+        <a class="next" href="#"></a>
     </footer>
 </body>
 

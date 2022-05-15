@@ -1,4 +1,12 @@
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+        .register("/sw.js")
+}
+
+
 document.querySelectorAll("nav span").forEach(element => element.addEventListener("click", flipAriaExpanded))
+document.querySelectorAll("#Uppdateringar_i_anvandarstodet span").forEach(element => element.addEventListener("click", flipAriaExpanded))
+
 document.querySelector(".close").addEventListener("click", flipAriaExpanded)
 
 document.querySelectorAll("nav a").forEach(element => {
@@ -6,6 +14,29 @@ document.querySelectorAll("nav a").forEach(element => {
         closeAriaParents(element)
     })
 })
+
+populatePage()
+
+function populatePage() {
+    const mainElement = document.querySelector("main")
+    const navElement = document.querySelector("nav>ul")
+
+    const allSections = []
+    for (let instruction of instructions) {
+        allSections.push(new Section(instruction))
+    }
+
+    const navFragment = document.createDocumentFragment()
+    const sectionFragment = document.createDocumentFragment()
+
+    for (let section of allSections) {
+        navFragment.append(section.navigationElement)
+        sectionFragment.append(section.element)
+    }
+
+    navElement.append(navFragment)
+    mainElement.append(sectionFragment)
+}
 
 function flipAriaExpanded() {
     let ariaElement = null
@@ -27,15 +58,6 @@ function closeAriaParents(element) {
     if (ariaParent) closeAriaParents(ariaParent)
 }
 
-// document.querySelectorAll("main img").forEach(element => {
-//     element.addEventListener("click", () => {
-//         const modal = document.querySelector(".modal")
-//         modal.classList.add("active")
-//         modal.querySelector("img").src = element.src
-//     })
-// })
-
-
 document.querySelector(".modal .close, .modal.active").addEventListener("click", (event) => {
     if (event.target.localName !== "img") document.querySelector(".modal.active").classList.remove("active")
 })
@@ -45,7 +67,6 @@ function clearElement(element) {
     for (let child of children) {
         child.remove()
     }
-
 }
 
 function createQuickElement(type, className, attributes) {
@@ -60,27 +81,6 @@ function createQuickElement(type, className, attributes) {
 
     return element
 }
-
-const mainElement = document.querySelector("main")
-const navElement = document.querySelector("nav>ul")
-// clearElement(mainElement)
-
-const allSections = []
-for (let instruction of instructions) {
-    allSections.push(new Section(instruction))
-}
-
-const navFragment = document.createDocumentFragment()
-const sectionFragment = document.createDocumentFragment()
-
-for (let section of allSections) {
-    navFragment.append(section.navigationElement)
-    sectionFragment.append(section.element)
-}
-
-navElement.append(navFragment)
-mainElement.append(sectionFragment)
-
 
 function makeId(string) {
     return string.replace(/\W/gi, "_")
