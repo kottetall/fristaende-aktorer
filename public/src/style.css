@@ -219,6 +219,7 @@ nav>ul {
     overflow: scroll;
     background-color: var(--main-bg);
     background-image: linear-gradient(var(--overlay-bg) 25vh, transparent);
+    margin-bottom: var(--offset-footer);
 }
 
 nav li {
@@ -545,6 +546,7 @@ footer a[href="#"]:not(.start)::after {
         justify-content: center;
         padding-bottom: var(--offset-footer);
         overflow-x: hidden;
+        margin-bottom: auto;
     }
 
     main {
