@@ -1,6 +1,6 @@
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker
-        .register("/sw.js")
+        .register("sw.js")
 }
 
 
@@ -86,7 +86,7 @@ function makeId(string) {
     return string.replace(/\W/gi, "_")
 }
 
-document.querySelector(".modal").addEventListener("mousedown", (event) => {
-    // Funktion för att kunna "röra sig" över bilden - liknande på telefon
-    console.dir(event)
-})
+// document.querySelector(".modal").addEventListener("mousedown", (event) => {
+//     // Funktion för att kunna "röra sig" över bilden - liknande på telefon
+//     console.dir(event)
+// })

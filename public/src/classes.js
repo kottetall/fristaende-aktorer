@@ -19,6 +19,8 @@ class Page {
             let element
             if (type === "paragraph") element = this.createParagraphElement(content, specialFormat)
             if (type === "image") element = this.createPictureElement(content, specialFormat)
+            if (type === "h4") element = this.createH4Element(content, specialFormat)
+            if (type === "listitem") element = this.createListItemElement(content, specialFormat)
             article.append(element)
         }
         return article
@@ -66,7 +68,7 @@ class Page {
         element.addEventListener("click", () => {
             const modal = document.querySelector(".modal")
             modal.classList.add("active")
-            modal.querySelector("img").src = `./img/instructions/${content}.png`
+            modal.querySelector("img").src = `./img/original/${content}.png`
         })
         element.append(srcsetWebp, srcsetPng, src)
 
@@ -75,14 +77,15 @@ class Page {
 
     createSrcSetString(filename, format) {
         const availableSizes = [
+            "192",
             "240",
-            "360",
+            "320",
             "480",
-            "540",
-            "720",
-            "800",
+            "640",
+            "750",
+            "1080",
         ]
-        const basePath = `./img/instructions_${format}/`
+        const basePath = `./img/`
         let srcsetString = ""
 
         for (let size of availableSizes) {
@@ -90,6 +93,19 @@ class Page {
         }
 
         return srcsetString
+    }
+
+    createH4Element(content, specialFormat) {
+        const h4 = createQuickElement("h4")
+        h4.textContent = content
+        return h4
+    }
+
+    createListItemElement(content, specialFormat) {
+        // TODO: ändra till bättre semantik - riktig ul m li
+        const listitem = createQuickElement("span", "listitem")
+        listitem.textContent = content
+        return listitem
     }
 }
 

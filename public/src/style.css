@@ -88,7 +88,7 @@ header {
     display: grid;
     grid-template-areas:
         "title title"
-        "lastUpdate nav";
+        "switch nav";
     gap: 0.5em;
     align-items: center;
     padding: 0.5em;
@@ -137,10 +137,39 @@ h3 {
     margin: 0.5em 0;
 }
 
-.lastUpdate {
+.switch {
     font-size: var(--font-small);
     font-style: italic;
-    grid-area: lastUpdate;
+    grid-area: switch;
+    text-decoration: line-through;
+}
+
+.switch::before {
+    content: "";
+    padding: 1em;
+    margin-right: 0.5em;
+    position: relative;
+    background-image: url(./../img/icons/switch.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.switch:hover {
+    border: 1px dashed var(--accent-bg);
+
+}
+
+.switch:hover::after {
+    content: "Denna knapp kommer i framtiden användas för att växla mellan användarstöden för MSFA och KA";
+    position: absolute;
+    background-color: black;
+    padding: 1em;
+    font-size: 1.2em;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    border: 1px dashed var(--accent-bg);
 }
 
 nav {
@@ -386,6 +415,16 @@ footer a[href="#"]:not(.start)::after {
     background-image: url(./../img/icons/info_white.png);
     background-position: center;
     background-size: contain;
+}
+
+.listitem {
+    font-size: 0.9em;
+    margin-left: 1em;
+}
+
+.listitem::before {
+    content: "*";
+    margin-right: 1em;
 }
 
 #about {

@@ -554,6 +554,104 @@ const instructions = [
         ]
     },
     {
+        "sectionTitle": "Beslut om period 2 och tilldela handledare till deltagare",
+        "pages": [
+            {
+                "id": "deltagare_till_period_2",
+                "title": "Deltagare till period 2",
+                "pagecontent": [
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Du ser under ”nya deltagare” att det kommit in en deltagare med grön text ”Ny period”."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Det innebär att det är en deltagare som fått beslut om period 2, 6 månader."
+                    },
+                    {
+                        "type": "image",
+                        "specialFormat": "",
+                        "content": "deltagare_till_period_2"
+                    }
+                ]
+            }, {
+                "id": "soka_och_tilldela_handledare",
+                "title": "Söka och tilldela handledare",
+                "pagecontent": [
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "I nuläget söker du fram deltagaren i deltagarlistan genom namn eller genomförandereferensen från deltagarens period 1 för att sedan kunna tilldela samma handledare."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "warning",
+                        "content": "OBS! Detta behöver du göra endast under en kort period, vi utvecklar nu bättre funktioner där systemet Känner av att deltagaren redan finns hos er och tilldelning av samma handledare som tidigare sker automatiskt."
+                    },
+                    {
+                        "type": "image",
+                        "specialFormat": "",
+                        "content": "soka_och_tilldela_handledare"
+                    }
+                ]
+            },
+            {
+                "id": "tilldela_handledare",
+                "title": "Tilldela handledare",
+                "pagecontent": [
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Välj vilken handledare i listan du vill tilldela till de valda deltagarna."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "När du har valt handledare i listan ser du med en gång namnet på handledaren under rubriken ”Vald handledare” i det gråa deltagarfältet. Du kan endast tilldela deltagare till handledare som har behörigheten ”Rapportering, planering och information om deltagare”. Det är endast de handledarna du ser i listan."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Kontrollera att du valt rätt handledare, klicka sedan på knappen ”Tilldela”"
+                    },
+                    {
+                        "type": "image",
+                        "specialFormat": "",
+                        "content": "tilldela_handledare"
+                    }
+                ]
+            },
+            {
+                "id": "bekrafta_tilldelning",
+                "title": "Bekräfta tilldelning",
+                "pagecontent": [
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Klicka på knappen ”Bekräfta tilldelning” för att bekräfta tilldelningen till handledaren."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Nu är tilldelningen färdig och du kan gå tillbaka till listan med nya deltagare genom att klicka på knappen ”Tillbaka till nya deltagare”."
+                    },
+                    {
+                        "type": "image",
+                        "specialFormat": "",
+                        "content": "bekrafta_tilldelning_1"
+                    },
+                    {
+                        "type": "image",
+                        "specialFormat": "",
+                        "content": "bekrafta_tilldelning_2"
+                    }
+                ]
+            },
+        ]
+    },
+    {
         "sectionTitle": "Mina deltagare, deltagarinformation",
         "pages": [
             {
@@ -609,7 +707,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Under fliken 'Deltagare & tjänst' hittar du information om deltagaren och tjänsten. Här ser du också om deltagaren har behov av språkstöd och i så fall på vilket språk. Deltagarens personnummer ligger dolt på sidan. För att få fram personnumret klicka på 'Visa' bredvid det lilla ögat. Du ser också vilken handledare som ansvarar för deltagaren. För att byta handledare väljer du ny handledare i listan under rubriken 'Byt handledare'. Klicka sedan på knappen 'Spara handledare' Du kan endast välja att byta till en handledare med behörigheten 'Rapportering, planering och information om deltagare'. Du ser därför endast de handledarna i listan."
+                        "content": "Under fliken 'Deltagare & tjänst' hittar du information om deltagaren och tjänsten. Här ser du också om deltagaren har behov av språkstöd och i så fall på vilket språk."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Deltagarens personnummer ligger dolt på sidan. För att få fram personnumret klicka på 'Visa' bredvid det lilla ögat."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Du ser också vilken handledare som ansvarar för deltagaren. För att byta handledare väljer du ny handledare i listan under rubriken 'Byt handledare'. Klicka sedan på knappen 'Spara handledare'"
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Du kan endast välja att byta till en handledare med behörigheten 'Rapportering, planering och information om deltagare'. Du ser därför endast de handledarna i listan."
                     },
                     {
                         "type": "image",
@@ -625,7 +738,27 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Under fliken 'Deltagare & tjänst' hittar du också 'Genomförandereferens', vilket är det referensnummer du ska använda dig av i kontakten med Arbetsförmedlingen. Du kan också använda genomförande-referensen till att leta fram ordrar i Leverantörsportalen. Under rubriken 'Om tjänsten' ser du också information om det gjorts ett avbrott för deltagaren. Här hittar du också en länk till videomöte som är Arbetsförmedlingens digitala tjänst för videomöte där du kan genomföra säkrare digitala möten med dina deltagare. Länken tar dig till en extern webbplats där du loggar in med BankID. På Arbetsförmedlingens hemsida hittar du instruktioner om hur du använder videomöten "
+                        "content": "Under fliken 'Deltagare & tjänst' hittar du också 'Genomförandereferens', vilket är det referensnummer du ska använda dig av i kontakten med Arbetsförmedlingen."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Du kan också använda genomförande-referensen till att leta fram ordrar i Leverantörsportalen."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Under rubriken 'Om tjänsten' ser du också information om det gjorts ett avbrott för deltagaren."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Här hittar du också en länk till videomöte som är Arbetsförmedlingens digitala tjänst för videomöte där du kan genomföra säkrare digitala möten med dina deltagare. Länken tar dig till en extern webbplats där du loggar in med BankID."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "På Arbetsförmedlingens hemsida hittar du instruktioner om hur du använder videomöten "
                     },
                     {
                         "type": "image",
@@ -667,7 +800,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Under fliken 'Rapportering' hittar du en lista över de olika rapporter du har skickat in till Arbetsförmedlingen för deltagaren. Under rubriken status ser du vilken status rapporten har och om den är mottagen eller godkänd. Det är också under fliken rapportering som du skapar nya rapporter. Information om hur du skapar och skickar rapporter hittar du i nästa avsnitt."
+                        "content": "Under fliken 'Rapportering' hittar du en lista över de olika rapporter du har skickat in till Arbetsförmedlingen för deltagaren."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Under rubriken status ser du vilken status rapporten har och om den är mottagen eller godkänd."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Det är också under fliken rapportering som du skapar nya rapporter."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Information om hur du skapar och skickar rapporter hittar du i nästa avsnitt."
                     },
                     {
                         "type": "image",
@@ -688,7 +836,12 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "För att skapa en rapport gå in under fliken 'Rapportering' i deltagarinformationen. Välj 'Gemensam planering' "
+                        "content": "För att skapa en rapport gå in under fliken 'Rapportering' i deltagarinformationen."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Välj 'Gemensam planering', detta gör du för både period 1 och period 2."
                     },
                     {
                         "type": "image",
@@ -740,7 +893,12 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Om du missar att välja de två obligatoriska aktiviteterna och minst en valfri aktivitet så kommer du inte vidare i systemet. Du får då fram en varningstext under listan av aktiviteter när du klickar på knappen 'förhandsgranska'."
+                        "content": "Om du missar att välja de två obligatoriska aktiviteterna och minst en valfri aktivitet så kommer du inte vidare i systemet."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Du får då fram en varningstext under listan av aktiviteter när du klickar på knappen 'förhandsgranska'."
                     },
                     {
                         "type": "image",
@@ -761,7 +919,12 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Kontrollera att den gemensamma planeringen stämmer och att du fått med de aktiviteter ni har kommit överens om att deltagaren ska genomföra. För att skicka in planeringen till Arbetsförmedlingen klicka på knappen 'Skicka in' "
+                        "content": "Kontrollera att den gemensamma planeringen stämmer och att du fått med de aktiviteter ni har kommit överens om att deltagaren ska genomföra."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "För att skicka in planeringen till Arbetsförmedlingen klicka på knappen 'Skicka in' "
                     },
                     {
                         "type": "image",
@@ -777,7 +940,17 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Nu är den gemensamma planeringen färdig och inskickad till Arbetsförmedlingen. I listan över rapporter under deltagarinformation ser du sen när den har blivit godkänd. Klicka på 'Tillbaka till deltagaren' för att komma tillbaka till deltagarinformationen."
+                        "content": "Nu är den gemensamma planeringen färdig och inskickad till Arbetsförmedlingen."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "I listan över rapporter under deltagarinformation ser du sen när den har blivit godkänd."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Klicka på 'Tillbaka till deltagaren' för att komma tillbaka till deltagarinformationen."
                     },
                     {
                         "type": "image",
@@ -798,7 +971,32 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Gå in under fliken 'Rapportering' i deltagarinformationen. Välj sedan 'Avvikelserapport (Frånvaro)' eller ' Avvikelserapport (Avvikelse)' beroende på vilken typ av avvikelse du vill rapportera Frånvaro: När deltagaren varit frånvarande på grund av sjukdom, vård av barn, arbete, utbildning, annan känd orsak, eller okänd orsak. Känd orsak kan vara till exempel läkar- eller tandläkarbesök, familjeangelägenhet, möte med myndighet eller annan känd orsak. Avvikelse: När deltagaren tackat nej till insats eller aktivitet, tackat nej till erbjudet arbete, inte kan tillgodogöra sig programmet, misskött sig eller stört verksamheten, eller sett till att erbjudet arbete inte blivit av."
+                        "content": "Gå in under fliken 'Rapportering' i deltagarinformationen. Välj sedan 'Avvikelserapport (Frånvaro)' eller ' Avvikelserapport (Avvikelse)' beroende på vilken typ av avvikelse du vill rapportera"
+                    },
+                    {
+                        "type": "h4",
+                        "specialFormat": "",
+                        "content": "Frånvaro:"
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "När deltagaren varit frånvarande på grund av sjukdom, vård av barn, arbete, utbildning, annan känd orsak, eller okänd orsak. Känd orsak kan vara till exempel läkar- eller tandläkarbesök, familjeangelägenhet, möte med myndighet eller annan känd orsak."
+                    },
+                    {
+                        "type": "h4",
+                        "specialFormat": "",
+                        "content": "Avvikelse:"
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "När deltagaren tackat nej till insats eller aktivitet, tackat nej till erbjudet arbete, inte kan tillgodogöra sig programmet, misskött sig eller stört verksamheten, eller sett till att erbjudet arbete inte blivit av."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": ""
                     },
                     {
                         "type": "image",
@@ -898,7 +1096,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "För att rätta en felaktig avvikelserapport om frånvaro så ska du skicka in en ny avvikelserapport. Välj 'Annan orsak' i listan under rubriken 'Orsak till frånvaro'. I fritextfältet skriver du sedan RÄTTELSE eller KOMPLETTERING och det datum då den felaktiga rapporten skickades in. T.ex. RÄTTELSE 211117. Skriv sedan in den korrekta informationen i fritextfältet och ange datum för frånvaron. Klicka sedan på 'Förhandsgranska för att komma vidare'."
+                        "content": "För att rätta en felaktig avvikelserapport om frånvaro så ska du skicka in en ny avvikelserapport."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Välj 'Annan orsak' i listan under rubriken 'Orsak till frånvaro'. I fritextfältet skriver du sedan RÄTTELSE eller KOMPLETTERING och det datum då den felaktiga rapporten skickades in. T.ex. RÄTTELSE 211117."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Skriv sedan in den korrekta informationen i fritextfältet och ange datum för frånvaron."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Klicka sedan på 'Förhandsgranska för att komma vidare'."
                     },
                     {
                         "type": "image",
@@ -956,7 +1169,12 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Gäller avvikelserapporten en deltagare som inte kan tillgodogöra sig programmet eller en deltagare som misskött sig så ska du först beskriva problemet. Sen ska du beskriva vad ni har gjort för att stötta deltagaren, hur ni har försökt anpassa programmet eller vad ni har gjort för att lösa problemet."
+                        "content": "Gäller avvikelserapporten en deltagare som inte kan tillgodogöra sig programmet eller en deltagare som misskött sig så ska du först beskriva problemet."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Sen ska du beskriva vad ni har gjort för att stötta deltagaren, hur ni har försökt anpassa programmet eller vad ni har gjort för att lösa problemet."
                     },
                     {
                         "type": "image",
@@ -977,7 +1195,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Om deltagaren har blivit erbjuden ett arbete och har agerat så att arbetet inte blir av, så beskriver du i fritextfältet på vilket sätt hen har agerat för att inte få arbetet. Ange vilken dag avvikelsen gäller för. Du kan välja ett datum bakåt i tiden men inte ett framåt i tiden. Du ska alltid rapportera en avvikelse så snart du får kännedom om den. Eftersom du rapporterar avvikelsen det datum då du får reda på den behöver du inte ange 'kännedomsdatum' i 'Mina sidor för fristående aktörer'. Klicka på 'Förhandsgranska' för att gå vidare."
+                        "content": "Om deltagaren har blivit erbjuden ett arbete och har agerat så att arbetet inte blir av, så beskriver du i fritextfältet på vilket sätt hen har agerat för att inte få arbetet."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Ange vilken dag avvikelsen gäller för. Du kan välja ett datum bakåt i tiden men inte ett framåt i tiden."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Du ska alltid rapportera en avvikelse så snart du får kännedom om den. Eftersom du rapporterar avvikelsen det datum då du får reda på den behöver du inte ange 'kännedomsdatum' i 'Mina sidor för fristående aktörer'."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Klicka på 'Förhandsgranska' för att gå vidare."
                     },
                     {
                         "type": "image",
@@ -1040,7 +1273,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "För att rätta en felaktig avvikelserapport om avvikelse ska du skicka in en ny avvikelserapport. Välj samma orsak till avvikelse som du gjorde på den felaktiga rapporten. I fritextfältet skriver du sedan RÄTTELSE eller KOMPLETTERING och det datum då du skickade in den felaktiga avvikelserapporten T. ex RÄTTELSE 211117. Fyll sedan i den korrekta informationen i fritextfälten. Ange datum för när avvikelsen inträffade och klicka på 'Förhandsgranska' för att granska och skicka in rättelsen."
+                        "content": "För att rätta en felaktig avvikelserapport om avvikelse ska du skicka in en ny avvikelserapport."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Välj samma orsak till avvikelse som du gjorde på den felaktiga rapporten. I fritextfältet skriver du sedan RÄTTELSE eller KOMPLETTERING och det datum då du skickade in den felaktiga avvikelserapporten T. ex RÄTTELSE 211117."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Fyll sedan i den korrekta informationen i fritextfälten."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Ange datum för när avvikelsen inträffade och klicka på 'Förhandsgranska' för att granska och skicka in rättelsen."
                     },
                     {
                         "type": "image",
@@ -1103,7 +1351,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Välj de aktiviteter deltagaren har genomfört under den aktuella perioden. Du kan endast välja aktiviteter som finns med i den inskickade gemensamma planeringen för deltagaren. Vill du lägga till nya aktiviteter behöver du först uppdatera den gemensamma planeringen innan du kan redovisa aktiviteten i periodisk redovisning. Ange hur mycket tid deltagaren har lagt på varje aktivitet. Klicka på knappen 'Förhandsgranska' för att gå vidare och förhandsgranska redovisningen."
+                        "content": "Välj de aktiviteter deltagaren har genomfört under den aktuella perioden."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Du kan endast välja aktiviteter som finns med i den inskickade gemensamma planeringen för deltagaren. Vill du lägga till nya aktiviteter behöver du först uppdatera den gemensamma planeringen innan du kan redovisa aktiviteten i periodisk redovisning."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Ange hur mycket tid deltagaren har lagt på varje aktivitet."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Klicka på knappen 'Förhandsgranska' för att gå vidare och förhandsgranska redovisningen."
                     },
                     {
                         "type": "image",
@@ -1150,10 +1413,10 @@ const instructions = [
                 ]
             }
         ],
-        "Informativ rapport": [
-            {
-                "sectionTitle": "Informativ rapport"
-            },
+    },
+    {
+        "sectionTitle": "Informativ rapport",
+        "pages": [
             {
                 "id": "Informativ_rapport",
                 "title": "Informativ rapport",
@@ -1218,12 +1481,17 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Du behöver meddela Arbetsförmedlingen att en deltagare har fått ett jobb eller påbörjat studier. Det gäller oavsett om det är på hel - eller deltid. Det gör du genom att skicka in en 'Signal om arbete eller studier' Ange om deltagaren ska arbeta eller studera på hel- eller deltid. Om det är en sysselsättning på deltid så anger du omfattningen i procent. Fyll också i startdatum för arbete eller studier. Om deltagaren ska arbeta eller studera på deltid så ska du också fylla i omfattning i rutan som kommer fram. Om starten sker efter insatsens slut skriver du in datum när sökande ansökte om utbildningen."
+                        "content": "Du behöver meddela Arbetsförmedlingen att en deltagare har fått ett jobb eller påbörjat studier. Det gäller oavsett om det är på hel - eller deltid. Det gör du genom att skicka in en 'Signal om arbete eller studier'"
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Klicka på 'Förhandsvisa' för att granska rapporten innan du skickar in den."
+                        "content": "Ange om deltagaren ska arbeta eller studera på hel- eller deltid. Om det är en sysselsättning på deltid så anger du omfattningen i procent."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Fyll också i startdatum för arbete eller studier. Om deltagaren ska arbeta eller studera på deltid så ska du också fylla i omfattning i rutan som kommer fram. Om starten sker efter insatsens slut skriver du in datum när sökande ansökte om utbildningen."
                     },
                     {
                         "type": "paragraph",
@@ -1343,7 +1611,17 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Välj yrkesområde i listan under rubriken 'Yrkesområde' Välj sedan Yrkesgrupp i listan som kommer fram. Ange anställningsform och i vilken omfattning deltagaren jobbar."
+                        "content": "Välj yrkesområde i listan under rubriken 'Yrkesområde'"
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Välj sedan Yrkesgrupp i listan som kommer fram."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Ange anställningsform och i vilken omfattning deltagaren jobbar."
                     },
                     {
                         "type": "paragraph",
@@ -1364,7 +1642,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Välj utbildningsnivå under rubriken 'Utbildningsnivå' Välj sedan hur lång utbildningen är under rubriken 'Utbildningens längd' I fritextfältet anger du vilken inriktning utbildningen har. Klicka på knappen 'vidare till steg 2' för att komma vidare och redovisa genomförda aktiviteter."
+                        "content": "Välj utbildningsnivå under rubriken 'Utbildningsnivå'"
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Välj sedan hur lång utbildningen är under rubriken 'Utbildningens längd'"
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "I fritextfältet anger du vilken inriktning utbildningen har."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Klicka på knappen 'vidare till steg 2' för att komma vidare och redovisa genomförda aktiviteter."
                     },
                     {
                         "type": "image",
@@ -1380,7 +1673,12 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Välj anledning till att deltagaren fortfarande är arbetssökande. Om du väljer 'Annat' ska du fylla i orsaken i fritextfältet. Det är obligatoriskt att fylla i orsaken. Du kommer inte vidare om du inte gör det "
+                        "content": "Välj anledning till att deltagaren fortfarande är arbetssökande."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Om du väljer 'Annat' ska du fylla i orsaken i fritextfältet. Det är obligatoriskt att fylla i orsaken. Du kommer inte vidare om du inte gör det"
                     },
                     {
                         "type": "paragraph",
@@ -1515,7 +1813,17 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Under fliken 'Rapportering' i deltagarinformationen finns två sätt att få fram information om varför en slutredovisning inte är godkänd. Klicka på 'Slutredovisning' under rubriken 'Typ av rapport' Klicka på 'Motivering till beslut' under rubriken 'Motivering' "
+                        "content": "Under fliken 'Rapportering' i deltagarinformationen finns två sätt att få fram information om varför en slutredovisning inte är godkänd. "
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "1. Klicka på 'Slutredovisning' under rubriken 'Typ av rapport'"
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "2. Klicka på 'Motivering till beslut' under rubriken 'Motivering' "
                     },
                     {
                         "type": "image",
@@ -1546,7 +1854,12 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Gå in under 'Exporter' i det gråa fältet till vänster. Välj sedan vilken tidsperiod du vill exportera information från. Tiden avser de deltagare som kommit in i 'Mina sidor för fristående aktörer' under den angivna perioden. Om du vill få med deltagarinformation som tidigare exporterats så bockar du för 'Inkludera redan exporterade deltagare'. Det gäller alla exporter som har gjorts för den utförande verksamhet och adress du är inloggad på."
+                        "content": "Gå in under 'Exporter' i det gråa fältet till vänster. Välj sedan vilken tidsperiod du vill exportera information från. Tiden avser de deltagare som kommit in i 'Mina sidor för fristående aktörer' under den angivna perioden."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Om du vill få med deltagarinformation som tidigare exporterats så bockar du för 'Inkludera redan exporterade deltagare'. Det gäller alla exporter som har gjorts för den utförande verksamhet och adress du är inloggad på."
                     },
                     {
                         "type": "paragraph",
@@ -1591,11 +1904,11 @@ const instructions = [
                     }
                 ]
             }
-        ],
-        "Behörigheter": [
-            {
-                "sectionTitle": "Behörigheter"
-            },
+        ]
+    },
+    {
+        "sectionTitle": "Behörigheter",
+        "pages": [
             {
                 "id": "Behorigheter_i_tre_nivaer",
                 "title": "Behörigheter i tre nivåer",
@@ -1608,17 +1921,17 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "1. Tillhörighet till en organisation En person kan vara anställd på en, eller flera organisationer."
+                        "content": "1. Tillhörighet till en organisation - En person kan vara anställd på en, eller flera organisationer."
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "2. Utförande verksamheter och adresser inom organisationen Inom vilken del av organisationen och på vilket kontor arbetar personen?"
+                        "content": "2. Utförande verksamheter och adresser inom organisationen - Inom vilken del av organisationen och på vilket kontor arbetar personen?"
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "3. Vad personen ska kunna arbeta med i systemet. Vilken roll/behörighet behöver personen för att kunna utföra sina arbetsuppgifter i Mina sidor FA?"
+                        "content": "3. Vad personen ska kunna arbeta med i systemet - Vilken roll/behörighet behöver personen för att kunna utföra sina arbetsuppgifter i Mina sidor FA?"
                     },
                     {
                         "type": "paragraph",
@@ -1644,64 +1957,104 @@ const instructions = [
             },
             {
                 "id": "Behorighet_1_Administrera_behorigheter",
-                "title": "Behörighet 1:",
+                "title": "Behörighet 1: Administrera behörigheter",
                 "pagecontent": [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Administrera behörigheter"
+                        "content": "Behörigheten 'Administrera behörigheter' passar personer som ska administrera behörigheter i systemet. Vi rekommenderar att endast ett fåtal personer får den här behörigheten, till exempel firmatecknare, eller någon annan person som ska kunna administrera personalens behörigheter."
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Behörigheten 'Administrera behörigheter' passar personer som ska administrera behörigheter i systemet. Vi rekommenderar att endast ett fåtal personer får den här behörigheten, till exempel firmatecknare, eller någon annan person som ska kunna administrera personalens behörigheter. Personer med den här behörigheten får tillgång till att administrera behörigheter för alla utförande verksamheter inom en organisation. Det går inte att ha behörigheten för endast en eller några få utförande verksamheter."
+                        "content": "Personer med den här behörigheten får tillgång till att administrera behörigheter för alla utförande verksamheter inom en organisation. Det går inte att ha behörigheten för endast en eller några få utförande verksamheter."
                     },
                     {
-                        "type": "paragraph",
+                        "type": "h4",
                         "specialFormat": "",
-                        "content": "Behörigheten ger tillgång till följande funktioner: Skapa nya personalkonton Se personallista Se och ändra personalkonton och dess behörigheter Ta bort personalkonton"
-                    }
+                        "content": "Behörigheten ger tillgång till följande funktioner:"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Skapa nya personalkonton"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Se personallista"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Se och ändra personalkonton och dess behörigheter"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Ta bort personalkonton"
+                    },
                 ]
             },
             {
                 "id": "Behorighet_2_Ta_emot_och_fordela_nya_deltagare",
-                "title": "Behörighet 2:",
+                "title": "Behörighet 2: Ta emot (och fördela) nya deltagare",
                 "pagecontent": [
-                    {
-                        "type": "paragraph",
-                        "specialFormat": "",
-                        "content": "Ta emot (och fördela) nya deltagare"
-                    },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
                         "content": "Behörigheten 'Ta emot (och fördela) nya deltagare' passar medarbetare som behöver kunna se nya deltagare och som ska arbeta med att tilldela nya deltagare till handledare. Behörigheten kan exempelvis användas av samordnande roller, handledare eller administratörer. Behörigheten gäller för de utförande verksamheter personen har tillgång till."
                     },
                     {
-                        "type": "paragraph",
+                        "type": "h4",
                         "specialFormat": "",
-                        "content": "Behörigheten ger tillgång till följande funktioner: Se lista över nya deltagare Tilldela handledare till nya deltagare"
+                        "content": "Behörigheten ger tillgång till följande funktioner:"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Se lista över nya deltagare"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Tilldela handledare till nya deltagare"
                     }
                 ]
             },
             {
                 "id": "Behorighet_3_Rapportering_planering_och_information",
-                "title": "Behörighet 3:",
+                "title": "Behörighet 3: Rapportering, planering och information om deltagare",
                 "pagecontent": [
-                    {
-                        "type": "paragraph",
-                        "specialFormat": "",
-                        "content": "Rapportering, planering och information om deltagare"
-                    },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
                         "content": "Behörigheten 'Rapportering, planering och information om deltagare' passar medarbetare som arbetar nära deltagare och som behöver se information om deltagare, planera aktiviteter med deltagare eller hantera deltagares rapporter. Exempelvis handledare, coacher, studie- och yrkesvägledare och lärare. Behörigheten gäller för de utförande verksamheter personen har tillgång till."
                     },
                     {
-                        "type": "paragraph",
+                        "type": "h4",
                         "specialFormat": "",
-                        "content": "Behörigheten ger tillgång till följande funktioner: Se lista över deltagare Se information om deltagare Planera aktiviteter i en gemensam planering Skicka och se avvikelserapporter, resultatredovisningar, periodiska redovisningar, slutredovisningar och informativa rapporter "
+                        "content": "Behörigheten ger tillgång till följande funktioner:"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Se lista över deltagare"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Se information om deltagare"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Planera aktiviteter i en gemensam planering"
+                    },
+                    {
+                        "type": "listitem",
+                        "specialFormat": "",
+                        "content": "Skicka och se avvikelserapporter, resultatredovisningar, periodiska redovisningar, slutredovisningar och informativa rapporter "
                     }
                 ]
             },
