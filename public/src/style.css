@@ -22,6 +22,8 @@
     --pop-border-article: rgb(255 165 0 / .6);
     --pop-border-hover: rgb(0 255 255 / .8);
     --loading-bg: rgb(0 136 255 / .2);
+    --mfsa-bg: #01005b;
+    --ka-bg: #08799a;
 
     --font-normal: 0.8rem;
     --font-small: 0.6rem;
@@ -149,7 +151,7 @@ h3 {
     padding: 1em;
     margin-right: 0.5em;
     position: relative;
-    background-image: url(./../img/icons/switch.png);
+    background-image: url(./../img/icons/switch.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -157,7 +159,6 @@ h3 {
 
 .switch:hover {
     border: 1px dashed var(--accent-bg);
-
 }
 
 .switch:hover::after {
@@ -185,7 +186,7 @@ nav .close {
     left: 100%;
     padding: var(--button-padding);
     z-index: 99;
-    background-image: url(./../img/icons/close.png);
+    background-image: url(./../img/icons/close.svg);
     background-position: center;
     background-size: cover;
     background-color: var(--accent-bg);
@@ -208,9 +209,10 @@ nav>span::after {
     width: 1em;
     height: 1em;
     margin-left: 0.5em;
-    background-image: url(./../img/icons/expand_white.png);
+    background-image: url(./../img/icons/expand.svg);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 nav>ul {
@@ -229,7 +231,7 @@ nav li {
 
 nav li span,
 nav li a {
-    --icon-src: url(./../img/icons/expand_white.png);
+    --icon-src: url(./../img/icons/expand.svg);
     position: relative;
     display: block;
     padding: 0.5em;
@@ -242,7 +244,7 @@ nav li span {
 }
 
 nav li a {
-    --icon-size: 0.75em;
+    --icon-size: 1em;
     --icon-offset: calc(var(--icon-size) + 1.5em);
     padding-right: var(--icon-offset);
 }
@@ -262,7 +264,7 @@ nav li a::after {
 }
 
 nav li a::after {
-    transform: translateY(-50%) rotate(-90deg);
+    --icon-src: url(./../img/icons/goto.svg);
 }
 
 main {
@@ -281,7 +283,7 @@ section {
     margin-left: 0.5em;
     height: 0.8em;
     width: 1em;
-    background-image: url(./../img/icons/expand_white.png);
+    background-image: url(./../img/icons/expand.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -324,13 +326,14 @@ picture {
     content: "";
     position: absolute;
     right: 0;
+    transform: translateY(-50%);
     top: 50%;
-    transform: translateY(-50%) rotateZ(-90deg);
     height: 1em;
     width: 1em;
-    background-image: url(./../img/icons/expand_white.png);
+    background-image: url(./../img/icons/goto.svg);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 picture img {
@@ -351,7 +354,9 @@ footer {
     background-color: var(--accent-bg);
     height: var(--offset-footer);
     border-top: 1px solid var(--main-bg);
-    display: flex;
+    display: grid;
+    grid-template-areas: "previous start next search";
+    grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
@@ -367,27 +372,62 @@ footer a[href="#"]:not(.start)::after {
     content: none;
 }
 
-.previous::before,
-.next::after {
-    content: "";
-    position: relative;
-    display: inline-block;
-    width: 1.5em;
-    height: 1em;
-    margin-right: 0.25em;
-    background-image: url(./../img/icons/expand_black.png);
-    background-position: center;
-    background-size: cover;
+/* FIXME: TILLFÄLLIG */
+
+.previous,
+.next {
+    background-image: none !important;
 }
 
-.previous::before {
-    transform: rotate(90deg);
+.previous {
+    grid-area: previous;
+    transform: rotate(180deg);
 }
 
-.next::after {
+.start {
+    grid-area: start;
     transform: rotate(-90deg);
 }
 
+.next {
+    grid-area: next;
+}
+
+
+.previous,
+.next,
+.start {
+    background-image: url(./../img/icons/arrow.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 1em;
+}
+
+
+.openSearchModal {
+    grid-area: search;
+    padding: 1.25em;
+    border-radius: 100vh;
+    border: none;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+
+.openSearchModal[data-searchopen="false"] {
+    background-image: url(./../img/icons/search.svg);
+}
+
+.openSearchModal[data-searchopen="true"] {
+    background-image: url(./../img/icons/close.svg);
+}
+
+.openSearchModal[data-searchopen="false"][data-results="true"] {
+    background-image: url(./../img/icons/list.svg);
+    border-radius: 0;
+}
 
 .warning {
     --icon-size-info: 2.5em;
@@ -413,7 +453,7 @@ footer a[href="#"]:not(.start)::after {
     border-radius: 100vh;
     border: 1px solid var(--accent-warning);
     background-color: var(--main-bg);
-    background-image: url(./../img/icons/info_white.png);
+    background-image: url(./../img/icons/info.svg);
     background-position: center;
     background-size: contain;
 }
@@ -464,7 +504,7 @@ footer a[href="#"]:not(.start)::after {
     bottom: var(--offset-footer);
     left: 0;
     right: 0;
-    display: block;
+    display: grid;
     overflow: scroll;
 }
 
@@ -476,12 +516,50 @@ footer a[href="#"]:not(.start)::after {
     height: var(--icon-size);
     width: var(--icon-size);
     background-color: white;
-    background-image: url(./../img/icons/close.png);
+    background-image: url(./../img/icons/close.svg);
     background-position: center;
-    background-size: cover;
+    background-size: 80%;
+    background-repeat: no-repeat;
     border: none;
     border-radius: 100vh;
-    outline: 1px solid currentColor;
+    outline: 3px solid black;
+}
+
+.searchModal {
+    padding: 1em;
+    gap: 1.75em;
+}
+
+.searchModal>div {
+    font-size: 1.2rem;
+}
+
+.inputContainer {
+    display: grid;
+    grid-template-columns: auto 2em;
+}
+
+.searchModal input,
+.searchModal button {
+    padding: 0.5em;
+    font-size: 1rem;
+}
+
+.searchModal button {
+    background-image: url(./../img/icons/search.svg);
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    border-color: white;
+}
+
+.results li {
+    padding: 0.5em;
+}
+
+.results a[data-visited="true"] {
+    font-style: italic;
+    text-decoration: line-through;
 }
 
 @media screen and (min-width: 600px) {
@@ -573,24 +651,27 @@ footer a[href="#"]:not(.start)::after {
     }
 
     footer {
-        width: fit-content;
-        margin-left: auto;
-        margin-right: 2em;
-        margin-bottom: 2em;
-        border-radius: 100vh;
-        padding: 1em;
+        gap: 0.5em;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 2em;
+        align-content: center;
+        max-width: 900px;
     }
 
-
-    .modal.active {
-        display: flex;
+    .searchModal.active {
+        overflow: auto;
+        grid-template-columns: 50vw;
         justify-content: center;
+    }
+
+    .results li {
+        margin-left: 1em;
     }
 
     .modal.active .close {
         --icon-size: 4em;
         right: 4vw;
-        background-color: var(--main-fg);
     }
 
     .modal.active .close:hover {

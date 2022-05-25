@@ -1,0 +1,29 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 3">
+<g id="item">
+<line id="Line 4" x1="15" y1="7" x2="45" y2="7" stroke="white" stroke-width="4"/>
+<path id="check" d="M6 6L8.00002 9.00001L13 1.50001" stroke="white"/>
+<circle id="Ellipse 3" cx="8" cy="7" r="3.5" stroke="white"/>
+</g>
+<g id="item_2">
+<line id="Line 4_2" x1="15" y1="16" x2="45" y2="16" stroke="white" stroke-width="4"/>
+<path id="check_2" d="M6 15L8.00002 18L13 10.5" stroke="white"/>
+<circle id="Ellipse 3_2" cx="8" cy="16" r="3.5" stroke="white"/>
+</g>
+<g id="item_3">
+<line id="Line 4_3" x1="15" y1="25" x2="45" y2="25" stroke="white" stroke-width="4"/>
+<path id="check_3" d="M6 24L8.00002 27L13 19.5" stroke="white"/>
+<circle id="Ellipse 3_3" cx="8" cy="25" r="3.5" stroke="white"/>
+</g>
+<g id="item_4">
+<line id="Line 4_4" x1="15" y1="34" x2="45" y2="34" stroke="white" stroke-width="4"/>
+<path id="check_4" d="M6 33L8.00002 36L13 28.5" stroke="white"/>
+<circle id="Ellipse 3_4" cx="8" cy="34" r="3.5" stroke="white"/>
+</g>
+<g id="item_5">
+<line id="Line 4_5" x1="15" y1="43" x2="45" y2="43" stroke="white" stroke-width="4"/>
+<path id="check_5" d="M6 42L8.00002 45L13 37.5" stroke="white"/>
+<circle id="Ellipse 3_5" cx="8" cy="43" r="3.5" stroke="white"/>
+</g>
+</g>
+</svg>

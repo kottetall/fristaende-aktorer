@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#8a2be2" />
-    <link rel="manifest" href="manifest.json">
-    <link rel="shortcut icon" href="./img/icons/logo48x48.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="./img/icons/logo192x192.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="shortcut icon" href="img/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/icons/logo48.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/icons/logo192.png">
     <link rel="stylesheet" href="src/style.css">
     <script src="src/instructions.js" defer></script>
     <script src="src/classes.js" defer></script>
@@ -36,7 +37,6 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section>
             <article id="about">
@@ -258,10 +258,23 @@
         <img src="" alt="">
     </div>
 
+    <div class="modal searchModal">
+        <div>
+            <label for="pageSearch">sök på sidan</label>
+            <div class="inputContainer">
+                <input type="text" name="pageSearch" id="pageSearch">
+                <button class="search" aria-label="starta sökning"></button>
+            </div>
+        </div>
+        <ul class="results"></ul>
+    </div>
+
     <footer>
         <a class="previous" href="#"></a>
-        <a class="start" href="#">sidstart</a>
+        <a class="start" href="#"></a>
         <a class="next" href="#"></a>
+        <button class="openSearchModal" data-searchopen="false" data-results="false"
+            aria-label="Öppna sökruta"></button>
     </footer>
 </body>
 

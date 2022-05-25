@@ -32,8 +32,10 @@ class Page {
         const aLink = createQuickElement("a")
         aLink.href = `#${this.id}`
         aLink.textContent = this.title
-        aLink.addEventListener("click", () => {
+        aLink.addEventListener("click", (e) => {
+            e.preventDefault()
             closeAriaParents(aLink)
+            document.getElementById(`${this.id}`).scrollIntoView()
         })
 
         li.append(aLink)

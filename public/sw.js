@@ -9,11 +9,15 @@ self.addEventListener("install", (e) => {
             "src/instructions.js",
             "src/classes.js",
             "src/app.js",
-            "img/icons/close.png",
-            "img/icons/expand_black.png",
-            "img/icons/expand_white.png",
-            "img/icons/info_black.png",
-            "img/icons/info_white.png",
+            "img/icons/close.svg",
+            "img/icons/list.svg",
+            "img/icons/info.svg",
+            "img/icons/search.svg",
+            "img/icons/switch.svg",
+            "img/icons/arrow.svg",
+            "img/icons/expand.svg",
+            "img/icons/minimize.svg",
+            "img/icons/goto.svg",
         ])))
 })
 
