@@ -35,6 +35,20 @@ document.querySelector(".openSearchModal").addEventListener("click", (e) => {
 
 document.querySelector(".search").addEventListener("click", findOnPage)
 
+document.querySelector("#pageSearch").addEventListener("input", (e) => {
+    const { parentElement, value } = e.target
+    value ? parentElement.dataset.empty = "false" : parentElement.dataset.empty = "true"
+})
+
+document.querySelector(".clear").addEventListener("click", () => {
+    clearFoundResults()
+    clearElement(document.querySelector(".results"))
+    document.querySelector("#pageSearch").value = ""
+    document.querySelector("#pageSearch").focus()
+    document.querySelector(".searchModal .inputContainer").dataset.empty = "true"
+    document.querySelector(".openSearchModal").dataset.results = "false"
+})
+
 populatePage()
 
 function populatePage() {
@@ -109,6 +123,8 @@ function makeId(string) {
 // })
 
 function searchPage(searchString) {
+
+    // TODO: förbättra!
     if (!searchString) return false
     const searchStringRegex = new RegExp(searchString.trim(), "i")
     const allArticles = [...document.querySelectorAll("article")]
@@ -117,6 +133,22 @@ function searchPage(searchString) {
     for (let article of allArticles) {
         if (searchStringRegex.test(article.textContent)) {
             foundMatches.push(article)
+            for (let child of article.children) {
+                if (searchStringRegex.test(child.textContent)) {
+                    const originalContent = child.textContent.split(searchStringRegex)
+                    child.textContent = ""
+                    const childFragment = document.createDocumentFragment()
+                    for (let content of originalContent) {
+                        childFragment.append(content)
+                        if (originalContent.indexOf(content) !== originalContent.length - 1) {
+                            const resultMarking = createQuickElement("span", "foundResult")
+                            resultMarking.textContent = searchString
+                            childFragment.append(resultMarking)
+                        }
+                    }
+                    child.append(childFragment)
+                }
+            }
         }
     }
 
@@ -165,7 +197,12 @@ function handleSearchResults(results) {
     resultsElement.append(resultsFragment)
 }
 
+function clearFoundResults() {
+    document.querySelectorAll(".foundResult").forEach(element => element.classList.remove("foundResult"))
+}
+
 function findOnPage() {
+    clearFoundResults()
     const searchString = document.querySelector("#pageSearch").value
     const foundMatches = searchPage(searchString)
     handleSearchResults(foundMatches)
@@ -187,7 +224,6 @@ function createIcon(type) {
             break
 
     }
-
 
     svg.append(path)
     return svg
