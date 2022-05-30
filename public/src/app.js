@@ -3,7 +3,6 @@ if ("serviceWorker" in navigator) {
         .register("sw.js")
 }
 
-
 document.querySelectorAll("nav span").forEach(element => element.addEventListener("click", flipAriaExpanded))
 document.querySelectorAll("#Uppdateringar_i_anvandarstodet span").forEach(element => element.addEventListener("click", flipAriaExpanded))
 
@@ -13,8 +12,21 @@ document.querySelectorAll("nav a").forEach(element => {
     element.addEventListener("click", (e) => {
         e.preventDefault()
         closeAriaParents(element)
-        document.querySelector(`${element.href}`).scrollIntoView()
+        document.querySelector(`${element.href.split("html").pop()}`).scrollIntoView()
     })
+})
+
+document.querySelectorAll(".previous, .next").forEach(element => element.addEventListener("click", e => {
+    e.preventDefault()
+    const targetElement = document.getElementById(e.target.href.split("#").pop())
+    targetElement.scrollIntoView()
+    updateShortcuts(targetElement)
+}))
+document.querySelector(".start").addEventListener("click", e => {
+    e.preventDefault()
+    const targetElement = document.querySelector("main")
+    targetElement.scrollIntoView()
+    updateShortcuts(targetElement)
 })
 
 document.querySelector(".modal .close, .modal.active").addEventListener("click", (event) => {
@@ -38,6 +50,10 @@ document.querySelector(".search").addEventListener("click", findOnPage)
 document.querySelector("#pageSearch").addEventListener("input", (e) => {
     const { parentElement, value } = e.target
     value ? parentElement.dataset.empty = "false" : parentElement.dataset.empty = "true"
+})
+
+document.querySelector("#pageSearch").addEventListener("keyup", (e) => {
+    if (e.code === "Enter") findOnPage()
 })
 
 document.querySelector(".clear").addEventListener("click", () => {
@@ -94,6 +110,7 @@ function closeAriaParents(element) {
 
 
 function clearElement(element) {
+    element.textContent = ""
     const children = [...element.children]
     for (let child of children) {
         child.remove()
@@ -117,11 +134,6 @@ function makeId(string) {
     return string.replace(/\W/gi, "_")
 }
 
-// document.querySelector(".modal").addEventListener("mousedown", (event) => {
-//     // Funktion för att kunna "röra sig" över bilden - liknande på telefon
-//     console.dir(event)
-// })
-
 function searchPage(searchString) {
 
     // TODO: förbättra!
@@ -131,6 +143,7 @@ function searchPage(searchString) {
     const foundMatches = []
 
     for (let article of allArticles) {
+        if (!article.id || article.id === "Uppdateringar_i_anvandarstodet" || article.id === "about") continue
         if (searchStringRegex.test(article.textContent)) {
             foundMatches.push(article)
             for (let child of article.children) {
@@ -201,6 +214,20 @@ function clearFoundResults() {
     document.querySelectorAll(".foundResult").forEach(element => element.classList.remove("foundResult"))
 }
 
+function updateShortcuts(target) {
+    // TODO: Uppdatera så next/prev anpassas utifrån sökresultat
+    let { previousElementSibling, nextElementSibling } = target
+
+    if (!previousElementSibling) previousElementSibling = { id: "" }
+    if (!nextElementSibling) nextElementSibling = { id: "" }
+    document.querySelector(".previous").href = `#${previousElementSibling.id}`
+    document.querySelector(".next").href = `#${nextElementSibling.id}`
+
+    // updateLinks
+    document.querySelectorAll(`.currentArticle`).forEach(element => element.classList.remove("currentArticle"))
+    document.querySelectorAll(`a[href="#${target.id}"]:not(footer)`).forEach(element => element.classList.add("currentArticle"))
+}
+
 function findOnPage() {
     clearFoundResults()
     const searchString = document.querySelector("#pageSearch").value
@@ -208,23 +235,14 @@ function findOnPage() {
     handleSearchResults(foundMatches)
 }
 
-function createIcon(type) {
-    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
-    svg.classList.add(type)
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path")
-
-    switch (type) {
-        case "caret":
-            svg.setAttribute("viewbox", "0 0 106 59")
-            svg.setAttribute("fill", "none")
-
-            path.setAttribute("d", "M3 56L52.5084 6L103 56")
-            path.setAttribute("stroke", "black")
-            path.setAttribute("stroke-width", "8")
-            break
-
-    }
-
-    svg.append(path)
-    return svg
+function intersectionHandler(entries, observer) {
+    if (entries[0].isIntersecting) updateShortcuts(entries[0].target)
 }
+
+const intersectionObserverOptions = {
+    rootMargin: getComputedStyle(document.querySelector("header")).getPropertyValue("height"),
+    threshold: 1
+}
+
+const observer = new IntersectionObserver(intersectionHandler, intersectionObserverOptions)
+document.querySelectorAll("article").forEach(element => observer.observe(element))

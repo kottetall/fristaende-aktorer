@@ -3,7 +3,6 @@
 self.addEventListener("install", (e) => {
     e.waitUntil(caches.open("fristaende-aktorer")
         .then((cache) => cache.addAll([
-            "/",
             "index.html",
             "src/style.css",
             "src/instructions.js",
@@ -18,6 +17,7 @@ self.addEventListener("install", (e) => {
             "img/icons/expand.svg",
             "img/icons/minimize.svg",
             "img/icons/goto.svg",
+            "img/icons/trash.svg"
         ])))
 })
 

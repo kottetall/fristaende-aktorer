@@ -1,8 +1,4 @@
 const instructions = [
-    // {
-    //     "id": "Uppdateringar_i_anvandarstodet",
-    //     "sectionTitle": "Uppdateringar i användarstödet"
-    // },
     {
         "sectionTitle": "Bjuda in användare och lägga till behörigheter",
         "pages": [
@@ -827,7 +823,7 @@ const instructions = [
         ]
     },
     {
-        "sectionTitle": "Skapa och skicka rapporter",
+        "sectionTitle": "Skapa och skicka rapporter för period 1 och period 2",
         "pages": [
             {
                 "id": "Skapa_gemensam_planering",
@@ -1345,7 +1341,7 @@ const instructions = [
                 ]
             },
             {
-                "id": "Välj_aktiviteter",
+                "id": "Valj_aktiviteter",
                 "title": "Välj aktiviteter",
                 "pagecontent": [
                     {
@@ -1475,7 +1471,7 @@ const instructions = [
                 ]
             },
             {
-                "id": "Signal_om_arbete-eller_studier",
+                "id": "Signal_om_arbete_eller_studier",
                 "title": "Signal om arbete eller studier",
                 "pagecontent": [
                     {
@@ -1499,6 +1495,11 @@ const instructions = [
                         "content": "Du kan inte skicka in 'Signal om arbete eller studier' om du redan har skickat in en resultatredovisning för hantering eller efter att en resultatredovisning har blivit godkänd av Arbetsförmedlingen."
                     },
                     {
+                        "type": "paragraph",
+                        "specialFormat": "warning",
+                        "content": "För tillfällig rutin för ny period där nytt beslut togs behöver du skicka in Signal om arbete eller Studier på nytt i period 2 även om du redan skickat in för period 1. Från 2022-04-29 när beslut tas på 'rätt sätt' behöver du endast skicka in en signal om arbete eller studier"
+                    },
+                    {
                         "type": "image",
                         "specialFormat": "",
                         "content": "signal_om_arbete_eller_studier"
@@ -1517,7 +1518,7 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Kontrollera att informationen stämmer och klicka sedan på knappen 'Skicka in' för att skicka in resultatredovisningen till Arbetsförmedlingen."
+                        "content": "Kontrollera att informationen stämmer och klicka sedan på knappen 'Skicka in' för att skicka in signal om arbete eller studier till Arbetsförmedlingen."
                     },
                     {
                         "type": "image",
@@ -1539,6 +1540,11 @@ const instructions = [
                         "type": "paragraph",
                         "specialFormat": "",
                         "content": "Ange var deltagaren ska studera eller arbeta och fyll i startdatum. Finns ett slutdatum fyller du i även det, annars lämnar du den rutan tom."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Fyll i organisationsnummer för arbetsgivaren, om arbetsgivaren är en enskild firma (personnummer som organisationsnummer) eller har utländskt organisationsnummer, fyll i 10 nollor."
                     },
                     {
                         "type": "paragraph",
@@ -1605,7 +1611,7 @@ const instructions = [
                 ]
             },
             {
-                "id": "Slutredovisning_-_Huvudsaklig_syssels._arbete",
+                "id": "Slutredovisning_Huvudsaklig_syssels_arbete",
                 "title": "Slutredovisning - Huvudsaklig sysselsättning arbete",
                 "pagecontent": [
                     {
@@ -1636,7 +1642,7 @@ const instructions = [
                 ]
             },
             {
-                "id": "Slutredovisning_-_Huvudsaklig_syssels._utbildning",
+                "id": "Slutredovisning_Huvudsaklig_syssels_utbildning",
                 "title": "Slutredovisning - Huvudsaklig sysselsättning utbildning",
                 "pagecontent": [
                     {
@@ -1667,7 +1673,7 @@ const instructions = [
                 ]
             },
             {
-                "id": "Slutredovisning_-_Huvudsaklig_syssels._Arbetssokande",
+                "id": "Slutredovisning_Huvudsaklig_syssels_Arbetssokande",
                 "title": "Slutredovisning - Huvudsaklig sysselsättning arbetssökande",
                 "pagecontent": [
                     {
@@ -1693,7 +1699,7 @@ const instructions = [
                 ]
             },
             {
-                "id": "Slutredovisning_-_Huvudsaklig_syssels._Annat",
+                "id": "Slutredovisning_Huvudsaklig_syssels_Annat",
                 "title": "Slutredovisning - Huvudsaklig sysselsättning annat",
                 "pagecontent": [
                     {
@@ -1750,7 +1756,7 @@ const instructions = [
                 ]
             },
             {
-                "id": "Se_status_för_rapporter_och_redovisningar",
+                "id": "Se_status_for_rapporter_och_redovisningar",
                 "title": "Se status för rapporter och redovisningar",
                 "pagecontent": [
                     {
@@ -1854,22 +1860,22 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Gå in under 'Exporter' i det gråa fältet till vänster. Välj sedan vilken tidsperiod du vill exportera information från. Tiden avser de deltagare som kommit in i 'Mina sidor för fristående aktörer' under den angivna perioden."
+                        "content": "Gå in under ”Exporter”. Välj sedan vilken tidsperiod du vill exportera information från. Exporten kommer innehålla de deltagare som fått beslut om period 1 eller 2 under vald tidsperiod. Du kan välja att exportera deltagare med eller utan tilldelad handledare."
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Om du vill få med deltagarinformation som tidigare exporterats så bockar du för 'Inkludera redan exporterade deltagare'. Det gäller alla exporter som har gjorts för den utförande verksamhet och adress du är inloggad på."
+                        "content": "Om du vill få med deltagarinformation som tidigare exporterats så bockar du i ”Inkludera redan exporterade deltagare”. Det gäller alla exporter som har gjorts för den utförande verksamhet och adress du är inloggad på."
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Om du vill exportera till Excel så bockar du för 'Exportera i Excelformat'. Om du inte väljer att exportera i Excelformat så får du informationen i DSV."
+                        "content": "Om du vill exportera till Excel så bockar du för ”Exportera i Excelformat”. Om du inte väljer att exportera i Excelformat så får du informationen i DSV"
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Klicka på 'Exportera deltagare' för att starta exporten."
+                        "content": "Klicka på ”Exportera deltagare” för att starta exporten."
                     },
                     {
                         "type": "paragraph",
@@ -1890,12 +1896,17 @@ const instructions = [
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Här ser du ett exempel på hur det ser ut i Excel när du har exporterat deltagarinformation från 'Mina sidor för fristående aktörer."
+                        "content": "Här ser du ett exempel på hur det ser ut i Excel när du har exporterat deltagarinformation från ”Mina sidor för fristående aktörer."
                     },
                     {
                         "type": "paragraph",
                         "specialFormat": "",
-                        "content": "Under rubriken 'Sparkod' hittar du information om vilken nivå som gäller för deltagaren. Den sista siffran visar om det är nivå A, B eller C (1 = Nivå A, 2 = Nivå B och 3 = Nivå C)."
+                        "content": "Under rubriken ”Sparkod” hittar du information om vilken nivå som gäller för deltagaren. Den sista siffran visar om det är nivå A, B eller C (1 = Nivå A, 2 = Nivå B och 3 = Nivå C)."
+                    },
+                    {
+                        "type": "paragraph",
+                        "specialFormat": "",
+                        "content": "Här kan du hitta information om deltagaren fått beslut om period 2 under rubriken ”Förlängning”"
                     },
                     {
                         "type": "image",

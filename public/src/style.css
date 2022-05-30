@@ -182,14 +182,14 @@ nav {
 nav .close {
     position: sticky;
     --button-padding: 15px;
-    top: 0;
+    top: 1em;
     left: 100%;
     padding: var(--button-padding);
     z-index: 99;
     background-image: url(./../img/icons/close.svg);
     background-position: center;
-    background-size: cover;
-    background-color: var(--accent-bg);
+    background-size: 80%;
+    background-color: rgb(255 255 255 / .8);
     border: none;
     margin-top: 1em;
     margin-right: 1em;
@@ -239,7 +239,7 @@ nav li a {
 
 nav li span {
     --icon-size: 1em;
-    --icon-offset: calc(var(--icon-size) + 1em);
+    --icon-offset: calc(var(--icon-size) + 2em);
     padding-right: var(--icon-offset);
 }
 
@@ -372,11 +372,11 @@ footer a[href="#"]:not(.start)::after {
     content: none;
 }
 
-/* FIXME: TILLFÄLLIG */
-
-.previous,
-.next {
-    background-image: none !important;
+.previous[href=""],
+.previous[href="#"],
+.next[href=""],
+.next[href="#"] {
+    display: none;
 }
 
 .previous {
@@ -404,6 +404,10 @@ footer a[href="#"]:not(.start)::after {
     padding: 1em;
 }
 
+
+.openSearchModal:hover {
+    cursor: pointer;
+}
 
 .openSearchModal {
     grid-area: search;
@@ -493,6 +497,14 @@ footer a[href="#"]:not(.start)::after {
     padding-right: 3em;
 }
 
+#Uppdateringar_i_anvandarstodet li {
+    margin-left: 1em;
+}
+
+.currentArticle {
+    border-left: 3px solid orange;
+}
+
 .modal {
     display: none;
 }
@@ -562,6 +574,10 @@ footer a[href="#"]:not(.start)::after {
     border-color: white;
 }
 
+.searchModal button:hover {
+    cursor: pointer;
+}
+
 .searchModal .inputContainer[data-empty="true"] .clear {
     transform: scale(0, 1);
 }
@@ -571,8 +587,9 @@ footer a[href="#"]:not(.start)::after {
 }
 
 .searchModal .inputContainer .clear {
-    background-image: url(./../img/icons/close.svg);
-    background-color: white;
+    background-image: url(./../img/icons/trash.svg);
+    background-color: black;
+    filter: invert(1);
     transition: transform 50ms ease-in;
     transform-origin: right;
 }
@@ -690,7 +707,6 @@ footer a[href="#"]:not(.start)::after {
         gap: 0.5em;
         margin: 0 auto;
         border-radius: 10px;
-        padding: 2em;
         align-content: center;
         max-width: 900px;
     }

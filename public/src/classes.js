@@ -35,7 +35,9 @@ class Page {
         aLink.addEventListener("click", (e) => {
             e.preventDefault()
             closeAriaParents(aLink)
-            document.getElementById(`${this.id}`).scrollIntoView()
+            const targetElement = document.getElementById(this.id)
+            targetElement.scrollIntoView()
+            updateShortcuts(targetElement)
         })
 
         li.append(aLink)
