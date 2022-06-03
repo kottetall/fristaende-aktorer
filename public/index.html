@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Sidan är ett komplement till de användarstöd som Arbetsförmedlingen har för leverantörer. Förhoppningen är att kunna erbjuda ett modernare och mer användarvänligt alternativ, än vad som finns tillgängligt idag.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#8a2be2" />
     <link rel="manifest" href="manifest.webmanifest">
@@ -20,9 +21,7 @@
 <body>
     <header>
         <div class="title">
-            <a href="#">
-                <h1>MSFA</h1>
-            </a>
+            <h1>MSFA</h1>
             <p>Mina sidor för fristående aktörer</p>
         </div>
         <span class="switch">KA Webb</span>
@@ -30,7 +29,7 @@
         <nav>
             <span>Innehållsförteckning</span>
             <ul aria-expanded="false">
-                <button class="close" aria-label="Stäng navigeringsmenyn"></button>
+                <button class="close" aria-label="Stäng navigeringsmenyn" type="button"></button>
                 <li>
                     <a href="#Uppdateringar_i_anvandarstodet">Uppdateringar i användarstödet</a>
                 </li>
@@ -44,62 +43,81 @@
                 <p class="warning">fristaende-aktorer.se drivs inte av Arbetsförmedlingen och du ansvarar själv för att
                     säkerställa att all information är korrekt</p>
 
-                <h3>Bakgrund</h3>
-                <p>Denna sida är en tillfällig lösning, skapad som ett komplement till de användarstöd som redan finns
-                    tillgängliga på
-                    <a href="https://arbetsformedlingen.se/om-oss/for-leverantorer/webbstod"
-                        target="_blank">Arbetsförmedlingens hemsida</a>
-                </p>
-                <p>All information är sådant som finns tillgängligt på <a
-                        href="https://arbetsformedlingen.se">arbetsformedlingen.se</a> och är i möjligaste mån
-                    oredigerad.
-                    Ibland kan text och/eller bild ha modifierats från originalet. Syftet har då varit att exempelvis
-                    rätta stavfel, felaktiga innehållsförteckningar, beskära bilder etc.
-                </p>
-                <p>Även om målet är att informationen ska vara identisk med den som erbjuds av Arbetsförmedlingen, är
-                    det i slutändan du själv som ytterst ansvarar för att det du gör är korrekt. fristaende-aktorer.se
-                    tar inget ansvar för eventuella konsekvenser som orsakats av felaktig eller gammal information.</p>
-                <p>
-                <h3>Grundförutsättningar</h3>
-                <ul>
-                    Målet är att tillhandahålla:
-                    <li><b>En plats för alla användarstöd</b> - <i>Du ska inte behöva lägga tid på att hitta stödet</i>
-                    </li>
-                    <li><b>En möjlighet att läsa användarstöden på mobilen, plattan eller datorn</b> - <i>Du ska inte
-                            behöva sitta
-                            vid datorn för att snabbt och smidig kunna hitta svar.</i></li>
-                    <li><b>En enhetlig struktur för alla användarstöd</b> - <i>Du ska inte behöva "lära dig" olika stöd
-                            för olika
-                            tjänster</i></li>
-                </ul>
-
-                <ul>
-                    Sidan kommer <u>inte</u>:
-                    <li>Vara vinstdrivande</li>
-                    <li>Innehålla annonsering</li>
-                    <li>Genomföra felsökning av KA eller MSFA</li>
-                    <li>Ta emot felanmälningar av KA eller MSFA</li>
-                    <li>Genomföra utbildningar av KA eller MSFA</li>
-                </ul>
-                </p>
-                <h3>Om mig</h3>
-                <p>
-                    Jag som driver sidan arbetar i dagsläget hos Servicedesk på Arbetsförmedlingen, inriktat mot
-                    arbetsförmedlares och leverantörers systemstöd.
-                </p>
-                <p>
-                    Då sidan potentiellt räknas som "bisyssla" innebär det vissa krav och begränsningar på
-                    innehåll och omfattning.
-                    Det innebär även att oannonserade förändringar kan komma att ske
-                    om oklarheter eller nya bedömningar blir aktuella.
-                </p>
-                <p class="signatur">
-                    / Alexander
-                </p>
-
+                <div class="expandable" aria-expanded="false">
+                    <h3><label>Bakgrund<button class="expand" type="button"
+                                aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
+                    <p>Denna sida är en tillfällig lösning, skapad som ett komplement till de användarstöd som redan
+                        finns
+                        tillgängliga på
+                        <a href="https://arbetsformedlingen.se/om-oss/for-leverantorer/webbstod"
+                            target="_blank">Arbetsförmedlingens hemsida</a>
+                    </p>
+                    <p>All information är sådant som finns tillgängligt på <a
+                            href="https://arbetsformedlingen.se">arbetsformedlingen.se</a> och är i möjligaste mån
+                        oredigerad.
+                        Ibland kan text och/eller bild ha modifierats från originalet. Syftet har då varit att
+                        exempelvis
+                        rätta stavfel, felaktiga innehållsförteckningar, beskära bilder etc.
+                    </p>
+                    <p>Även om målet är att informationen ska vara identisk med den som erbjuds av Arbetsförmedlingen,
+                        är
+                        det i slutändan du själv som ytterst ansvarar för att det du gör är korrekt.
+                        fristaende-aktorer.se
+                        tar inget ansvar för eventuella konsekvenser som orsakats av felaktig eller gammal information.
+                    </p>
+                    <p>
+                </div>
+                <div class="expandable" aria-expanded="false">
+                    <h3><label>Grundförutsättningar<button class="expand" type="button"
+                                aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
+                    <div>
+                        <h4>Målet är att tillhandahålla:</h4>
+                        <ul>
+                            <li><b>En plats för alla användarstöd</b> - <i>Du ska inte behöva lägga tid på att hitta
+                                    stödet</i>
+                            </li>
+                            <li><b>En möjlighet att läsa användarstöden på mobilen, plattan eller datorn</b> - <i>Du ska
+                                    inte
+                                    behöva sitta
+                                    vid datorn för att snabbt och smidig kunna hitta svar.</i></li>
+                            <li><b>En enhetlig struktur för alla användarstöd</b> - <i>Du ska inte behöva "lära dig"
+                                    olika
+                                    stöd
+                                    för olika
+                                    tjänster</i></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4> Sidan kommer <u>inte</u>:</h4>
+                        <ul>
+                            <li>Vara vinstdrivande</li>
+                            <li>Innehålla annonsering</li>
+                            <li>Genomföra felsökning av KA eller MSFA</li>
+                            <li>Ta emot felanmälningar av KA eller MSFA</li>
+                            <li>Genomföra utbildningar av KA eller MSFA</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="expandable" aria-expanded="false">
+                    <h3><label>Om mig<button class="expand" type="button"
+                                aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
+                    <p>
+                        Jag som driver sidan arbetar i dagsläget hos Servicedesk på Arbetsförmedlingen, inriktat mot
+                        arbetsförmedlares och leverantörers systemstöd.
+                    </p>
+                    <p>
+                        Då sidan potentiellt räknas som "bisyssla" innebär det vissa krav och begränsningar på
+                        innehåll och omfattning.
+                        Det innebär även att oannonserade förändringar kan komma att ske
+                        om oklarheter eller nya bedömningar blir aktuella.
+                    </p>
+                    <p class="signatur">
+                        / Alexander
+                    </p>
+                </div>
             </article>
         </section>
-
         <section>
             <article id="Uppdateringar_i_anvandarstodet">
                 <h2>Uppdateringar i användarstödet</h2>
@@ -227,7 +245,7 @@
     </main>
 
     <div class="modal">
-        <button class="close" aria-label="Stäng bildinzoomning"></button>
+        <button class="close" aria-label="Stäng bildinzoomning" type="button"></button>
         <img src="" alt="">
     </div>
 
@@ -236,8 +254,8 @@
             <label for="pageSearch">sök på sidan</label>
             <div class="inputContainer" data-empty="true">
                 <input type="text" name="pageSearch" id="pageSearch">
-                <button class="clear" aria-label="rensa sökresultat"></button>
-                <button class="search" aria-label="starta sökning"></button>
+                <button class="clear" aria-label="rensa sökresultat" type="button"></button>
+                <button class="search" aria-label="starta sökning" type="button"></button>
             </div>
         </div>
         <ul class="results"></ul>
@@ -247,8 +265,8 @@
         <a class="previous" href="#" aria-label="Gå till föregående del"></a>
         <a class="start" href="#" aria-label="Gå till början av sidan"></a>
         <a class="next" href="#" aria-label="Gå till nästa del"></a>
-        <button class="openSearchModal" data-searchopen="false" data-results="false"
-            aria-label="Öppna sökruta"></button>
+        <button class="openSearchModal" data-searchopen="false" data-results="false" aria-label="Öppna sökruta"
+            type="button"></button>
     </footer>
 </body>
 

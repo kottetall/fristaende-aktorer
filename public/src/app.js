@@ -4,7 +4,7 @@ if ("serviceWorker" in navigator) {
 }
 
 document.querySelectorAll("nav span").forEach(element => element.addEventListener("click", flipAriaExpanded))
-document.querySelectorAll("#Uppdateringar_i_anvandarstodet span").forEach(element => element.addEventListener("click", flipAriaExpanded))
+// document.querySelectorAll("#Uppdateringar_i_anvandarstodet span").forEach(element => element.addEventListener("click", flipAriaExpanded))
 
 document.querySelector(".close").addEventListener("click", flipAriaExpanded)
 
@@ -65,6 +65,8 @@ document.querySelector(".clear").addEventListener("click", () => {
     document.querySelector(".openSearchModal").dataset.results = "false"
 })
 
+document.querySelectorAll(".expandable .expand").forEach(element => element.addEventListener("click", flipAriaExpanded))
+
 populatePage()
 
 function populatePage() {
@@ -90,11 +92,9 @@ function populatePage() {
 
 function flipAriaExpanded() {
     let ariaElement = null
-
     if (this.ariaExpanded) ariaElement = this
     else if (this.nextElementSibling && this.nextElementSibling.ariaExpanded) ariaElement = this.nextElementSibling
     else ariaElement = this.closest("[aria-expanded]")
-
     let newState = "false"
     if (ariaElement.ariaExpanded === newState) newState = "true"
 
