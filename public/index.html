@@ -12,7 +12,8 @@
     <link rel="shortcut icon" href="./img/icons/logo48.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="./img/icons/logo192.png">
     <link rel="stylesheet" href="src/style.css">
-    <script src="src/instructions.js" defer></script>
+    <script src="src/instructions_msfa.js" defer></script>
+    <script src="src/instructions_ka.js" defer></script>
     <script src="src/classes.js" defer></script>
     <script src="src/app.js" defer></script>
     <title>Fristaende-Aktorer.se</title>
@@ -24,10 +25,28 @@
             <h1>MSFA</h1>
             <p>Mina sidor för fristående aktörer</p>
         </div>
-        <span class="switch">KA Webb</span>
+        <div class="switch expandable" aria-expanded="false">
+            <label class="">Navigering <button class="expand" aria-label="Öppna eller stäng val av system och tjänst"
+                    type="button"></button></label>
+            <ul class="system">
+                <li class="expandable" aria-expanded="false">
+                    <label>Mina Sidor för Fristående Aktörer(MSFA) <button class="expand"></button></label>
+                    <ul class="service">
+                        <li>Rusta Matcha (KROM)</li>
+                        <li class="inactive">Karriärvägledning (KVL)</li>
+                    </ul>
+                </li>
+                <li class="expandable" aria-expanded="false">
+                    <label class="inactive">Kompletterande Aktörer(KA) <button class="expand"></button></label>
+                    <ul class="service">
+                    </ul>
+                </li>
+            </ul>
+        </div>
 
-        <nav>
-            <span>Innehållsförteckning</span>
+        <nav class="expandable" aria-expanded="false">
+            <label class="">Innehållsförteckning <button class="expand" aria-label="Öppna navigeringsmenyn"
+                    type="button"></button></label>
             <ul aria-expanded="false">
                 <button class="close" aria-label="Stäng navigeringsmenyn" type="button"></button>
                 <li>
@@ -97,6 +116,41 @@
                             <li>Genomföra utbildningar av KA eller MSFA</li>
                         </ul>
                         </p>
+                    </div>
+                </div>
+                <div class="expandable" aria-expanded="false">
+                    <h3><label>Kommande<button class="expand" type="button"
+                                aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
+                    <div>
+                        <h4>Önskan är att i framtiden kunna lägga till följande funktionalitet:</h4>
+                        <ul>
+                            <li><b>Vanliga problem/felmeddelanden</b> - <i>Det finns vissa problem som är vanligare än
+                                    andra och där lösningen många gånger är relativt enkel. Min önskan är att ha en del
+                                    på sidan där man exempelvis kan skriva in ett felmeddelande och få fram de
+                                    vanligaste orsakerna. Men även vilka steg man själv kan ta innan en eventuell
+                                    felanmälan till Arbetsförmedlingen, för att förhoppningsvis kunna lösa felet själv.
+                                </i>
+                            </li>
+                            <li><b>API</b> - <i>Möjligheten att själv kunna bestämma i vilket format du vill få
+                                    användarstöden och hur du själv vill visa dem för att passa just din organisation
+                                    och dina medarbetare.</i></li>
+                            <li><b>Verktyg</b> - <i>Möjligheten att bistå med verktyg som behövs för att underlätta ert
+                                    dagliga arbete, men som inte finns implementerade direkt i systemstöden. Exempel på
+                                    detta vore en tidslinje över besluten - tidsgränser och viktiga datum baserat på
+                                    beslutsstarten. Men även förklarningar av diverse förkortningar som används (Finns
+                                    idag som ett av mina separata projekt - <a href="https://myndighetssvenska.com"
+                                        target="_blank"><u>Myndighetssvenska.com</u></a> ). Jag
+                                    skulle
+                                    även vilja komplettera detta med förklaringar av diverse begrepp, utifrån avtalen ni
+                                    skrivit med Arbetsförmedlingen - när har man uppnått ett "resultat", vilka praktiska
+                                    uppgifter förväntas man hjälpa deltagaren med och vilka är olämpliga.</i></li>
+                            <li><b>Övrigt</b> - <i>Detta är bara ett fåtal exempel på de planer som kan komma och
+                                    långsiktigt är målet att även kunna ta emot feedback och önskemål från
+                                    användare.</i></li>
+                        </ul>
+                        <p class="warning">Alla dessa planer på förutsätter godkännande. De kan komma att strykas om
+                            Arbetsförmedlingen gör bedömningen att de vore olämpliga/otillåtna alternativt om
+                            funktionaliteten läggs till i systemstöden.</p>
                     </div>
                 </div>
                 <div class="expandable" aria-expanded="false">

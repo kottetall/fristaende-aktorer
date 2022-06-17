@@ -6,7 +6,9 @@ if ("serviceWorker" in navigator) {
 document.querySelectorAll("nav span").forEach(element => element.addEventListener("click", flipAriaExpanded))
 // document.querySelectorAll("#Uppdateringar_i_anvandarstodet span").forEach(element => element.addEventListener("click", flipAriaExpanded))
 
-document.querySelector(".close").addEventListener("click", flipAriaExpanded)
+document.querySelector(".close").addEventListener("click", () => {
+    document.querySelector("nav").ariaExpanded = "false"
+})
 
 document.querySelectorAll("nav a").forEach(element => {
     element.addEventListener("click", (e) => {
@@ -74,7 +76,7 @@ function populatePage() {
     const navElement = document.querySelector("nav>ul")
 
     const allSections = []
-    for (let instruction of instructions) {
+    for (let instruction of instructions_msfa) {
         allSections.push(new Section(instruction))
     }
 

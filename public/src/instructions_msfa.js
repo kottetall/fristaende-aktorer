@@ -1,4 +1,4 @@
-const instructions = [
+const instructions_msfa = [
     {
         "sectionTitle": "Bjuda in användare och lägga till behörigheter",
         "pages": [

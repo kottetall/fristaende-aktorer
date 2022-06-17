@@ -151,17 +151,35 @@ class Section {
     }
 
     createNavigationElement() {
-        const li = createQuickElement("li")
-        const span = createQuickElement("span", "expand")
-        span.textContent = this.title
-        span.addEventListener("click", flipAriaExpanded)
+        const li = createQuickElement("li", "expandable", { "aria-expanded": "false" })
+        const label = createQuickElement("label")
+        label.textContent = this.title
 
-        const ul = createQuickElement("ul", false, { "aria-expanded": false })
+        const button = createQuickElement("button", "expand", { "type": "button", "aria-label": `Öppnar eller minimerar undermeny för sektionen ${this.title}` })
+        button.addEventListener("click", flipAriaExpanded)
+        label.append(button)
+
+
+
+        // const ul = createQuickElement("ul", false, { "aria-expanded": false })
+        const ul = createQuickElement("ul")
         for (let page of this.pages) {
             ul.append(page.navLink)
         }
 
-        li.append(span, ul)
+        li.append(label, ul)
         return li
+        // const li = createQuickElement("li")
+        // const span = createQuickElement("span", "expand")
+        // span.textContent = this.title
+        // span.addEventListener("click", flipAriaExpanded)
+
+        // const ul = createQuickElement("ul", false, { "aria-expanded": false })
+        // for (let page of this.pages) {
+        //     ul.append(page.navLink)
+        // }
+
+        // li.append(span, ul)
+        // return li
     }
 }

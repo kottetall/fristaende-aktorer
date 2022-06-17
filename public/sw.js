@@ -5,7 +5,8 @@ self.addEventListener("install", (e) => {
         .then((cache) => cache.addAll([
             "index.html",
             "src/style.css",
-            "src/instructions.js",
+            "src/instructions_msfa.js",
+            "src/instructions_ka.js",
             "src/classes.js",
             "src/app.js",
             "img/icons/close.svg",
