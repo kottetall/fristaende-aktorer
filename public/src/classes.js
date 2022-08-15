@@ -16,12 +16,28 @@ class Page {
         article.append(h3)
         for (let part of this.parts) {
             const { type, content, specialFormat } = part
+
             let element
-            if (type === "paragraph") element = this.createParagraphElement(content, specialFormat)
-            if (type === "image") element = this.createPictureElement(content, specialFormat)
-            if (type === "h4") element = this.createH4Element(content, specialFormat)
-            if (type === "listitem") element = this.createListItemElement(content, specialFormat)
-            article.append(element)
+            switch (type) {
+                case "paragraph":
+                    element = this.createParagraphElement(content, specialFormat)
+                    break
+                case "image":
+                    element = this.createPictureElement(content, specialFormat)
+                    break
+                case "h4":
+                    element = this.createH4Element(content, specialFormat)
+                    break
+                case "h5":
+                    element = this.createH5Element(content, specialFormat)
+                    break
+                case "listitem":
+                case "li":
+                    element = this.createListItemElement(content, specialFormat)
+                    break
+            }
+
+            if (element !== undefined) article.append(element)
         }
         return article
     }
@@ -45,13 +61,28 @@ class Page {
         return li
     }
 
-    createParagraphElement(content, specialFormat) {
+    createParagraphElement(content, specialFormat = "") {
         const element = createQuickElement("p", `${specialFormat}`)
         element.textContent = content
         return element
     }
 
-    createPictureElement(content, specialFormat) {
+    createPictureElement(content, specialFormat = "") {
+
+        const tempBlacklist = [
+            "u10",
+            "u13",
+            "u33",
+            "u56",
+            "u187",
+            "u204",
+            "u248",
+            "u277",
+            "u319"
+        ]
+
+        if (tempBlacklist.includes(content)) return undefined
+
         const element = createQuickElement("picture", `${specialFormat}`)
         const srcsetWebp = createQuickElement("source", null, {
             "width": `${window.innerWidth}`,
@@ -67,7 +98,6 @@ class Page {
             "src": `./img/instructions/${content}.png`,
             "alt": `Bild som beskriver avsnittet ${this.title}`,
             "width": `${window.innerWidth}`,
-            "loading": "lazy"
         })
         element.addEventListener("click", () => {
             const modal = document.querySelector(".modal")
@@ -103,6 +133,11 @@ class Page {
         const h4 = createQuickElement("h4")
         h4.textContent = content
         return h4
+    }
+    createH5Element(content, specialFormat) {
+        const h5 = createQuickElement("h5")
+        h5.textContent = content
+        return h5
     }
 
     createListItemElement(content, specialFormat) {
@@ -159,9 +194,6 @@ class Section {
         button.addEventListener("click", flipAriaExpanded)
         label.append(button)
 
-
-
-        // const ul = createQuickElement("ul", false, { "aria-expanded": false })
         const ul = createQuickElement("ul")
         for (let page of this.pages) {
             ul.append(page.navLink)
@@ -169,17 +201,51 @@ class Section {
 
         li.append(label, ul)
         return li
-        // const li = createQuickElement("li")
-        // const span = createQuickElement("span", "expand")
-        // span.textContent = this.title
-        // span.addEventListener("click", flipAriaExpanded)
+    }
+}
 
-        // const ul = createQuickElement("ul", false, { "aria-expanded": false })
-        // for (let page of this.pages) {
-        //     ul.append(page.navLink)
-        // }
+class FAQ {
+    constructor(faqHeader) {
+        this.title = faqHeader.title
+        this.questions = faqHeader.questions
+        this.questionContainer = createQuickElement("div", "expandable", { "aria-expanded": "false" })
+        this.createHeader()
+    }
 
-        // li.append(span, ul)
-        // return li
+    createHeader() {
+        const header = createQuickElement("h3")
+        const label = createQuickElement("label")
+        label.textContent = this.title
+
+        const button = createQuickElement("button", "expand", { "type": "button", "aria-label": `Öppnar eller minimerar undermeny för sektionen ${this.title}` })
+        button.addEventListener("click", flipAriaExpanded)
+        label.append(button)
+        header.append(label)
+
+        this.questionContainer.append(header)
+
+        this.fillQuestions()
+    }
+
+    fillQuestions() {
+        const questionsFragment = document.createDocumentFragment()
+        for (let question of this.questions) {
+            const container = createQuickElement("div", "expandable", { "aria-expanded": "false" })
+            const header = createQuickElement("h4")
+            const label = createQuickElement("label")
+            label.textContent = question.title
+
+            const button = createQuickElement("button", "expand", { "type": "button", "aria-label": `Öppnar eller minimerar undermeny för sektionen ${this.title}` })
+            button.addEventListener("click", flipAriaExpanded)
+            label.append(button)
+            header.append(label)
+
+            const answer = createQuickElement("p")
+            answer.textContent = question.answer
+
+            container.append(header, answer)
+            questionsFragment.append(container)
+        }
+        this.questionContainer.append(questionsFragment)
     }
 }

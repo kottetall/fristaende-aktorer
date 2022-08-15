@@ -3,21 +3,6 @@ if ("serviceWorker" in navigator) {
         .register("sw.js")
 }
 
-document.querySelectorAll("nav span").forEach(element => element.addEventListener("click", flipAriaExpanded))
-// document.querySelectorAll("#Uppdateringar_i_anvandarstodet span").forEach(element => element.addEventListener("click", flipAriaExpanded))
-
-document.querySelector(".close").addEventListener("click", () => {
-    document.querySelector("nav").ariaExpanded = "false"
-})
-
-document.querySelectorAll("nav a").forEach(element => {
-    element.addEventListener("click", (e) => {
-        e.preventDefault()
-        closeAriaParents(element)
-        document.querySelector(`${element.href.split("html").pop()}`).scrollIntoView()
-    })
-})
-
 document.querySelectorAll(".previous, .next").forEach(element => element.addEventListener("click", e => {
     e.preventDefault()
     const targetElement = document.getElementById(e.target.href.split("#").pop())
@@ -69,19 +54,147 @@ document.querySelector(".clear").addEventListener("click", () => {
 
 document.querySelectorAll(".expandable .expand").forEach(element => element.addEventListener("click", flipAriaExpanded))
 
-populatePage()
+document.querySelector(`li[data-system="start"] button`).addEventListener("click", () => {
+    location.reload()
+})
 
-function populatePage() {
+document.querySelector(`li[data-system="faq"] button`).addEventListener("click", showFaq)
+
+document.querySelectorAll(`header nav, header .switch`).forEach(element => {
+    element.addEventListener("click", () => {
+        document.querySelectorAll(`header nav[aria-expanded="true"], header .switch[aria-expanded="true"]`).forEach(ariaElement => {
+            if (ariaElement.ariaExpanded === "true" && ariaElement !== element) ariaElement.ariaExpanded = "false"
+        })
+    })
+})
+
+document.querySelectorAll(".switch .goto").forEach(element => {
+    element.addEventListener("click", flipAriaExpanded)
+})
+
+function showFaq() {
     const mainElement = document.querySelector("main")
     const navElement = document.querySelector("nav>ul")
+    clearElement(navElement)
+    clearElement(mainElement)
+
+    setTitleElement()
+    updateBreadCrumbs("system", "vanliga frågor/problem")
+
+    const section = createQuickElement("section")
+    const article = createQuickElement("article")
+    article.id = "faq"
+
+    // TODO: Tillfällig
+    const warningP = createQuickElement("p", "warning")
+    warningP.textContent = "Denna del är under utveckling och innehåller i dagsläget inga svar/lösningar"
+    article.append(warningP)
+
+    const faqFragment = document.createDocumentFragment()
+    for (let question of faq) {
+        const faq = new FAQ(question)
+        faqFragment.append(faq.questionContainer)
+    }
+    const h2 = createQuickElement("h2")
+    h2.textContent = "Vanliga fel och problem"
+    article.append(h2, faqFragment)
+    section.append(article)
+    mainElement.append(section)
+}
+
+function populateNav() {
+    const servicesMsfa = Object.keys(instructions_msfa)
+    const servicesKa = Object.keys(instructions_ka)
+
+    const msfaNavFragment = document.createDocumentFragment()
+    const kaNavFragment = document.createDocumentFragment()
+
+    for (let service of servicesMsfa) {
+        if (instructions_msfa[service].length === 0) continue
+        msfaNavFragment.append(createNavServiceElement(service))
+    }
+    for (let service of servicesKa) {
+        if (instructions_ka[service].length === 0) continue
+        kaNavFragment.append(createNavServiceElement(service))
+    }
+
+    document.querySelector(`li[data-system="msfa"] .service`).append(msfaNavFragment)
+    document.querySelector(`li[data-system="ka"] .service`).append(kaNavFragment)
+}
+
+function createNavServiceElement(name) {
+    const li = createQuickElement("li")
+
+    const label = createQuickElement("label")
+    label.dataset.service = name
+    const button = createQuickElement("button", "goto")
+    button.addEventListener("click", () => {
+        closeAriaParents(button)
+    })
+
+    label.append(name, button)
+    label.addEventListener("click", populate)
+    li.append(label)
+    return li
+}
+
+populateNav()
+
+// function populatePage() {
+//     const mainElement = document.querySelector("main")
+//     const navElement = document.querySelector("nav>ul")
+
+//     const allSections = []
+//     for (let instruction of instructions_msfa["krom"]) {
+//         allSections.push(new Section(instruction))
+//     }
+
+//     const navFragment = document.createDocumentFragment()
+//     const sectionFragment = document.createDocumentFragment()
+
+//     for (let section of allSections) {
+//         navFragment.append(section.navigationElement)
+//         sectionFragment.append(section.element)
+//     }
+
+//     clearElement(navElement)
+//     clearElement(mainElement)
+
+//     navElement.append(navFragment)
+//     mainElement.append(sectionFragment)
+// }
+
+function populate() {
+    const { service } = this.dataset
+    const { system } = this.closest(`[data-system]`).dataset
+
+    const mainElement = document.querySelector("main")
+    const navElement = document.querySelector("nav>ul")
+    clearElement(navElement)
+    clearElement(mainElement)
+
+    updateBreadCrumbs("system", system)
+    updateBreadCrumbs("service", service)
+
+    if (system === "msfa") setTitleElement("MSFA", "Mina sidor för fristående aktörer")
+    else setTitleElement("KA", "Kompletterande aktörer")
+
+    const instructionsToUse = system === "msfa" ? instructions_msfa : instructions_ka
 
     const allSections = []
-    for (let instruction of instructions_msfa) {
+
+    for (let instruction of instructionsToUse[service]) {
         allSections.push(new Section(instruction))
     }
 
     const navFragment = document.createDocumentFragment()
     const sectionFragment = document.createDocumentFragment()
+    // const observer = new IntersectionObserver(intersectionHandler, intersectionObserverOptions)
+    for (let section of allSections) {
+        for (let article of section.pages) {
+            observer.observe(article.article)
+        }
+    }
 
     for (let section of allSections) {
         navFragment.append(section.navigationElement)
@@ -99,12 +212,10 @@ function flipAriaExpanded() {
     else ariaElement = this.closest("[aria-expanded]")
     let newState = "false"
     if (ariaElement.ariaExpanded === newState) newState = "true"
-
     ariaElement.ariaExpanded = newState
 }
 
 function closeAriaParents(element) {
-    // TODO: Ev stänga alla öppna i NAV eller alla utom den men länken man klickade på
     if (element.ariaExpanded) element.ariaExpanded = "false"
     const ariaParent = element.closest(`[aria-expanded="true"]`)
     if (ariaParent) closeAriaParents(ariaParent)
@@ -228,6 +339,7 @@ function updateShortcuts(target) {
     // updateLinks
     document.querySelectorAll(`.currentArticle`).forEach(element => element.classList.remove("currentArticle"))
     document.querySelectorAll(`a[href="#${target.id}"]:not(footer)`).forEach(element => element.classList.add("currentArticle"))
+    updateBreadCrumbs("article", target.querySelector("h3").textContent)
 }
 
 function findOnPage() {
@@ -238,13 +350,37 @@ function findOnPage() {
 }
 
 function intersectionHandler(entries, observer) {
-    if (entries[0].isIntersecting) updateShortcuts(entries[0].target)
+    entries.forEach(entry => {
+        if (entry.isIntersecting) updateShortcuts(entry.target)
+    })
 }
 
 const intersectionObserverOptions = {
     rootMargin: getComputedStyle(document.querySelector("header")).getPropertyValue("height"),
-    threshold: 1
+    threshold: .1
 }
 
 const observer = new IntersectionObserver(intersectionHandler, intersectionObserverOptions)
-document.querySelectorAll("article").forEach(element => observer.observe(element))
+
+
+function setTitleElement(h1Text = "FA", pText = "Fristaende-Aktorer.se") {
+    document.querySelector("header .title h1").textContent = h1Text
+    document.querySelector("header .title p").textContent = pText
+}
+
+function updateBreadCrumbs(crumb, content) {
+    switch (crumb) {
+        case "system":
+            document.querySelector(".systemCrumb").textContent = content
+            break
+        case "service":
+            document.querySelector(".serviceCrumb").textContent = content
+            break
+        case "section":
+            document.querySelector(".sectionCrumb").textContent = content
+            break
+        case "article":
+            document.querySelector(".articleCrumb").textContent = content
+            break
+    }
+}

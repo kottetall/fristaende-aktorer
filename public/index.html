@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="src/style.css">
     <script src="src/instructions_msfa.js" defer></script>
     <script src="src/instructions_ka.js" defer></script>
+    <script src="src/faq.js" defer></script>
     <script src="src/classes.js" defer></script>
     <script src="src/app.js" defer></script>
     <title>Fristaende-Aktorer.se</title>
@@ -22,24 +23,32 @@
 <body>
     <header>
         <div class="title">
-            <h1>MSFA</h1>
-            <p>Mina sidor för fristående aktörer</p>
+            <h1>FA</h1>
+            <p>Fristaende-Aktorer.se</p>
         </div>
         <div class="switch expandable" aria-expanded="false">
-            <label class="">Navigering <button class="expand" aria-label="Öppna eller stäng val av system och tjänst"
+            <label class="">Systemstöd <button class="expand" aria-label="Öppna eller stäng val av system och tjänst"
                     type="button"></button></label>
             <ul class="system">
-                <li class="expandable" aria-expanded="false">
+                <li class="" data-system="start">
+                    <label class="">Startsidan
+                        <button class="goto"></button>
+                    </label>
+                </li>
+                <li class="expandable" aria-expanded="false" data-system="msfa">
                     <label>Mina Sidor för Fristående Aktörer(MSFA) <button class="expand"></button></label>
                     <ul class="service">
-                        <li>Rusta Matcha (KROM)</li>
-                        <li class="inactive">Karriärvägledning (KVL)</li>
                     </ul>
                 </li>
-                <li class="expandable" aria-expanded="false">
-                    <label class="inactive">Kompletterande Aktörer(KA) <button class="expand"></button></label>
+                <li class="expandable" aria-expanded="false" data-system="ka">
+                    <label class="">Kompletterande Aktörer(KA) <button class="expand"></button></label>
                     <ul class="service">
                     </ul>
+                </li>
+                <li class="" data-system="faq">
+                    <label class="">Vanliga problem
+                        <button class="goto"></button>
+                    </label>
                 </li>
             </ul>
         </div>
@@ -48,12 +57,17 @@
             <label class="">Innehållsförteckning <button class="expand" aria-label="Öppna navigeringsmenyn"
                     type="button"></button></label>
             <ul aria-expanded="false">
-                <button class="close" aria-label="Stäng navigeringsmenyn" type="button"></button>
-                <li>
-                    <a href="#Uppdateringar_i_anvandarstodet">Uppdateringar i användarstödet</a>
-                </li>
+                <p class="warning">
+                    Välj något under "Systemstöd"
+                </p>
             </ul>
         </nav>
+        <div class="breadcrumbs">
+            <div class="systemCrumb">start</div>
+            <div class="serviceCrumb"></div>
+            <div class="sectionCrumb"></div>
+            <div class="articleCrumb"></div>
+        </div>
     </header>
     <main>
         <section>
@@ -63,7 +77,7 @@
                     säkerställa att all information är korrekt</p>
 
                 <div class="expandable" aria-expanded="false">
-                    <h3><label>Bakgrund<button class="expand" type="button"
+                    <h3><label>Bakgrunden<button class="expand" type="button"
                                 aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
                     <p>Denna sida är en tillfällig lösning, skapad som ett komplement till de användarstöd som redan
                         finns
@@ -87,7 +101,7 @@
                     <p>
                 </div>
                 <div class="expandable" aria-expanded="false">
-                    <h3><label>Grundförutsättningar<button class="expand" type="button"
+                    <h3><label>Planen<button class="expand" type="button"
                                 aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
                     <div>
                         <h4>Målet är att tillhandahålla:</h4>
@@ -119,7 +133,7 @@
                     </div>
                 </div>
                 <div class="expandable" aria-expanded="false">
-                    <h3><label>Kommande<button class="expand" type="button"
+                    <h3><label>Framtiden<button class="expand" type="button"
                                 aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
                     <div>
                         <h4>Önskan är att i framtiden kunna lägga till följande funktionalitet:</h4>
@@ -154,7 +168,7 @@
                     </div>
                 </div>
                 <div class="expandable" aria-expanded="false">
-                    <h3><label>Om mig<button class="expand" type="button"
+                    <h3><label>Grundaren<button class="expand" type="button"
                                 aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
                     <p>
                         Jag som driver sidan arbetar i dagsläget hos Servicedesk på Arbetsförmedlingen, inriktat mot
@@ -169,130 +183,6 @@
                     <p class="signatur">
                         / Alexander
                     </p>
-                </div>
-            </article>
-        </section>
-        <section>
-            <article id="Uppdateringar_i_anvandarstodet">
-                <h2>Uppdateringar i användarstödet</h2>
-                <div>
-                    <h3>21-11-23</h3>
-                    <h4>Ändringar:</h4>
-                    <ul>
-                        <li>
-                            Deltagarinformation - Deltagare & tjänst ny info om avbrott
-                        </li>
-                    </ul>
-                    <h4>Nya avsnitt:</h4>
-                    <ul>
-                        <li>
-                            Rätta fel i inskickad avvikelserapport frånvaro
-                        </li>
-                        <li>
-                            Rätta fel i inskickad avvikelserapport avvikelse
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>21-11-30</h3>
-                    <h4>Ändringar:</h4>
-                    <ul>
-                        <li>
-                            Export till Excel ny info om nivå
-                        </li>
-                    </ul>
-                    <h4>Nya avsnitt:</h4>
-                    <ul>
-                        <li>
-                            Informativ rapport
-                        </li>
-                        <li>
-                            Slutredovisning
-                        </li>
-                        <li>
-                            Se status för rapporter och redovisningar
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>21-12-01</h3>
-                    <h4>Ändringar:</h4>
-                    <ul>
-                        <li>
-                            Slutredovisning steg 1 tillägg om obligatoriska fält
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>21-12-16</h3>
-                    <h4>Ändringar:</h4>
-                    <ul>
-                        <li>
-                            Skapa informativ rapport tillägg om kontaktuppgifter
-                        </li>
-                    </ul>
-                    <h4>Nya avsnitt:</h4>
-                    <ul>
-                        <li>
-                            Se status för rapporter och redovisningar
-                        </li>
-                        <li>
-                            Se motivering till ej godkänd slutredovisning - deltagarl...
-                        </li>
-                        <li>
-                            Se motivering till ej godkänd slutredovisning - Rapporter
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>22-01-27</h3>
-                    <h4>Ändringar:</h4>
-                    <ul>
-                        <li>
-                            Deltagare & tjänst - Genomförandereferens, avbrott och v...
-                        </li>
-                        <li>
-                            Ny info om videolänk
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>22-02-28</h3>
-                    <h4>Ändringar:</h4>
-                    <ul>
-                        <li>
-                            Se mina deltagare - Tillägg om att söka på genomförande
-                        </li>
-                    </ul>
-                    <h4>Nya avsnitt:</h4>
-                    <ul>
-                        <li>
-                            Signal om arbete eller studier
-                        </li>
-                        <li>
-                            Skapa resultatredovisning
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>22-04-06</h3>
-                    <ul>
-                        <li>Ta bort personal/ handledare</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>22-04-29</h3>
-                    <ul>
-                        <li>Beslut om period 2</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>22-05-23</h3>
-                    <ul>
-                        <li>Beslut om period 2 Visas i ”deltagarlista”</li>
-                        <li>Förändring; tilldelas nu automatiskt samma handledare som för period 1.</li>
-                        <li>Export till Excel Tillägg; exporteringen och vad ni får ut för information</li>
-                    </ul>
                 </div>
             </article>
         </section>
