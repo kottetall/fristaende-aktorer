@@ -357,7 +357,7 @@ function intersectionHandler(entries, observer) {
 
 const intersectionObserverOptions = {
     rootMargin: getComputedStyle(document.querySelector("header")).getPropertyValue("height"),
-    threshold: .1
+    threshold: 1
 }
 
 const observer = new IntersectionObserver(intersectionHandler, intersectionObserverOptions)
