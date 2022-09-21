@@ -1,12 +1,13 @@
-import dotenv from "dotenv"
-dotenv.config()
+require("dotenv").config()
 
-import express from "express"
+const express = require("express")
 const app = express()
+
 const { PORT, API_URL } = process.env
 // const { PORT, API_URL_TEST: API_URL } = process.env
-import helmet from "helmet"
-import fetch from "node-fetch"
+
+const helmet = require("helmet")
+const fetch = require("node-fetch")
 
 app.use(helmet({
     contentSecurityPolicy: false,
