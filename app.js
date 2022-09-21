@@ -3,8 +3,8 @@ dotenv.config()
 
 import express from "express"
 const app = express()
-// const { PORT, API_URL } = process.env
-const { PORT, API_URL_TEST: API_URL } = process.env
+const { PORT, API_URL } = process.env
+// const { PORT, API_URL_TEST: API_URL } = process.env
 import helmet from "helmet"
 import fetch from "node-fetch"
 
