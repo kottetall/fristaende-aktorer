@@ -3,74 +3,134 @@ if ("serviceWorker" in navigator) {
         .register("sw.js")
 }
 
-document.querySelectorAll(".previous, .next").forEach(element => element.addEventListener("click", e => {
-    e.preventDefault()
-    const targetElement = document.getElementById(e.target.href.split("#").pop())
-    targetElement.scrollIntoView()
-    updateShortcuts(targetElement)
-}))
-document.querySelector(".start").addEventListener("click", e => {
-    e.preventDefault()
-    const targetElement = document.querySelector("main")
-    targetElement.scrollIntoView()
-    updateShortcuts(targetElement)
-})
 
-document.querySelector(".modal .close, .modal.active").addEventListener("click", (event) => {
-    if (event.target.localName !== "img") document.querySelector(".modal.active").classList.remove("active")
-})
 
-document.querySelector(".openSearchModal").addEventListener("click", (e) => {
-    const searchModal = document.querySelector(".searchModal")
-    if (e.target.dataset.searchopen === "false") {
-        e.target.dataset.searchopen = "true"
-        searchModal.classList.add("active")
-        searchModal.querySelector("input").focus()
-    } else {
-        e.target.dataset.searchopen = "false"
-        searchModal.classList.remove("active")
+const indicator = new StatusIndicator()
+const breadcrumbs = new Breadcrumbs()
+
+const allSystems = new Map()
+const lookupServiceId = new Map()
+const lookupSystemId = new Map()
+
+async function loadData() {
+    // TODO: konsolidera till en fetch
+
+    try {
+        const serviceResponse = await fetch("/services")
+        const services = await serviceResponse.json()
+
+
+        const allServices = {}
+        services.forEach(service => {
+            service = new Service(service)
+            if (allServices[service.system]) allServices[service.system].push(service)
+            else allServices[service.system] = [service]
+            lookupServiceId.set(`${service.id}`, service.abbriviation || service.name)
+        })
+
+
+        const systemResponse = await fetch("/systems")
+        const systems = await systemResponse.json()
+
+
+        systems.forEach(system => {
+            system = new System(system, allServices[system.id])
+            allSystems.set(`${system.id}`, system)
+            lookupSystemId.set(`${system.id}`, system.abbriviation || system.name)
+        })
+
+        allSystems.forEach(system => document.querySelector(".system").append(system.element))
+    } catch (error) {
+        indicator.update = "intermittent"
+        console.warn("Från loaddata():\n", error.message)
     }
-})
+}
 
-document.querySelector(".search").addEventListener("click", findOnPage)
+loadData()
 
-document.querySelector("#pageSearch").addEventListener("input", (e) => {
-    const { parentElement, value } = e.target
-    value ? parentElement.dataset.empty = "false" : parentElement.dataset.empty = "true"
-})
+window.onload = () => {
+    indicator.update = "online"
+    window.addEventListener("offline", () => {
+        console.log("offline")
+        indicator.update = "offline"
+    })
+    window.addEventListener("online", () => {
+        console.log("online")
+        indicator.update = "online"
+    })
 
-document.querySelector("#pageSearch").addEventListener("keyup", (e) => {
-    if (e.code === "Enter") findOnPage()
-})
+    document.querySelectorAll(".previous, .next").forEach(element => element.addEventListener("click", e => {
+        e.preventDefault()
+        const targetElement = document.getElementById(e.target.href.split("#").pop())
+        targetElement.scrollIntoView()
+        updateShortcuts(targetElement)
+    }))
+    document.querySelector(".start").addEventListener("click", e => {
+        e.preventDefault()
+        const targetElement = document.querySelector("main")
+        targetElement.scrollIntoView()
+        updateShortcuts(targetElement)
+    })
 
-document.querySelector(".clear").addEventListener("click", () => {
-    clearFoundResults()
-    clearElement(document.querySelector(".results"))
-    document.querySelector("#pageSearch").value = ""
-    document.querySelector("#pageSearch").focus()
-    document.querySelector(".searchModal .inputContainer").dataset.empty = "true"
-    document.querySelector(".openSearchModal").dataset.results = "false"
-})
+    document.querySelector(".modal .close, .modal.active").addEventListener("click", (event) => {
+        if (event.target.localName !== "img") document.querySelector(".modal.active").classList.remove("active")
+    })
 
-document.querySelectorAll(".expandable .expand").forEach(element => element.addEventListener("click", flipAriaExpanded))
+    // document.querySelector(".imageModal img").addEventListener("wheel", scrollZoom)
 
-document.querySelector(`li[data-system="start"] button`).addEventListener("click", () => {
-    location.reload()
-})
+    document.querySelector(".openSearchModal").addEventListener("click", (e) => {
+        const searchModal = document.querySelector(".searchModal")
+        if (e.target.dataset.searchopen === "false") {
+            e.target.dataset.searchopen = "true"
+            searchModal.classList.add("active")
+            // searchModal.querySelector("input").focus()
+        } else {
+            e.target.dataset.searchopen = "false"
+            searchModal.classList.remove("active")
+        }
+    })
 
-document.querySelector(`li[data-system="faq"] button`).addEventListener("click", showFaq)
+    document.querySelector(".search").addEventListener("click", findOnPage)
 
-document.querySelectorAll(`header nav, header .switch`).forEach(element => {
-    element.addEventListener("click", () => {
-        document.querySelectorAll(`header nav[aria-expanded="true"], header .switch[aria-expanded="true"]`).forEach(ariaElement => {
-            if (ariaElement.ariaExpanded === "true" && ariaElement !== element) ariaElement.ariaExpanded = "false"
+    document.querySelector("#pageSearch").addEventListener("input", (e) => {
+        const { parentElement, value } = e.target
+        value ? parentElement.dataset.empty = "false" : parentElement.dataset.empty = "true"
+    })
+
+    document.querySelector("#pageSearch").addEventListener("keyup", (e) => {
+        if (e.code === "Enter") findOnPage()
+    })
+
+    document.querySelector(".clear").addEventListener("click", () => {
+        clearFoundResults()
+        clearElement(document.querySelector(".results"))
+        document.querySelector("#pageSearch").value = ""
+        // document.querySelector("#pageSearch").focus()
+        document.querySelector(".searchModal .inputContainer").dataset.empty = "true"
+        document.querySelector(".openSearchModal").dataset.results = "false"
+    })
+
+    document.querySelectorAll(".expandable .expand").forEach(element => element.addEventListener("click", flipAriaExpanded))
+
+    document.querySelector(`li[data-system="start"] button`).addEventListener("click", () => {
+        location.reload()
+    })
+
+    document.querySelector(`li[data-system="faq"] button`).addEventListener("click", showFaq)
+
+    document.querySelectorAll(`header nav, header .switch`).forEach(element => {
+        element.addEventListener("click", () => {
+            document.querySelectorAll(`header nav[aria-expanded="true"], header .switch[aria-expanded="true"]`).forEach(ariaElement => {
+                if (ariaElement.ariaExpanded === "true" && ariaElement !== element) ariaElement.ariaExpanded = "false"
+            })
         })
     })
-})
 
-document.querySelectorAll(".switch .goto").forEach(element => {
-    element.addEventListener("click", flipAriaExpanded)
-})
+    document.querySelectorAll(".switch .goto").forEach(element => {
+        element.addEventListener("click", flipAriaExpanded)
+    })
+
+}
 
 function showFaq() {
     const mainElement = document.querySelector("main")
@@ -79,7 +139,8 @@ function showFaq() {
     clearElement(mainElement)
 
     setTitleElement()
-    updateBreadCrumbs("system", "vanliga frågor/problem")
+    // updateBreadCrumbs("system", "vanliga frågor/problem")
+    breadcrumbs.system = "vanliga frågor/problem"
 
     const section = createQuickElement("section")
     const article = createQuickElement("article")
@@ -102,107 +163,72 @@ function showFaq() {
     mainElement.append(section)
 }
 
-function populateNav() {
-    const servicesMsfa = Object.keys(instructions_msfa)
-    const servicesKa = Object.keys(instructions_ka)
-
-    const msfaNavFragment = document.createDocumentFragment()
-    const kaNavFragment = document.createDocumentFragment()
-
-    for (let service of servicesMsfa) {
-        if (instructions_msfa[service].length === 0) continue
-        msfaNavFragment.append(createNavServiceElement(service))
-    }
-    for (let service of servicesKa) {
-        if (instructions_ka[service].length === 0) continue
-        kaNavFragment.append(createNavServiceElement(service))
-    }
-
-    document.querySelector(`li[data-system="msfa"] .service`).append(msfaNavFragment)
-    document.querySelector(`li[data-system="ka"] .service`).append(kaNavFragment)
-}
-
-function createNavServiceElement(name) {
-    const li = createQuickElement("li")
-
-    const label = createQuickElement("label")
-    label.dataset.service = name
-    const button = createQuickElement("button", "goto")
-    button.addEventListener("click", () => {
-        closeAriaParents(button)
-    })
-
-    label.append(name, button)
-    label.addEventListener("click", populate)
-    li.append(label)
-    return li
-}
-
-populateNav()
-
-// function populatePage() {
-//     const mainElement = document.querySelector("main")
-//     const navElement = document.querySelector("nav>ul")
-
-//     const allSections = []
-//     for (let instruction of instructions_msfa["krom"]) {
-//         allSections.push(new Section(instruction))
-//     }
-
-//     const navFragment = document.createDocumentFragment()
-//     const sectionFragment = document.createDocumentFragment()
-
-//     for (let section of allSections) {
-//         navFragment.append(section.navigationElement)
-//         sectionFragment.append(section.element)
-//     }
-
-//     clearElement(navElement)
-//     clearElement(mainElement)
-
-//     navElement.append(navFragment)
-//     mainElement.append(sectionFragment)
-// }
-
-function populate() {
-    const { service } = this.dataset
-    const { system } = this.closest(`[data-system]`).dataset
+async function populate(triggerElement) {
+    const { service: serviceId } = triggerElement.closest(`[data-service]`).dataset
+    const { system: systemId } = triggerElement.closest(`[data-system]`).dataset
 
     const mainElement = document.querySelector("main")
     const navElement = document.querySelector("nav>ul")
     clearElement(navElement)
     clearElement(mainElement)
 
-    updateBreadCrumbs("system", system)
-    updateBreadCrumbs("service", service)
+    // updateBreadCrumbs("system", lookupSystemId.get(systemId))
+    breadcrumbs.system = lookupSystemId.get(systemId)
+    // updateBreadCrumbs("service", lookupServiceId.get(serviceId))
+    breadcrumbs.service = lookupServiceId.get(serviceId)
 
-    if (system === "msfa") setTitleElement("MSFA", "Mina sidor för fristående aktörer")
-    else setTitleElement("KA", "Kompletterande aktörer")
+    const titelText = allSystems.get(systemId).abbriviation || allSystems.get(systemId).name
+    const titelUnderText = allSystems.get(systemId).abbriviation ? allSystems.get(systemId).name : ""
 
-    const instructionsToUse = system === "msfa" ? instructions_msfa : instructions_ka
+    setTitleElement(titelText, titelUnderText)
 
-    const allSections = []
+    // TODO: förbättre spinner - lägg ihop med status/indikator
+    const spinner = document.getElementById("spinner")
+    spinner.dataset.waiting = true
 
-    for (let instruction of instructionsToUse[service]) {
-        allSections.push(new Section(instruction))
+    const errorMsg = await getCategoriesWithInstructions(serviceId, systemId)
+    if (errorMsg) {
+        const errorP = createQuickElement("p", "warning")
+        errorP.textContent = errorMsg
+        document.querySelector("main").append(errorP)
     }
 
-    const navFragment = document.createDocumentFragment()
-    const sectionFragment = document.createDocumentFragment()
-    // const observer = new IntersectionObserver(intersectionHandler, intersectionObserverOptions)
-    for (let section of allSections) {
-        for (let article of section.pages) {
-            observer.observe(article.article)
-        }
-    }
+    spinner.dataset.waiting = false
+}
 
-    for (let section of allSections) {
-        navFragment.append(section.navigationElement)
-        sectionFragment.append(section.element)
-    }
+async function getCategoriesWithInstructions(serviceId, systemId) {
+    const instructionResponse = await fetch(`/instructions/${serviceId}`)
+    const instructions = await instructionResponse.json()
 
-    navElement.append(navFragment)
-    mainElement.append(sectionFragment)
+
+    const allInstructions = {}
+    instructions.forEach(instruction => {
+        instruction = new Instruction(instruction)
+        if (allInstructions[instruction.category]) allInstructions[instruction.category].push(instruction)
+        else allInstructions[instruction.category] = [instruction]
+    })
+
+    if (instructions.length === 0) return `Instruktioner saknas för "${lookupServiceId.get(serviceId)}"`
+
+    const categoryResponse = await fetch("/categories")
+    const categories = await categoryResponse.json()
+
+    const allCategories = new Map()
+
+    categories.forEach(category => {
+        category = new Category(category, allInstructions[category.id])
+        allCategories.set(`${category.id}`, category)
+    })
+
+    let navigationFragment = document.createDocumentFragment()
+    let mainFragment = document.createDocumentFragment()
+    allCategories.forEach(category => {
+        navigationFragment.append(category.navigationElement)
+        mainFragment.append(category.section)
+    })
+
+    document.querySelector("nav>ul").append(navigationFragment)
+    document.querySelector("main").append(mainFragment)
 }
 
 function flipAriaExpanded() {
@@ -339,7 +365,8 @@ function updateShortcuts(target) {
     // updateLinks
     document.querySelectorAll(`.currentArticle`).forEach(element => element.classList.remove("currentArticle"))
     document.querySelectorAll(`a[href="#${target.id}"]:not(footer)`).forEach(element => element.classList.add("currentArticle"))
-    updateBreadCrumbs("article", target.querySelector("h3").textContent)
+    // updateBreadCrumbs("article", target.querySelector("h3").textContent)
+    breadcrumbs.article = target.querySelector("h3").textContent
 }
 
 function findOnPage() {
@@ -384,3 +411,23 @@ function updateBreadCrumbs(crumb, content) {
             break
     }
 }
+
+function toCapitalizedSentence(sentence) {
+    sentence = [...sentence]
+    sentence[0] = sentence[0].toUpperCase()
+
+    return sentence.join("")
+}
+
+// let currentZoomLevel = 1
+// const zoomRate = 0.01
+
+// function scrollZoom(e) {
+//     const imageModal = document.querySelector(".imageModal")
+//     if (!imageModal.classList.contains("active")) return
+
+//     const imageElement = e.target
+
+//     if (e.deltaY > 0) imageElement.style.scale = currentZoomLevel += zoomRate
+//     else imageElement.style.scale = currentZoomLevel -= zoomRate
+// }

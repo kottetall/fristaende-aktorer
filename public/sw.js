@@ -5,9 +5,8 @@ self.addEventListener("install", (e) => {
         .then((cache) => cache.addAll([
             "index.html",
             "src/style.css",
-            "src/instructions_msfa.js",
-            "src/instructions_ka.js",
             "src/classes.js",
+            "src/instructions.js",
             "src/app.js",
             "img/icons/close.svg",
             "img/icons/list.svg",
@@ -18,7 +17,10 @@ self.addEventListener("install", (e) => {
             "img/icons/expand.svg",
             "img/icons/minimize.svg",
             "img/icons/goto.svg",
-            "img/icons/trash.svg"
+            "img/icons/trash.svg",
+            "img/icons/online.svg",
+            "img/icons/intermittent.svg",
+            "img/icons/offline.svg",
         ])))
 })
 

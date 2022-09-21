@@ -12,10 +12,9 @@
     <link rel="shortcut icon" href="./img/icons/logo48.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="./img/icons/logo192.png">
     <link rel="stylesheet" href="src/style.css">
-    <script src="src/instructions_msfa.js" defer></script>
-    <script src="src/instructions_ka.js" defer></script>
     <script src="src/faq.js" defer></script>
     <script src="src/classes.js" defer></script>
+    <script src="src/instructions.js" defer></script>
     <script src="src/app.js" defer></script>
     <title>Fristaende-Aktorer.se</title>
 </head>
@@ -35,16 +34,6 @@
                         <button class="goto"></button>
                     </label>
                 </li>
-                <li class="expandable" aria-expanded="false" data-system="msfa">
-                    <label>Mina Sidor för Fristående Aktörer(MSFA) <button class="expand"></button></label>
-                    <ul class="service">
-                    </ul>
-                </li>
-                <li class="expandable" aria-expanded="false" data-system="ka">
-                    <label class="">Kompletterande Aktörer(KA) <button class="expand"></button></label>
-                    <ul class="service">
-                    </ul>
-                </li>
                 <li class="" data-system="faq">
                     <label class="">Vanliga problem
                         <button class="goto"></button>
@@ -52,6 +41,7 @@
                 </li>
             </ul>
         </div>
+
 
         <nav class="expandable" aria-expanded="false">
             <label class="">Innehållsförteckning <button class="expand" aria-label="Öppna navigeringsmenyn"
@@ -68,6 +58,7 @@
             <div class="sectionCrumb"></div>
             <div class="articleCrumb"></div>
         </div>
+        <div id="status"></div>
     </header>
     <main>
         <section>
@@ -94,9 +85,10 @@
                     </p>
                     <p>Även om målet är att informationen ska vara identisk med den som erbjuds av Arbetsförmedlingen,
                         är
-                        det i slutändan du själv som ytterst ansvarar för att det du gör är korrekt.
-                        fristaende-aktorer.se
-                        tar inget ansvar för eventuella konsekvenser som orsakats av felaktig eller gammal information.
+                        det i slutändan <strong>du själv som ytterst ansvarar för att det du gör är korrekt.</strong>
+                        <strong>fristaende-aktorer.se
+                            tar inget ansvar för eventuella konsekvenser som orsakats av felaktig eller gammal
+                            information.</strong>
                     </p>
                     <p>
                 </div>
@@ -140,9 +132,11 @@
                         <ul>
                             <li><b>Vanliga problem/felmeddelanden</b> - <i>Det finns vissa problem som är vanligare än
                                     andra och där lösningen många gånger är relativt enkel. Min önskan är att ha en del
-                                    på sidan där man exempelvis kan skriva in ett felmeddelande och få fram de
-                                    vanligaste orsakerna. Men även vilka steg man själv kan ta innan en eventuell
-                                    felanmälan till Arbetsförmedlingen, för att förhoppningsvis kunna lösa felet själv.
+                                    på sidan där man exempelvis kan slå upp vanliga felmeddelanden. Men även få hjälp
+                                    med vilka steg man själv kan ta innan en eventuell
+                                    felanmälan till Arbetsförmedlingen. Detta för att antingen själv kunna lösa
+                                    problemet, eller för att skapa en felanmälan hos Arbetsförmedlingen med den
+                                    information som är relevant.
                                 </i>
                             </li>
                             <li><b>API</b> - <i>Möjligheten att själv kunna bestämma i vilket format du vill få
@@ -156,19 +150,20 @@
                                         target="_blank"><u>Myndighetssvenska.com</u></a> ). Jag
                                     skulle
                                     även vilja komplettera detta med förklaringar av diverse begrepp, utifrån avtalen ni
-                                    skrivit med Arbetsförmedlingen - när har man uppnått ett "resultat", vilka praktiska
-                                    uppgifter förväntas man hjälpa deltagaren med och vilka är olämpliga.</i></li>
-                            <li><b>Övrigt</b> - <i>Detta är bara ett fåtal exempel på de planer som kan komma och
+                                    skrivit med Arbetsförmedlingen - hur defineras "resultat", vilka praktiska
+                                    uppgifter förväntas man hjälpa deltagaren med och vilka är olämpliga o.s.v.</i></li>
+                            <li><b>Övrigt</b> - <i>Detta är bara ett fåtal exempel på de planer som kan komma framöver
+                                    och
                                     långsiktigt är målet att även kunna ta emot feedback och önskemål från
                                     användare.</i></li>
                         </ul>
                         <p class="warning">Alla dessa planer på förutsätter godkännande. De kan komma att strykas om
                             Arbetsförmedlingen gör bedömningen att de vore olämpliga/otillåtna alternativt om
-                            funktionaliteten läggs till i systemstöden.</p>
+                            funktionaliteten läggs till direkt i systemstöden.</p>
                     </div>
                 </div>
                 <div class="expandable" aria-expanded="false">
-                    <h3><label>Grundaren<button class="expand" type="button"
+                    <h3><label>Ansvarig<button class="expand" type="button"
                                 aria-label="Växla mellan expandering och minimering av ämnet"></button></label></h3>
                     <p>
                         Jag som driver sidan arbetar i dagsläget hos Servicedesk på Arbetsförmedlingen, inriktat mot
@@ -188,12 +183,14 @@
         </section>
     </main>
 
-    <div class="modal">
+    <div id="spinner" data-waiting="false"></div>
+
+    <div class="modal imageModal">
         <button class="close" aria-label="Stäng bildinzoomning" type="button"></button>
         <img src="" alt="">
     </div>
 
-    <div class="modal searchModal">
+    <div class="modal searchModal disabled">
         <div>
             <label for="pageSearch">sök på sidan</label>
             <div class="inputContainer" data-empty="true">
@@ -203,6 +200,9 @@
             </div>
         </div>
         <ul class="results"></ul>
+        <p class="warning">
+            Sökfunktionen är tillfälligt avstängd under utvecklingen av sidan
+        </p>
     </div>
 
     <footer>

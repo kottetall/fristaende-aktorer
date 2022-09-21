@@ -1,18 +1,19 @@
-require("dotenv").config()
+import dotenv from "dotenv"
+dotenv.config()
 
-const { response } = require("express")
-const express = require("express")
+import express from "express"
 const app = express()
-const PORT = process.env.PORT
-const helmet = require("helmet")
-
+// const { PORT, API_URL } = process.env
+const { PORT, API_URL_TEST: API_URL } = process.env
+import helmet from "helmet"
+import fetch from "node-fetch"
 
 app.use(helmet({
     contentSecurityPolicy: false,
     xssFilter: false
 }))
 
-app.use((request, res, next) => {
+app.use((request, response, next) => {
     if (/.*\.svg/.test(request.path)) response.charset = "utf-8"
     next()
 })
@@ -21,4 +22,28 @@ app.use(express.static("public"))
 
 app.listen(PORT, () => {
     console.log(`Lyssnar på port: ${PORT}`)
+})
+
+app.get("/instructions/:id", async (request, response) => {
+    const { id } = request.params
+    const data = await fetch(`${API_URL}/instruktioner/tjanst/${id}`)
+    const jsonData = await data.json()
+    response.send(jsonData)
+})
+
+app.get("/services", async (request, response) => {
+    const data = await fetch(`${API_URL}/tjanster`)
+    const jsonData = await data.json()
+    response.send(jsonData)
+})
+
+app.get("/systems", async (request, response) => {
+    const data = await fetch(`${API_URL}/systemstod`)
+    const jsonData = await data.json()
+    response.send(jsonData)
+})
+app.get("/categories", async (request, response) => {
+    const data = await fetch(`${API_URL}/kategorier`)
+    const jsonData = await data.json()
+    response.send(jsonData)
 })
