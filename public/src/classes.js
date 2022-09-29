@@ -38,7 +38,7 @@ class FAQ {
             answer.textContent = question.answer
 
             const ticket = createQuickElement("a", "ticket")
-            ticket.textContent = "Gå till formuläret för felanmälan hos Arbetsformedlingen"
+            ticket.textContent = "Felanmälan hos Arbetsformedlingen"
             ticket.href = "https://arbetsformedlingen.se/om-oss/for-leverantorer/administration-for-leverantorer/rapportera-tekniska-problem-med-webbstod"
 
             container.append(header, answer, ticket)
@@ -59,7 +59,7 @@ class Breadcrumbs {
     }
 
     _init() {
-        this.system = "start"
+        this.system = "Om sidan"
     }
 
     set system(newSystem) {

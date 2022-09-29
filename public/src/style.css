@@ -31,7 +31,7 @@
     --font-normal: 0.8rem;
     --font-small: 0.6rem;
     --font-h1: 2rem;
-    --font-h2: 1.1rem;
+    --font-h2: 1.25rem;
     --font-h3: 1.1rem;
     --font-h4: 0.9rem;
     --font-h5: 0.8rem;
@@ -39,7 +39,7 @@
     --font-message: 0.8rem;
     --font-warning: 0.7rem;
 
-    --offset-header: max(18vh, 3em);
+    --offset-header: max(22vh, 3em);
     --offset-footer: max(5vh, 3em);
 
     scroll-padding-top: var(--offset-header);
@@ -174,18 +174,22 @@ h1 {
 
 h2 {
     font-size: var(--font-h2);
+    border-bottom: 2px solid var(--pop-border-section);
+    /* margin: 0.5em 0; */
 }
 
 h3 {
     font-size: var(--font-h3);
     border-bottom: 1px solid var(--pop-border-article);
-    margin: 0.5em 0;
+    /* margin: 0.5em 0; */
+    margin-left: 0.5em;
 }
 
 h4 {
     font-size: var(--font-h4);
     font-weight: 400;
-    margin: 0.5em 0;
+    margin: 0.25em 0;
+    margin-left: 0.5em;
 }
 
 h5 {
@@ -366,7 +370,7 @@ article p {
 .expandable {
     display: inherit;
     flex-direction: inherit;
-    gap: inherit;
+    gap: 1.5em;
 }
 
 .expandable[aria-expanded="false"] *:not(:first-child) {
@@ -410,7 +414,7 @@ article {
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
-    /* gap: 2em; */
+    gap: 2em;
     padding: 0.5em;
     min-height: calc(100vh - var(--offset-header) - var(--offset-footer));
     max-width: 100vw;
@@ -418,7 +422,7 @@ article {
 }
 
 article>* {
-    margin: 1em 0;
+    /* margin: 1em 0; */
 }
 
 article h4 {
@@ -636,7 +640,7 @@ footer a[href="#"]:not(.start)::after {
 }
 
 #about p:not(.warning) {
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 .signatur {
@@ -786,6 +790,21 @@ footer a[href="#"]:not(.start)::after {
     max-width: 50%;
     position: relative;
     border-radius: 10px;
+}
+
+#faq .ticket::after {
+    /* content: ""; */
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    right: 0;
+    width: 2em;
+    height: 2em;
+    background-color: var(--main-bg);
+    background-image: url(./../img/icons/external.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 @media screen and (min-width: 600px) {
