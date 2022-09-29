@@ -141,6 +141,9 @@ function showFaq() {
     setTitleElement()
     // updateBreadCrumbs("system", "vanliga frågor/problem")
     breadcrumbs.system = "vanliga frågor/problem"
+    breadcrumbs.service = ""
+    breadcrumbs.section = ""
+    breadcrumbs.article = ""
 
     const section = createQuickElement("section")
     const article = createQuickElement("article")
